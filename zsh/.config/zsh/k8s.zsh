@@ -24,7 +24,6 @@ alias yul='switch_context yul yul-1 yul'
 
 # Port forward a pod, `pfs service` will port-forward service-xxxxxxxxxx-xxxxx at localhost:50051
 pfs() {
-  echo $1
   POD=$(kubectl -n default get pods | grep -E "^$1-\S{10}-\S{5}\s+(.*?)$" | sed 1q | awk '{print $1;}')
   PORT="50051:50051"
   echo -e "\e[36m\e[1mForwarding $POD\e[0m"
