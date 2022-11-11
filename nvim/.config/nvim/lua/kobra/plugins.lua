@@ -45,13 +45,17 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by many plugins
 
 	-- Other
-	use("numToStr/Comment.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use("folke/which-key.nvim")
-	use("gpanders/editorconfig.nvim")
 	use("windwp/nvim-spectre")
+
+  -- Formating
+	use("numToStr/Comment.nvim")
+  use("tpope/vim-sleuth")
+  use("tpope/vim-repeat")
+  use("tpope/vim-rhubarb")
+	use("gpanders/editorconfig.nvim")
 	use("MunifTanjim/prettier.nvim")
-  use("nmac427/guess-indent.nvim")
 
   -- Navigation
 	use({ "jdhao/better-escape.vim", event = "InsertEnter" }) -- uses 'jk' for ESC
@@ -69,8 +73,9 @@ return packer.startup(function(use)
 	-- Git
 	use("airblade/vim-gitgutter")
 	use("f-person/git-blame.nvim") -- git blame
-	use("ruifm/gitlinker.nvim")
 	use("sindrets/diffview.nvim")
+  use("tpope/vim-fugitive")
+  use("shumphrey/fugitive-gitlab.vim")
 
 	-- Auto completion
 	use("windwp/nvim-autopairs")
