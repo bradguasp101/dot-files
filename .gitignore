@@ -1,0 +1,6 @@
+# Secret configs
+/zsh/.config/zsh/config.zsh
+/zsh/.config/zsh/docker-secret.zsh
+
+# OSX stuff
+.DS_Store
