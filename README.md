@@ -5,4 +5,4 @@
 2. Use stow to symlink
   - `stow -v -R -t ~ nvim`
   - `-t ~` means the stow root is at `~`
-3. Install [wollem](https://github.com/tcncloud/wollemi)
+3. Install [wollemi](https://github.com/tcncloud/wollemi)
