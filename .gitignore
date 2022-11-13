@@ -1,3 +1,6 @@
+# Build
+/nvim/.config/nvim/plugin/
+
 # Secret configs
 /zsh/.config/zsh/config.zsh
 /zsh/.config/zsh/docker-secret.zsh
