@@ -83,12 +83,16 @@ return packer.startup(function(use)
   use({
     'saadparwaiz1/cmp_luasnip',
     requires = {
+      'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-calc',
       'hrsh7th/nvim-cmp',
+      'f3fora/cmp-spell',
+      'David-Kunz/cmp-npm',
     },
     config = function() require('kobra.config.cmp') end,
   })
@@ -101,6 +105,7 @@ return packer.startup(function(use)
     'jose-elias-alvarez/null-ls.nvim',
     'jayp0521/mason-null-ls.nvim',
   })
+  use({'ray-x/lsp_signature.nvim', config = function() require('kobra.config.signature') end})
   use('RRethy/vim-illuminate')
   use({
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim',

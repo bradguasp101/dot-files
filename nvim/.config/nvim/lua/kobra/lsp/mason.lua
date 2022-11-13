@@ -1,46 +1,44 @@
 local export = {}
 
 export.servers = {
-	"sumneko_lua",
-	"jsonls",
-	"gopls",
+  'bashls',
+  'clangd',
+  'cmake',
+  'cssls',
+  'dockerls',
+	'gopls',
+  'html',
+	'jsonls',
+  'kotlin_language_server',
+  'pyright',
+  'rust_analyzer',
+  'solargraph',
+	'sumneko_lua',
+  'texlab',
+  'tsserver',
+  'vimls',
+  'yamlls',
 }
 
 function export.setup()
-	local mason_ok, mason = pcall(require, "mason")
-	if not mason_ok then
-		return
-	end
+  require('mason').setup({
+    ui = {
+      icons = {
+        package_installed = '✓',
+        package_pending = '➜',
+        package_uninstalled = '✗',
+      },
+    },
+  })
 
-	mason.setup({
-		ui = {
-			border = "none",
-			icons = {
-				package_installed = "✓",
-			},
-		},
-		log_level = vim.log.levels.INFO,
-		max_concurrent_installers = 4,
-	})
-
-	local mason_config_ok, mason_lsp_config = pcall(require, "mason-lspconfig")
-	if not mason_config_ok then
-		return
-	end
-
-	mason_lsp_config.setup({
+	require('mason-lspconfig').setup({
 		ensure_installed = export.servers,
 		automatic_installation = true,
 	})
 
-	require("kobra.lsp.null-ls").setup()
+	require('kobra.lsp.null-ls').setup()
 
-	local mason_null_ok, mason_null = pcall(require, "mason-null-ls")
-	if not mason_null_ok then
-		return
-	end
-
-	mason_null.setup()
+  require('mason-null-ls').setup()
 end
 
 return export

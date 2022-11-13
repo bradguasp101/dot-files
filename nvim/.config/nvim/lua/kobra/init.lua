@@ -1,4 +1,3 @@
-require "kobra.lsp"
 require "kobra.utils"
 require "kobra.keymaps"
 require "kobra.options"
