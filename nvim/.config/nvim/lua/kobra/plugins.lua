@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use({'jdhao/better-escape.vim', event = 'InsertEnter'})
   use({'ggandor/leap.nvim', config = function() require('kobra.config.leap') end})
   use({'karb94/neoscroll.nvim', config = function() require('kobra.config.neoscroll') end})
+  use('mg979/vim-visual-multi')
 
   -- Terminal
   use({'akinsho/toggleterm.nvim', config = function() require('kobra.config.toggleterm') end})
@@ -162,6 +163,7 @@ return packer.startup(function(use)
   use({'nvim-lualine/lualine.nvim', config = function() require('kobra.config.lualine') end})
   use({'folke/which-key.nvim', config = function() require('kobra.config.whichkey') end})
   use({'windwp/nvim-spectre', config = function() require('kobra.config.spectre') end})
+  use({'ThePrimeagen/refactoring.nvim', config = function() require('kobra.config.refactoring') end})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
