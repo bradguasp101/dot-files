@@ -19,6 +19,11 @@ local opts = {
   nowait = false, -- use `nowait` when creating keymaps
 }
 
+local telescope_ok, telescope = pcall(require, 'telescope')
+if telescope_ok then
+  telescope.load_extension('dap')
+end
+
 local mappings = {
   ["w"] = { "<cmd>update!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
@@ -116,6 +121,30 @@ local mappings = {
     f = { "1z=", "Use 1. correction" },
     l = { "<cmd>Telescope spell_suggest<cr>", "List corrections" },
   },
+
+  -- DAP
+  D = {
+    name = "DAP",
+    c = {"<cmd>lua require('dap').continue()<cr>", "Continue"},
+    sv = {"<cmd>lua require('dap').step_over()<cr>", "Step Over"},
+    si = {"<cmd>lua require('dap').step_into()<cr>", "Step Into"},
+    so = {"<cmd>lua require('dap').step_out()<cr>", "Step Out"},
+    sc = {"<cmd>lua require('dap.ui.variables').scopes()<cr>", "Variable Scopes"},
+    hh = {"<cmd>lua require('dap.ui.variables').hover()<cr>", "Hover Variables"},
+    uh = {"<cmd>lua require('dap.ui.widgets').hover()<cr>", "Widgets"},
+    uf = {"<cmd>lua require('dap.ui.widgets').centered_float(require('dap.ui.widgets').scopes)<cr>", "Widget Scopes"},
+    tb = {"<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breakpoint"},
+    sbr = {"<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Set Breakpoint"},
+    sbm = {"<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", "Set Log Point"},
+    ro = {"<cmd>lua require('dap').repl.open()<cr>", "Open Repl"},
+    rl = {"<cmd>lua require('dap').repl.run_last()<cr>", "Run Last Repl"},
+
+    cc = {"<cmd>lua require('telescope').extensions.dap.commands{}<cr>", "Commands"},
+    co = {"<cmd>lua require('telescope').extensions.dap.configurations{}<cr>", "Configurations"},
+    lb = {"<cmd>lua require('telescope').extensions.dap.list_breakpoints{}<cr>", "List Breakpoints"},
+    v = {"<cmd>lua require('telescope').extensions.dap.variables{}<cr>", "Variables"},
+    f = {"<cmd>lua require('telescope').extensions.dap.frames{}<cr>", "Frames"},
+  },
 }
 
 local v_opts = {
@@ -132,6 +161,11 @@ local v_mappings = {
     name = "+Git",
     y = { [[<cmd>lua require("gitlinker").get_buf_range_url("v")<cr>]], "GitLink" },
   },
+
+  D = {
+    name = "DAP",
+    hv = {"<cmd>lua require('dap.ui.variables').visual_hover()<cr>", "Variables"},
+  }
 }
 
 whichkey.register(mappings, opts)

@@ -6,3 +6,14 @@
   - `stow -v -R -t ~ nvim`
   - `-t ~` means the stow root is at `~`
 3. Install [wollemi](https://github.com/tcncloud/wollemi)
+
+## When working with jest
+Jest often transforms files causing breakpoints to be inserted
+in the wrong place. To prevent this, you can add this to your
+`.babelrc` in your project's root.
+```json
+{
+  "retainLines": true,
+  "sourceMap": "inline"
+}
+```

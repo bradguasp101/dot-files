@@ -1,6 +1,3 @@
-if not table.unpack then
-  table.unpack = unpack
-end
 local fn = vim.fn
 
 -- Automatically install packer
@@ -109,6 +106,18 @@ return packer.startup(function(use)
     config = function() require('kobra.config.lsp_lines') end,
   })
   use('onsails/lspkind.nvim')
+
+  -- DAP
+  use('mfussenegger/nvim-dap')
+  use('nvim-telescope/telescope-dap.nvim')
+  use({'leoluz/nvim-dap-go', config = function() require('kobra.dap.go') end})
+  use({'suketa/nvim-dap-ruby', config = function() require('kobra.dap.ruby') end})
+  use({
+    'mxsdev/nvim-dap-vscode-js',
+    opt = true,
+    run = 'npm i --legacy-peer-deps && npm run compile',
+    config = function() require('kobra.dap.js') end,
+  })
 
   -- Snippets
   use('L3MON4D3/LuaSnip')
