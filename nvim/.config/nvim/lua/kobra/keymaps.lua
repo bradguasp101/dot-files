@@ -13,8 +13,8 @@ keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
 -- navigate buffers
-keymap('n', '<S-l>', ':bnext<cr>', opts)
-keymap('n', '<S-h>', ':bprevious<cr>', opts)
+keymap('n', '<S-h>', ':bnext<cr>', opts)
+keymap('n', '<S-l>', ':bprevious<cr>', opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
