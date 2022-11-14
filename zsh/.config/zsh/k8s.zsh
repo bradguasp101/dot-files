@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # linkerd
 export PATH=$PATH:$HOME/.linkerd2/bin/
 

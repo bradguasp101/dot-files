@@ -1,6 +1,6 @@
 return {
   cmd = {
-    'node', DATA_PATH .. '/lsp_servers/json/vscode-json/json-language-features/server/dist/node/jsonServerMain.js',
+    'node', DATA_PATH .. '/mason/bin/vscode-json-language-server',
     '--stdio',
   },
   commands = {

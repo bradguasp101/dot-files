@@ -1,3 +1,3 @@
 return {
-  cmd = {DATA_PATH .. '/lsp_servers/vim/node_modules/.bin/vim-language-server', '--stdio'},
+  cmd = {DATA_PATH .. '/mason/bin/vim-language-server', '--stdio'},
 }

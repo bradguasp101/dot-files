@@ -1,16 +1,13 @@
-local root_path = DATA_PATH .. '/lsp_servers/sumneko_lua'
-local binary = root_path .. '/extension/server/bin/lua-language-server'
-
 return {
-  cmd = {binary, '-E', root_path .. '/main.lua'},
+  cmd = { DATA_PATH .. '/mason/bin/lua-language-server' },
   settings = {
-    LUA = {
+    Lua = {
       runtime = {
         version = 'LuaJIT',
         path = vim.split(package.path, ';')
       },
       diagnostics = {
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         library = {

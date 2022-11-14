@@ -1,6 +1,6 @@
 local util = require('lspconfig/util')
 
-local bin_name = DATA_PATH .. '/lsp_servers/kotlin/language-server/server/build/install/server/bin/kotlin-language-server'
+local bin_name = DATA_PATH .. '/mason/bin/kotlin-language-server'
 if vim.fn.has('win32') == 1 then
   bin_name = bin_name .. '.bat'
 end

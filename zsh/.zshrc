@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Load config files
 for conf in "$HOME/.config/zsh/"*.zsh; do
   source "${conf}"

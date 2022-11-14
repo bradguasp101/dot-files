@@ -1,6 +1,6 @@
 return {
   cmd = {
-    'node', DATA_PATH .. '/lsp_servers/html/vscode-html/html-language-features/server/dist/node/htmlServerMain.js',
+    'node', DATA_PATH .. '/mason/bin/vscode-html-language-server',
     '--stdio',
   },
 }

@@ -1,5 +1,5 @@
 return {
-  cmd = {DATA_PATH .. '/lsp_servers/go/gopls'},
+  cmd = {DATA_PATH .. '/mason/bin/gopls'},
   settings = {
     gopls = {
       analyses = {unusedparams = true},

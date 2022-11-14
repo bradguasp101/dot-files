@@ -1,3 +1,3 @@
 return {
-  cmd = {DATA_PATH .. '/lsp_servers/rust/rust-analyzer'},
+  cmd = {DATA_PATH .. '/mason/bin/rust-analyzer'},
 }

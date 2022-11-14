@@ -1,5 +1,5 @@
 return {
-  cmd = {DATA_PATH .. '/lsp_servers/cpp/clangd/bin/clangd'},
+  cmd = {DATA_PATH .. '/mason/bin/clangd'},
   handlers = {
     ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
       virtual_text = {spacing = 0, prefix = ''},

@@ -1,4 +1,4 @@
 return {
-  cmd = {DATA_PATH .. '/lsp_servers/cmake/venv/bin/cmake-language-server'},
+  cmd = {DATA_PATH .. '/mason/bin/cmake-language-server'},
   filetypes = {'cmake'},
 }
