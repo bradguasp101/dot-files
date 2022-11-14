@@ -195,6 +195,7 @@ local mappings = {
       h = { "<cmd>Telescope help_tags<cr>", "Find Help Tags" },
       c = { "<cmd>Telescope command_history<cr>", "List Commands That Were Executed" },
       q = { "<cmd>Telescope quickfix<cr>", "List Items In The Quikcfix List" },
+      e = { "<cmd>Telescope notify<cr>", "Notifications" },
     },
     t = {
       name = "Treesitter",
