@@ -31,6 +31,7 @@ end
 
 -- Have packer use a popup window
 packer.init({
+  max_jobs = 50,
 	display = {
 		open_fn = function()
 			return require('packer.util').float({ border = 'rounded' })
@@ -48,14 +49,12 @@ return packer.startup(function(use)
   use('tpope/vim-sleuth')
   use('tpope/vim-repeat')
   use('tpope/vim-rhubarb')
-  use('gpanders/editorconfig.nvim')
-  use({'MunifTanjim/prettier.nvim', config = function() require('kobra.config.prettier') end})
+  use({'editorconfig/editorconfig-vim', config = function() require('kobra.config.editorconfig') end})
 
   -- Navigation
   use({'jdhao/better-escape.vim', event = 'InsertEnter'})
   use({'ggandor/leap.nvim', config = function() require('kobra.config.leap') end})
   use({'karb94/neoscroll.nvim', config = function() require('kobra.config.neoscroll') end})
-  use('mg979/vim-visual-multi')
 
   -- Terminal
   use({'akinsho/toggleterm.nvim', config = function() require('kobra.config.toggleterm') end})
@@ -63,7 +62,7 @@ return packer.startup(function(use)
   -- Syntax
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('kobra.config.treesitter') end})
   use('nvim-treesitter/playground')
-  use({'numToStr/Comment.nvim', config = function() require('kobra.config.comment') end})
+  use({'terrortylor/nvim-comment', config = function() require('kobra.config.comment') end})
   use('JoosepAlviste/nvim-ts-context-commentstring')
 
   -- Git
@@ -77,25 +76,23 @@ return packer.startup(function(use)
   })
 
   -- Completion
+  use('f3fora/cmp-spell')
+  use('David-Kunz/cmp-npm')
+  use('saadparwaiz1/cmp_luasnip')
+  use('hrsh7th/cmp-nvim-lsp-signature-help')
+  use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lua')
+  use('hrsh7th/cmp-buffer')
+  use('hrsh7th/cmp-path')
+  use('hrsh7th/cmp-cmdline')
+  use('hrsh7th/cmp-calc')
+  use({'hrsh7th/nvim-cmp', config = function() require('kobra.config.cmp') end})
+
+  -- Matchings
   use({'windwp/nvim-autopairs', config = function() require('kobra.config.autopairs') end})
-  use('tpope/vim-surround')
-  use('tpope/vim-endwise')
-  use({
-    'saadparwaiz1/cmp_luasnip',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp-signature-help',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-calc',
-      'hrsh7th/nvim-cmp',
-      'f3fora/cmp-spell',
-      'David-Kunz/cmp-npm',
-    },
-    config = function() require('kobra.config.cmp') end,
-  })
+  use('windwp/nvim-ts-autotag')
+  use({'andymass/vim-matchup', config = function() require('kobra.config.matchup') end})
+  use('lukas-reineke/indent-blankline.nvim')
 
   -- LSP
   use({
@@ -107,10 +104,6 @@ return packer.startup(function(use)
   })
   use({'ray-x/lsp_signature.nvim', config = function() require('kobra.config.signature') end})
   use('RRethy/vim-illuminate')
-  use({
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-    config = function() require('kobra.config.lsp_lines') end,
-  })
   use('onsails/lspkind.nvim')
 
   -- DAP
@@ -143,8 +136,8 @@ return packer.startup(function(use)
   })
 
   -- Buffers
-  use({'akinsho/bufferline.nvim', config = function() require('kobra.config.bufferline') end})
-  use('moll/vim-bbye')
+  use({'beauwilliams/focus.nvim', config = function() require('kobra.config.focus') end})
+  use({'romgrk/barbar.nvim', config = function() require('kobra.config.barbar') end})
 
   -- Database
   use('tpope/vim-dadbod')
@@ -157,9 +150,9 @@ return packer.startup(function(use)
   -- Go
   use({
     'ray-x/go.nvim',
-    requires = 'ray-x/guihua.lua',
     config = function() require('kobra.config.go') end,
   })
+  use('ray-x/guihua.lua')
 
   -- Colors
   use({'sainnhe/sonokai', config = function() require('kobra.config.colorscheme') end})
@@ -169,6 +162,11 @@ return packer.startup(function(use)
   use({'folke/which-key.nvim', config = function() require('kobra.config.whichkey') end})
   use({'windwp/nvim-spectre', config = function() require('kobra.config.spectre') end})
   use({'ThePrimeagen/refactoring.nvim', config = function() require('kobra.config.refactoring') end})
+  use({'norcalli/nvim-colorizer.lua', config = function() require('kobra.config.colorizer') end})
+
+  -- Start up
+  use('lewis6991/impatient.nvim')
+  use('dstein64/vim-startuptime')
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
