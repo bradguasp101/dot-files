@@ -92,7 +92,7 @@ return packer.startup(function(use)
   use({'windwp/nvim-autopairs', config = function() require('kobra.config.autopairs') end})
   use('windwp/nvim-ts-autotag')
   use({'andymass/vim-matchup', config = function() require('kobra.config.matchup') end})
-  use('lukas-reineke/indent-blankline.nvim')
+  use({'lukas-reineke/indent-blankline.nvim', config = function() require('kobra.config.indent') end})
 
   -- LSP
   use({
@@ -163,6 +163,10 @@ return packer.startup(function(use)
   use({'windwp/nvim-spectre', config = function() require('kobra.config.spectre') end})
   use({'ThePrimeagen/refactoring.nvim', config = function() require('kobra.config.refactoring') end})
   use({'norcalli/nvim-colorizer.lua', config = function() require('kobra.config.colorizer') end})
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   -- Start up
   use('lewis6991/impatient.nvim')
