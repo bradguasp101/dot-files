@@ -6,4 +6,7 @@ return {
       staticcheck = true,
     },
   },
+  init_options = {
+    completeUnimported = true,
+  },
 }
