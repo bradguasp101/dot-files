@@ -6,8 +6,4 @@ return {
       staticcheck = true,
     },
   },
-  init_options = {
-    usePlaceholders = true,
-    completeUnimported = true,
-  },
 }
