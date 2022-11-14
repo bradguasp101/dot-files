@@ -98,6 +98,13 @@ local mappings = {
     L = {"<cmd>BufferLineSortByExtension<cr>", "Sort by language"},
   },
 
+  p = {
+    name = "Plz and Project",
+    b = {function() require('kobra.config.utils.please').plzBuild() end, "Plz Build"},
+    t = {function() require('kobra.config.utils.please').plzTest() end, "Plz Test"},
+    r = {function() require('kobra.config.utils.revive').lint() end, "Revive"},
+  },
+
   P = {
     name = "Packer",
     c = {"<cmd>PackerCompile<cr>", "Compile"},
