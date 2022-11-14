@@ -65,7 +65,10 @@ local vmappings = {
 }
 
 local mappings = {
+  q = {"<cmd>q!<cr>", "Quit"},
+  w = {"<cmd>w<cr>", "Write"},
   e = {"<cmd>NvimTreeToggle<cr>", "File Tree"},
+
   f = {"<cmd>Telescope find_files <cr>", "Find File"},
   g = {"<cmd>Telescope live_grep <cr>", "Grep String"},
   H = {":set hlsearch!<cr>", "No Highlight"},
@@ -198,7 +201,7 @@ local mappings = {
     },
   },
 
-  q = {
+  Q = {
     name = "Quickfix List",
     n = {"<cmd>cn<cr>", "Next"},
     p = {"<cmd>cp<cr>", "Previous"},
