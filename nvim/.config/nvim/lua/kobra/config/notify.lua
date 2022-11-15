@@ -8,4 +8,12 @@ notify.setup({
   stages = 'slide',
 })
 
-vim.notify = notify
+vim.notify = function(msg, ...)
+  -- This error occurs when two clients with different offset encodings are attached to the same buffer. This is not
+  -- yet supported, and so we're suppressing the issue until it is.
+  if msg:match("warning:multiple different client offset_encodings") then
+    return
+  end
+
+  notify(msg, ...)
+end
