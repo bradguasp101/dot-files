@@ -92,6 +92,7 @@ return packer.startup(function(use)
   use({'windwp/nvim-autopairs', config = function() require('kobra.config.autopairs') end})
   use('windwp/nvim-ts-autotag')
   use({'andymass/vim-matchup', config = function() require('kobra.config.matchup') end})
+  use({'RRethy/nvim-treesitter-endwise', config = function() require('kobra.config.endwise') end})
   -- uncomment next line for indent visualization
   -- use({'lukas-reineke/indent-blankline.nvim', config = function() require('kobra.config.indent') end})
 
