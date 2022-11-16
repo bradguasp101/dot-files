@@ -5,11 +5,13 @@ lsp_handlers.capabilities.textDocument.completion.completionItem.snippetSupport 
 
 function lsp_handlers.on_attach(client, bufnr)
   require('illuminate').on_attach(client)
+
   if client.name == 'sumneko_lua' then
     client.server_capabilities.documentFormattingProvider = false
   end
+
   if client.server_capabilities.documentFormattingProvider then
-    vim.cmd('autocmd BufWritePost <buffer> lua vim.lsp.buf.format({ async = true })')
+    vim.cmd('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting({ async = true })')
   end
 end
 

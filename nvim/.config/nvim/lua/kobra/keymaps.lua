@@ -53,5 +53,10 @@ keymap("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract B
 keymap("n", "<leader>rbf", [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]], {noremap = true, silent = true, expr = false})
 keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
 
-require('telescope').load_extension('refactoring')
+local telescope_ok, telescope = pcall(require, 'telescope')
+if not telescope_ok then
+	return
+end
+
+telescope.load_extension('refactoring')
 keymap("v", "<leader>rr", "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<cr>", {noremap = true})
