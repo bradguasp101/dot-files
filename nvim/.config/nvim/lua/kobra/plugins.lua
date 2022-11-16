@@ -114,6 +114,8 @@ return packer.startup(function(use)
 
   -- DAP
   use('mfussenegger/nvim-dap')
+  use({'theHamsta/nvim-dap-virtual-text', config = function() require('kobra.dap.virtual-text') end})
+  use({'rcarriga/nvim-dap-ui', config = function() require('kobra.dap.ui') end})
   use('nvim-telescope/telescope-dap.nvim')
   use({'leoluz/nvim-dap-go', config = function() require('kobra.dap.go') end})
   use({'suketa/nvim-dap-ruby', config = function() require('kobra.dap.ruby') end})
