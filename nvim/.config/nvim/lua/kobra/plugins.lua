@@ -62,6 +62,7 @@ return packer.startup(function(use)
   -- Syntax
   use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('kobra.config.treesitter') end })
   use('nvim-treesitter/nvim-treesitter-refactor')
+  use('nvim-treesitter/nvim-treesitter-context')
   use('nvim-treesitter/playground')
   use({ 'terrortylor/nvim-comment', config = function() require('kobra.config.comment') end })
   use('JoosepAlviste/nvim-ts-context-commentstring')
@@ -75,6 +76,7 @@ return packer.startup(function(use)
     requires = 'tpope/vim-fugitive',
     config = function() require('kobra.config.fugitive') end,
   })
+  use('kdheepak/lazygit.nvim')
 
   -- Completion
   use('f3fora/cmp-spell')
@@ -112,6 +114,7 @@ return packer.startup(function(use)
   use({ 'ray-x/lsp_signature.nvim', config = function() require('kobra.config.signature') end })
   use('RRethy/vim-illuminate')
   use('onsails/lspkind.nvim')
+  use({'j-hui/fidget.nvim', config = function() require('kobra.config.fidget') end})
 
   -- DAP
   use('mfussenegger/nvim-dap')
