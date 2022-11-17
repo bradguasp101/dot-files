@@ -1,10 +1,16 @@
 local export = {}
 
+local null_ls = require('null-ls')
+local code_actions = null_ls.builtins.code_actions
+local diagnostics = null_ls.builtins.diagnostics
+local formatting = null_ls.builtins.formatting
+
 function export.setup()
-  local null_ls = require('null-ls')
   null_ls.setup({
     sources = {
-      null_ls.builtins.code_actions.gitsigns,
+      code_actions.refactoring,
+      diagnostics.tsc,
+      formatting.gofmt,
     },
   })
 end

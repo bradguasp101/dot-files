@@ -104,23 +104,26 @@ return packer.startup(function(use)
     'neovim/nvim-lspconfig',
   })
   use({ 'jose-elias-alvarez/null-ls.nvim', after = 'mason.nvim' })
-  use({ 'jayp0521/mason-null-ls.nvim', after = 'null-ls.nvim' })
+  use({
+    'jayp0521/mason-null-ls.nvim',
+    after = 'null-ls.nvim',
+    config = function() require('kobra.lsp') end,
+  })
   use({ 'ray-x/lsp_signature.nvim', config = function() require('kobra.config.signature') end })
   use('RRethy/vim-illuminate')
   use('onsails/lspkind.nvim')
 
   -- DAP
   use('mfussenegger/nvim-dap')
-  use({ 'theHamsta/nvim-dap-virtual-text', config = function() require('kobra.dap.virtual-text') end })
-  use({ 'rcarriga/nvim-dap-ui', config = function() require('kobra.dap.ui') end })
+  use('theHamsta/nvim-dap-virtual-text')
+  use('rcarriga/nvim-dap-ui')
   use('nvim-telescope/telescope-dap.nvim')
-  use({ 'leoluz/nvim-dap-go', config = function() require('kobra.dap.go') end })
-  use({ 'suketa/nvim-dap-ruby', config = function() require('kobra.dap.ruby') end })
+  use('leoluz/nvim-dap-go')
+  use('suketa/nvim-dap-ruby')
   use({
     'mxsdev/nvim-dap-vscode-js',
     opt = true,
     run = 'npm i --legacy-peer-deps && npm run compile',
-    config = function() require('kobra.dap.js') end,
   })
 
   -- Snippets

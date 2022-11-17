@@ -5,8 +5,9 @@
 2. Use stow to symlink
   - `stow -v -R -t ~ nvim`
   - `-t ~` means the stow root is at `~`
-3. Install [wollemi](https://github.com/tcncloud/wollemi)
-4. Install [grpcui](https://github.com/fullstorydev/grpcui)
+3. Install [revive](https://github.com/mgechev/revive)
+4. Install [wollemi](https://github.com/tcncloud/wollemi)
+5. Install [grpcui](https://github.com/fullstorydev/grpcui)
 
 ## When working with jest
 Jest often transforms files causing breakpoints to be inserted

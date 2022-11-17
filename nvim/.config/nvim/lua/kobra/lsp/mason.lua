@@ -36,9 +36,8 @@ function export.setup()
 		automatic_installation = true,
 	})
 
+  require('kobra.lsp.mason-null-ls').setup()
 	require('kobra.lsp.null-ls').setup()
-
-  require('mason-null-ls').setup()
 end
 
 return export
