@@ -165,6 +165,13 @@ return packer.startup(function(use)
   -- Colors
   use({'sainnhe/sonokai', config = function() require('kobra.config.colorscheme') end})
 
+  -- Start up
+  use('lewis6991/impatient.nvim')
+  use('dstein64/vim-startuptime')
+
+  -- UI
+  use('MunifTanjim/nui.nvim')
+
   -- Other
   use({'nvim-lualine/lualine.nvim', config = function() require('kobra.config.lualine') end})
   use({'folke/which-key.nvim', config = function() require('kobra.config.whichkey') end})
@@ -180,10 +187,6 @@ return packer.startup(function(use)
     ft = {'markdown'},
   })
   use({'rcarriga/nvim-notify', config = function() require('kobra.config.notify') end})
-
-  -- Start up
-  use('lewis6991/impatient.nvim')
-  use('dstein64/vim-startuptime')
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
