@@ -148,7 +148,7 @@ local mappings = {
     D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
     I = { "<cmd>LspInfo<cr>", "Info" },
     i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover Type Information" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
@@ -156,18 +156,17 @@ local mappings = {
     S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
-    -- NODE: revive should automatically start, but can manually load if needed
-    v = { "<cmd>lua require'lint'.try_lint()<cr>", "Load Revive (nvim-lint)" },
     w = {
       name = "Workspace",
       l = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folders" },
-      -- TODO should populate the function with the paramater for workspace folder
+      -- TODO should populate the function with the parameter for workspace folder
       -- also have no clue wtf this does
       w = { "<cmd>lua vim.lsp.buf.add_workspace_folders()<cr>", "Add Workspace Folder" },
       W = { "<cmd>lua vim.lsp.buf.remove_workspace_folders()<cr>", "Remove Workspace Folder" },
       -- TODO get this working :) the query is bad
       -- x = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"},
     },
+    o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
   },
 
   s = {

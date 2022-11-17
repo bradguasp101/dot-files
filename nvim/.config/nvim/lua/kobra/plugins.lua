@@ -115,6 +115,8 @@ return packer.startup(function(use)
   use('RRethy/vim-illuminate')
   use('onsails/lspkind.nvim')
   use({'j-hui/fidget.nvim', config = function() require('kobra.config.fidget') end})
+  use({'simrat39/symbols-outline.nvim', config = function() require('kobra.config.symbols-outline') end})
+  use({'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'})
 
   -- DAP
   use('mfussenegger/nvim-dap')
