@@ -106,7 +106,6 @@ local mappings = {
     name = "Plz and Project",
     b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },
     t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
-    r = { function() require('kobra.utils.revive').lint() end, "Revive" },
   },
 
   P = {

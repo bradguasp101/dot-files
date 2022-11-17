@@ -15,12 +15,8 @@ function export.plzTest()
 end
 
 function export.runCmd(cmd)
-  local result = os.execute(cmd)
-  if not result[1] then
-    vim.notify('Failed to execute command: \'' .. cmd .. '\'', 'error')
-  end
+  vim.cmd('9TermExec direction=float cmd="' .. cmd .. ' && read -n 1 -s -p \"[Press key to continue]\" && exec true"')
 end
 
 export.plzBuild()
-
 return export
