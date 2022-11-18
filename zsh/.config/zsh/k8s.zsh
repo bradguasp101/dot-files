@@ -51,11 +51,11 @@ mountdc() {
 
 # Exec into omni db
 pgomni() {
-  kpg DEV_OMNI_DB_POD DEV_OMNI_DB_NAME DEV_OMNI_DB_USER
+  kpg $DEV_OMNI_DB_POD $DEV_OMNI_DB_NAME $DEV_OMNI_DB_USER
 }
 
-pgomni() {
-  kpg DEV_SKUNK_DB_POD DEV_SKUNK_DB_NAME DEV_SKUNK_DB_USER
+pgskunk() {
+  kpg $DEV_SKUNK_DB_POD $DEV_SKUNK_DB_NAME $DEV_SKUNK_DB_USER
 }
 
 # Exec into pod and run psql
