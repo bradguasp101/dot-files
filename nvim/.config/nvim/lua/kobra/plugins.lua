@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use({ 'terrortylor/nvim-comment', config = [[require('kobra.config.comment')]] })
   use('JoosepAlviste/nvim-ts-context-commentstring')
   use('fladson/vim-kitty')
+  use('nickeb96/fish.vim')
 
   -- Git
   use('airblade/vim-gitgutter')
