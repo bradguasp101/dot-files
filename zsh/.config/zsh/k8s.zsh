@@ -48,3 +48,17 @@ mountdc() {
     kubectl exec -n default $POD -c $CONTAINER -it -- zsh
   fi
 }
+
+# Exec into omni db
+pgomni() {
+  kpg DEV_OMNI_DB_POD DEV_OMNI_DB_NAME DEV_OMNI_DB_USER
+}
+
+pgomni() {
+  kpg DEV_SKUNK_DB_POD DEV_SKUNK_DB_NAME DEV_SKUNK_DB_USER
+}
+
+# Exec into pod and run psql
+kpg() {
+  kubectl exec $1 -it -- psql -h $2 -U $3
+}
