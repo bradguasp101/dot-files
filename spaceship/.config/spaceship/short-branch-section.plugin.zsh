@@ -33,5 +33,5 @@ spaceship_short_branch() {
 
   spaceship::section \
     --color "$SPACESHIP_SHORT_BRANCH_COLOR" \
-    "$SPACESHIP_SHORT_BRANCH_PREFIX $short_name$SPACESHIP_GIT_BRANCH_SUFFIX "
+    "$SPACESHIP_SHORT_BRANCH_PREFIX$short_name$SPACESHIP_GIT_BRANCH_SUFFIX "
 }
