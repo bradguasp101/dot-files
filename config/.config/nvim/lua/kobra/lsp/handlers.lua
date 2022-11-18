@@ -4,7 +4,10 @@ lsp_handlers.capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp
 lsp_handlers.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 function lsp_handlers.on_attach(client, bufnr)
-  require('illuminate').on_attach(client)
+  local illuminate_ok, illuminate = pcall(require, 'illuminate')
+  if illuminate_ok then
+    illuminate.on_attach(client)
+  end
 
   if client.name == 'sumneko_lua' then
     client.server_capabilities.documentFormattingProvider = false
