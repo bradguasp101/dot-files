@@ -23,6 +23,9 @@ spaceship_short_branch() {
   local branch_name="$(git rev-parse --abbrev-ref HEAD)"
   local short_name=""
   case $branch_name in
+    *"/"*)
+      short_name="$($branch_name | rev | cut -d '/' -f '1' | rev)"
+      ;;
     *"-"*)
       short_name="$(cut -d'-' -f1 <<<"$branch_name")"
       ;;
