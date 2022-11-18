@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use('nvim-treesitter/playground')
   use({ 'terrortylor/nvim-comment', config = function() require('kobra.config.comment') end })
   use('JoosepAlviste/nvim-ts-context-commentstring')
+  use('fladson/vim-kitty')
 
   -- Git
   use('airblade/vim-gitgutter')
@@ -168,7 +169,8 @@ return packer.startup(function(use)
   use('ray-x/guihua.lua')
 
   -- Colors
-  use({ 'sainnhe/sonokai', config = function() require('kobra.config.colorscheme') end })
+  use('sainnhe/sonokai')
+  use('shaunsingh/moonlight.nvim')
 
   -- Start up
   use('lewis6991/impatient.nvim')
