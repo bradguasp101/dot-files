@@ -1,0 +1,5 @@
+[character]
+success_symbol = "[➜](bold green)"
+
+[gcloud]
+format = 'using [$symbol$active]($style)'
