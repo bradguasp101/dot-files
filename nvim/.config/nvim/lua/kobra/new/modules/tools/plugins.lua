@@ -24,7 +24,7 @@ tools['iamcco/markdown-preview.nvim'] = {
 tools['akinsho/toggleterm.nvim'] = {
   cmd = { 'ToggleTerm', 'TermExec' },
   event = { 'CmdwinEnter', 'CmdlineEnter' },
-  config = conf.floaterm,
+  config = conf.toggleterm,
 }
 
 tools['NTBBloodbath/rest.nvim'] = {
@@ -52,6 +52,28 @@ tools['akinsho/git-conflict.nvim'] = {
   },
   opt = true,
   config = conf.git_conflict,
+}
+
+tools['rbong/vim-flog'] = {
+  cmd = { 'Flog', 'Flogsplit' },
+  opt = true,
+}
+
+tools['tpope/vim-fugitive'] = {
+  cmd = { 'Gvsplit', 'Git', 'Gedit', 'Gstatus', 'Gdiffsplit', 'Gvdiffsplit', 'Flog', 'Flogsplit' },
+  opt = true,
+}
+
+tools['kevinhwang91/nvim-bqf'] = {
+  opt = true,
+  event = { 'CmdlineEnter', 'QuickfixCmdPre' },
+  config = conf.bqf,
+}
+
+tools['ahmedkhalf/project.nvim'] = {
+  opt = true,
+  after = { 'telescope.nvim' },
+  config = conf.project,
 }
 
 return tools
