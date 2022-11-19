@@ -18,4 +18,4 @@ $character"""
 success_symbol = "[➜](bold green)"
 
 [gcloud]
-format = 'using [$symbol$active]($style)'
+format = 'using [$symbol$active]($style) '
