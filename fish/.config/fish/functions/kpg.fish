@@ -1,4 +1,4 @@
-#!/usr/local/env fish
+#!/usr/bin/env fish
 
 function kpg -d "exec into pod and run psql"
   if set -q "$argv"

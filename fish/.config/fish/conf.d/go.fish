@@ -1,4 +1,4 @@
-#!/usr/local/env fish
+#!/usr/bin/env fish
 
 set -gx GOPATH $HOME/go
 set -gx GOROOT /usr/local/opt/go/libexec

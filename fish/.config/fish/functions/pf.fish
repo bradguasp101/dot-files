@@ -1,4 +1,4 @@
-#!/usr/local/env fish
+#!/usr/bin/env fish
 
 function pf -d "Port forward a pod, `pf service` will port-forward service-xxxxxxxxxx-xxxxx at localhost:50051"
   if set -q "$argv"; or test -z "$argv[1]"

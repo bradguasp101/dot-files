@@ -1,4 +1,4 @@
-#!/usr/local/env fish
+#!/usr/bin/env fish
 
 function mountdc -d "exec into the devclone pod"
   set name "dev-$(whoami | tr '.' '-')"
