@@ -14,6 +14,8 @@ $container\
 $shell\
 $character"""
 
+add_newline = false
+
 [character]
 success_symbol = "[➜](bold green)"
 
