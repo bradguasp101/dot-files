@@ -26,6 +26,14 @@ function config.barbar()
   end)
 end
 
+function config.lualine()
+  require('lualine').setup({
+    options = {
+      theme = 'moonlight',
+    },
+  })
+end
+
 function config.notify()
   require('notify').setup({
     stages = 'slide',

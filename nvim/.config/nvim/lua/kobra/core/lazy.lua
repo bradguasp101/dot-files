@@ -118,7 +118,7 @@ end, lazy_timer)
 vim.defer_fn(function()
   load_colorscheme('moonlight.nvim')
   loader('lualine.nvim')
-  vim.cmd('command! Gram lua require"modules.tools.config".grammcheck()')
+  vim.cmd('command! Gram lua require"kobra.modules.tools.config".grammcheck()')
   vim.cmd('command! Spell call spelunker#check()')
 end, lazy_timer + 30)
 
@@ -132,10 +132,6 @@ vim.defer_fn(function()
     loader('gitsigns.nvim')
     loader('git-conflict.nvim')
     loader('fugitive-gitlab.vim')
-  end
-
-  if vim.fn.executable(vim.g.python3_host_prog) == 0 then
-    print('file not find, please update path setup', vim.g.python3_host_prog)
   end
 end, lazy_timer + 80)
 

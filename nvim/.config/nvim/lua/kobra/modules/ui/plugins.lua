@@ -7,6 +7,11 @@ ui['romgrk/barbar.nvim'] = {
   module = 'bufferline',
 }
 
+ui['nvim-lualine/lualine.nvim'] = {
+  opt = true,
+  config = conf.lualine,
+}
+
 ui['kyazdani42/nvim-web-devicons'] = {}
 
 ui['lambdalisue/glyph-palette.vim'] = {}
