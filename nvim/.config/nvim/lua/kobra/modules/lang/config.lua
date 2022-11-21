@@ -98,7 +98,6 @@ function config.navigator()
     width = 0.7,
     lsp_installer = false,
     border = single,
-    ts_fold = true,
     lsp_signature_help = true,
     combined_attach = 'their',
     lsp = {

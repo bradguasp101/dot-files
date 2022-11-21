@@ -1,6 +1,10 @@
 local editor = {}
 local conf = require('kobra.modules.editor.config')
 
+editor['jdhao/better-escape.vim'] = {
+  event = 'InsertEnter',
+}
+
 editor['windwp/nvim-autopairs'] = {
   after = { 'nvim-cmp' },
   config = conf.autopairs,

@@ -78,6 +78,14 @@ function config.git_conflict()
   require('git-conflict').setup()
 end
 
+function config.gitsigns()
+  require('gitsigns').setup()
+end
+
+function config.fugitive_gitlab()
+  vim.g.fugitive_gitlab_domains = {'http://git', 'http://git.tcncloud.net'}
+end
+
 function config.bqf()
   require('bqf').setup({
     auto_enable = true,

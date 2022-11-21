@@ -84,7 +84,6 @@ function LazyLoad()
     loader(plugins)
     loader('neogen')
     loader('refactoring.nvim')
-    -- loader('indent-blankline.nvim')
     loader('hlargs.nvim')
   end
 

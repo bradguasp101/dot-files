@@ -64,6 +64,16 @@ tools['tpope/vim-fugitive'] = {
   opt = true,
 }
 
+tools['lewis6991/gitsigns.nvim'] = {
+  opt = true,
+  config = conf.gitsigns,
+}
+
+tools['shumphrey/fugitive-gitlab.vim'] = {
+  opt = true,
+  config = conf.fugitive_gitlab,
+}
+
 tools['kevinhwang91/nvim-bqf'] = {
   opt = true,
   event = { 'CmdlineEnter', 'QuickfixCmdPre' },
