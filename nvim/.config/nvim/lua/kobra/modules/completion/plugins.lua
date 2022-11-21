@@ -1,32 +1,6 @@
 local completion = {}
 local conf = require('kobra.modules.completion.config')
 
-local filetypes = {
-  'html',
-  'css',
-  'javascript',
-  'java',
-  'javascriptreact',
-  'vue',
-  'typescript',
-  'typescriptreact',
-  'go',
-  'lua',
-  'cpp',
-  'c',
-  'markdown',
-  'makefile',
-  'python',
-  'bash',
-  'sh',
-  'php',
-  'yaml',
-  'json',
-  'sql',
-  'vim',
-  'sh',
-}
-
 completion['neovim/nvim-lspconfig'] = {
   opt = true,
   config = conf.nvim_lsp,

@@ -29,22 +29,6 @@ core['nvim-treesitter/nvim-treesitter'] = {
   config = ts.treesitter,
 }
 
-core['nvim-treesitter/nvim-treesitter-textobjects'] = {
-  opt = true,
-  config = ts.textobjects,
-}
-
-core['RRethy/nvim-treesitter-textsubjects'] = {
-  opt = true,
-  config = ts.textsubjects,
-}
-
-core['nvim-treesitter/nvim-treesitter-refactor'] = {
-  opt = true,
-  after = 'nvim-treesitter-textobjects',
-  config = ts.refactor,
-}
-
 core['nvim-treesitter/playground'] = {
   opt = true,
   cmd = 'TSPlaygroundToggle',

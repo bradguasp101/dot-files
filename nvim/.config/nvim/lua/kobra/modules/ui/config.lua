@@ -46,6 +46,7 @@ end
 
 -- THEME
 function config.moonlight()
+  vim.g.moonlight_borders = true
   require('moonlight').set()
 end
 

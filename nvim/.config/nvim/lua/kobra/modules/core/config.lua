@@ -22,7 +22,13 @@ function config.nvim_tree()
           { key = 'v', cb = tree_cb 'vsplit' },
         },
       },
-    }
+    },
+    renderer = {
+      group_empty = true,
+    },
+    filters = {
+      dotfiles = true,
+    },
   })
 end
 

@@ -1,33 +1,10 @@
 local loader = require('packer').loader
 
-local fsize = vim.fn.getfsize(vim.fn.expand('%:p:f'))
-if fsize == nil or fsize < 0 then
-  fsize = 1
-end
-
-local load_ts_plugins = true
-local load_lsp = true
-
-if fsize > 1024 * 1024 then
-  load_ts_plugins = false
-  load_lsp = false
-end
-
 local function load_colorscheme(theme)
   require('packer').loader(theme)
 end
 
 load_colorscheme('moonlight.nvim')
-
-if vim.wo.diff then
-  if load_ts_plugins then
-    vim.cmd([[packadd nvim-treesitter]])
-    require('nvim-treesitter.configs').setup({ highlight = { enable = true, use_languagetree = false } })
-  else
-    vim.cmd([[syntax on]])
-  end
-  return
-end
 
 -- load module but not init/config
 vim.cmd([[packadd nvim-treesitter]])
@@ -50,18 +27,8 @@ function LazyLoad()
     vim.cmd([[syntax manual]])
   end
 
-  if fsize > 6 * 1024 * 1024 then
-    load_lsp = false
-    load_ts_plugins = false
-    vim.cmd([[syntax off]])
-  end
-
-  if load_ts_plugins then
-    loader('nvim-treesitter')
-  end
-
-  local plugins = 'plenary.nvim'
   loader('plenary.nvim')
+  loader('nvim-treesitter')
   loader('better-escape.vim')
   loader('which-key.nvim')
 
@@ -75,36 +42,23 @@ function LazyLoad()
 
   vim.g.vimsyn_embed = 'lPr'
 
-  if load_lsp then
-    loader('nvim-lspconfig')
-    loader('lsp_signature.nvim')
-  end
-
+  loader('nvim-lspconfig')
+  loader('lsp_signature.nvim')
   loader('guihua.lua')
-  if load_lsp or load_ts_plugins then
-    loader('navigator.lua')
-  end
+  loader('navigator.lua')
 
-  if load_ts_plugins then
-    loader('nvim-treesitter-textobjects')
-    loader('nvim-treesitter-textsubjects')
-    loader('nvim-treesitter-refactor')
-    loader('nvim-ts-autotag')
-    loader('nvim-ts-context-commentstring')
-    loader('neogen')
-    loader('refactoring.nvim')
-    loader('hlargs.nvim')
-  end
+  loader('nvim-ts-autotag')
+  loader('nvim-ts-context-commentstring')
+  loader('neogen')
+  loader('refactoring.nvim')
+  loader('hlargs.nvim')
 
   vim.cmd([[autocmd FileType vista,guihua,guihua_rust setlocal syntax=on]])
   vim.cmd(
     [[autocmd FileType * silent! lua if vim.fn.wordcount()['bytes'] > 2048000 then vim.notify('syntax off', 'warn') vim.cmd('setlocal syntax=off') end]]
   )
 
-  if load_lsp then
-    loader('null-ls.nvim')
-  end
-
+  loader('null-ls.nvim')
   loader('barbar.nvim')
 end
 
