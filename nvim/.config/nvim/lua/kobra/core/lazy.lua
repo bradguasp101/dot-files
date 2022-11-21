@@ -63,6 +63,7 @@ function LazyLoad()
   local plugins = 'plenary.nvim'
   loader('plenary.nvim')
   loader('better-escape.vim')
+  loader('which-key.nvim')
 
   if vim.bo.filetype == 'lua' then
     loader('neodev.nvim')
