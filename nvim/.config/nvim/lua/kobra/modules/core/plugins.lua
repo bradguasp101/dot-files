@@ -1,7 +1,6 @@
 local core = {}
 local conf = require('kobra.modules.core.config')
 local ts = require('kobra.modules.core.treesitter')
-local wk = require('kobra.modules.core.whichkey')
 
 core['nvim-lua/plenary.nvim'] = {
   opt = true,
@@ -70,7 +69,7 @@ core['JoosepAlviste/nvim-ts-context-commentstring'] = {
 
 core['folke/which-key.nvim'] = {
   opt = true,
-  config = wk.setup,
+  config = require('kobra.modules.core.whichkey').setup,
 }
 
 return core
