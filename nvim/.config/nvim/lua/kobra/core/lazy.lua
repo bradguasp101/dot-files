@@ -66,6 +66,10 @@ function LazyLoad()
   if vim.bo.filetype == 'lua' then
     loader('neodev.nvim')
   end
+  
+  if vim.bo.filetype == 'go' then
+    loader('go.nvim')
+  end
 
   vim.g.vimsyn_embed = 'lPr'
 
@@ -80,8 +84,10 @@ function LazyLoad()
   end
 
   if load_ts_plugins then
-    plugins = 'nvim-treesitter-textobjects nvim-ts-autotag nvim-ts-context-commentstring nvim-treesitter-textsubjects'
-    loader(plugins)
+    loader('nvim-treesitter-textobjects')
+    loader('nvim-ts-autotag')
+    loader('nvim-ts-context-commentstring')
+    loader('nvim-treesitter-textsubjects')
     loader('neogen')
     loader('refactoring.nvim')
     loader('hlargs.nvim')
@@ -117,8 +123,6 @@ end, lazy_timer)
 vim.defer_fn(function()
   load_colorscheme('moonlight.nvim')
   loader('lualine.nvim')
-  vim.cmd('command! Gram lua require"kobra.modules.tools.config".grammcheck()')
-  vim.cmd('command! Spell call spelunker#check()')
 end, lazy_timer + 30)
 
 vim.defer_fn(function()

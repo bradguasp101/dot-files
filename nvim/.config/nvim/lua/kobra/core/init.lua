@@ -46,7 +46,7 @@ local load_core = function()
     pack.load_compile()
     require('kobra.core.lazy')
   else
-    print('install all plugins, please wait and restart nvim when finish')
+    print('installing plugins, please wait and restart nvim when finish')
   end
 end
 

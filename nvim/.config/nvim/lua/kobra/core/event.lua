@@ -23,7 +23,7 @@ function autocmd.load_autocmds()
     },
     bufs = {
       { "BufWritePost", "plugins.lua", "PackerCompile" },
-      { "BufReadPre", "*", ":silent! :lua require('kobra.modules.lang.config').nvim_treesitter()" },
+      -- { "BufReadPre", "*", ":silent! :lua require('kobra.modules.lang.config').nvim_treesitter()" },
     },
   }
 
