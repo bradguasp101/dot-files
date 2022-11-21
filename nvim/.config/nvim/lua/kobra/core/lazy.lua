@@ -4,7 +4,7 @@ local function load_colorscheme(theme)
   require('packer').loader(theme)
 end
 
-load_colorscheme('moonlight.nvim')
+load_colorscheme('nightfox.nvim')
 
 -- load module but not init/config
 vim.cmd([[packadd nvim-treesitter]])
@@ -35,7 +35,7 @@ function LazyLoad()
   if vim.bo.filetype == 'lua' then
     loader('neodev.nvim')
   end
-  
+   
   if vim.bo.filetype == 'go' then
     loader('go.nvim')
   end
@@ -46,13 +46,13 @@ function LazyLoad()
   loader('lsp_signature.nvim')
   loader('guihua.lua')
   loader('navigator.lua')
-
+  
   loader('nvim-ts-autotag')
   loader('nvim-ts-context-commentstring')
   loader('neogen')
   loader('refactoring.nvim')
   loader('hlargs.nvim')
-
+  
   vim.cmd([[autocmd FileType vista,guihua,guihua_rust setlocal syntax=on]])
   vim.cmd(
     [[autocmd FileType * silent! lua if vim.fn.wordcount()['bytes'] > 2048000 then vim.notify('syntax off', 'warn') vim.cmd('setlocal syntax=off') end]]
@@ -78,7 +78,7 @@ vim.defer_fn(function()
 end, lazy_timer)
 
 vim.defer_fn(function()
-  load_colorscheme('moonlight.nvim')
+  load_colorscheme('nightfox.nvim')
   loader('lualine.nvim')
 end, lazy_timer + 30)
 
@@ -86,7 +86,7 @@ vim.defer_fn(function()
   loader('telescope.nvim')
   loader('nvim-notify')
   vim.notify = require('notify')
-
+  
   local gitrepo = vim.fn.isdirectory('.git/index')
   if gitrepo then
     loader('gitsigns.nvim')
@@ -95,4 +95,4 @@ vim.defer_fn(function()
   end
 end, lazy_timer + 80)
 
-load_colorscheme('moonlight.nvim')
+load_colorscheme('nightfox.nvim')

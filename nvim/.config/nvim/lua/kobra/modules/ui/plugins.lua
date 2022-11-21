@@ -22,4 +22,15 @@ ui['shaunsingh/moonlight.nvim'] = {
   config = conf.moonlight,
 }
 
+ui['marko-cerovac/material.nvim'] = {
+  opt = true,
+  -- after = 'lualine.nvim',
+  config = conf.material,
+}
+
+ui['EdenEast/nightfox.nvim'] = {
+  opt = true,
+  config = conf.nightfox,
+}
+
 return ui

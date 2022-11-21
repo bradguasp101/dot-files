@@ -39,7 +39,7 @@ end
 function config.lualine()
   require('lualine').setup({
     options = {
-      theme = 'moonlight',
+      theme = 'auto',
     },
   })
 end
@@ -48,6 +48,27 @@ end
 function config.moonlight()
   vim.g.moonlight_borders = true
   require('moonlight').set()
+end
+
+function config.material()
+  require('material').setup({
+    plugins = {
+      -- 'gitsigns',
+      -- 'nvim-cmp',
+      'nvim-tree',
+      'nvim-web-devicons',
+      -- 'telescope',
+      -- 'trouble',
+      -- 'which-key',
+    },
+  })
+
+  vim.g.material_style = 'deep ocean'
+  vim.cmd 'colorscheme material'
+end
+
+function config.nightfox()
+  vim.cmd('colorscheme carbonfox')
 end
 
 return config
