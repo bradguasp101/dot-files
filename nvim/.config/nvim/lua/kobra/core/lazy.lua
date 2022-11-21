@@ -85,9 +85,10 @@ function LazyLoad()
 
   if load_ts_plugins then
     loader('nvim-treesitter-textobjects')
+    loader('nvim-treesitter-textsubjects')
+    loader('nvim-treesitter-refactor')
     loader('nvim-ts-autotag')
     loader('nvim-ts-context-commentstring')
-    loader('nvim-treesitter-textsubjects')
     loader('neogen')
     loader('refactoring.nvim')
     loader('hlargs.nvim')
@@ -106,7 +107,7 @@ function LazyLoad()
 end
 
 local lazy_timer = 20
-if _G.packer_plugins == nil or _G.packer_plugins['packer.nvim'] == nil then
+if packer_plugins == nil or packer_plugins['packer.nvim'] == nil then
   print('recompile')
   vim.cmd([[PackerRecompile]])
   vim.defer_fn(function()

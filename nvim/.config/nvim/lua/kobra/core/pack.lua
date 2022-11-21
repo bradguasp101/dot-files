@@ -47,8 +47,11 @@ function Packer:load_packer()
     max_jobs = 50,
     display = {
       open_fn = function()
-	return require('packer.util').float({ border = 'rounded' })
+	      return require('packer.util').float({ border = 'rounded' })
       end,
+    },
+    profile = {
+      enable = true,
     },
   })
   packer.reset()
@@ -59,6 +62,10 @@ function Packer:load_packer()
   self:load_plugins()
 
   use('wbthomason/packer.nvim')
+  use({
+    'lewis6991/impatient.nvim',
+    config = function() require('impatient') end,
+  })
 
   for _, repo in ipairs(self.repos) do
     use(repo)
