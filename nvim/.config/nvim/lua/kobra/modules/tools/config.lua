@@ -78,4 +78,29 @@ function config.toggleterm()
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 end
 
+function config.dadbod()
+  if packer_plugins['vim-dadbod'] and not packer_pugins['vim-dadbod'].loaded then
+    require('packer').loader('vim-dadbod')
+  end
+
+  vim.g.db_ui_show_help = 0
+  vim.g.db_ui_win_position = 'left'
+  vim.g.db_ui_use_nerd_fonts = 1
+  vim.g.db_ui_winwidth = 35
+  vim.g.db_ui_save_location = require('core.global').home .. '/.cache/vim/db_ui_queries'
+end
+
+function config.mkdp_setup()
+  vim.g.mkdp_filetypes = { 'markdown' }
+end
+
+function config.abbrevman()
+  local status_ok, abbrev = pcall(require, 'abbrev-man')
+  if not status_ok then
+    return
+  end
+
+  abbrev.setup()
+end
+
 return config

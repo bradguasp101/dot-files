@@ -58,6 +58,18 @@ tools['shumphrey/fugitive-gitlab.vim'] = {
   config = conf.fugitive_gitlab,
 }
 
+tools['tpope/vim-rhubarb'] = {
+  opt = true,
+}
+
+tools['f-person/git-blame.nvim'] = {
+  opt = true,
+}
+
+tools['kdheepak/lazygit.nvim'] = {
+  opt = true,
+}
+
 tools['folke/trouble.nvim'] = {
   opt = true,
   config = conf.trouble,
@@ -65,6 +77,26 @@ tools['folke/trouble.nvim'] = {
 
 tools['akinsho/toggleterm.nvim'] = {
   config = conf.toggleterm,
+}
+
+tools['kristijanhusak/vim-dadbod-ui'] = {
+  opt = true,
+  cmd = { 'DBUIToggle', 'DBUIAddConnection', 'DBUI', 'DBUIFindBuffer', 'DBUIRenameBuffer', 'DB' },
+  requires = { 'tpope/vim-dadbod', ft = { 'sql' } },
+  config = conf.dadbod,
+}
+
+tools['dstein64/vim-startuptime'] = {}
+
+tools['iamcco/markdown-preview.nvim'] = {
+  opt = true,
+  run = [[vim.fn['mkdp#util#install']()]],
+  setup = conf.mkdp_setup,
+  ft = { 'markdown' },
+}
+
+tools['Pocco81/AbbrevMan.nvim'] = {
+  config = conf.abbrevman(),
 }
 
 return tools

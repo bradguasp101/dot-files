@@ -40,4 +40,16 @@ completion['windwp/nvim-autopairs'] = {
   config = conf.autopairs,
 }
 
+completion['andymass/vim-matchup'] = {
+  opt = true,
+  config = conf.matchup,
+}
+
+completion['RRethy/nvim-treesitter-endwise'] = {
+  opt = true,
+  config = conf.endwise,
+}
+
+completion['kristijanhusak/vim-dadbod-completion'] = {}
+
 return completion

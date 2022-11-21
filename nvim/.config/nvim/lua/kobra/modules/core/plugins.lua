@@ -11,11 +11,6 @@ core['ray-x/guihua.lua'] = {
   run = 'cd lua/fzy && make',
 }
 
-core['jdhao/better-escape.vim'] = {
-  opt = true,
-  event = 'InsertEnter',
-}
-
 core['kyazdani42/nvim-web-devicons'] = {}
 
 core['nvim-tree/nvim-tree.lua'] = {
@@ -29,26 +24,14 @@ core['nvim-treesitter/nvim-treesitter'] = {
   config = ts.treesitter,
 }
 
+core['nvim-treesitter/nvim-treesitter-context'] = {
+  opt = true,
+}
+
 core['nvim-treesitter/playground'] = {
   opt = true,
   cmd = 'TSPlaygroundToggle',
   config = ts.playground,
-}
-
-core['windwp/nvim-ts-autotag'] = {
-  opt = true,
-  config = conf.autotag,
-}
-
-core['numToStr/Comment.nvim'] = {
-  opt = true,
-  config = conf.comment,
-}
-
-core['JoosepAlviste/nvim-ts-context-commentstring'] = {
-  opt = true,
-  after = 'Comment.nvim',
-  config = conf.commentstring,
 }
 
 core['folke/which-key.nvim'] = {

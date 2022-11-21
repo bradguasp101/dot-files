@@ -32,6 +32,10 @@ function config.nvim_cmp()
     { name = 'path' },
   }
 
+  if vim.o.ft == 'sql' then
+    table.insert(sources, { name = 'vim-dadbod-completion' })
+  end
+
   if vim.o.ft == 'markdown' then
     table.insert(sources, { name = 'spell' })
     table.insert(sources, { name = 'look' })
@@ -151,6 +155,18 @@ end
 
 function config.autopairs()
   require('nvim-autopairs').setup({})
+end
+
+function config.matchup()
+  vim.g.matchup_matchparen_offscreen = {method = 'popup'}
+end
+
+function config.endwise()
+  require('nvim-treesitter.configs').setup({
+    endwise = {
+      enable = true,
+    },
+  })
 end
 
 return config

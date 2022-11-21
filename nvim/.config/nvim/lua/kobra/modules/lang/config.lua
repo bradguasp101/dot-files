@@ -1,5 +1,13 @@
 local config = {}
 
+function config.fidget()
+  require('fidget').setup({
+    sources = {
+      ['null-ls'] = { ignore = true },
+    },
+  })
+end
+
 function config.navigator()
   local single = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' }
   local nav_cfg = {
@@ -27,6 +35,12 @@ function config.navigator()
   require('navigator').setup(nav_cfg)
 end
 
+function config.symbols_outline()
+  require('symbols-outline').setup({
+    show_relative_numbers = true,
+  })
+end
+
 function config.go()
   require('go').setup({
     fillstruct = 'gopls',
@@ -45,12 +59,8 @@ function config.go()
   vim.cmd('augroup END')
 end
 
-function config.fidget()
-  require('fidget').setup({
-    sources = {
-      ['null-ls'] = { ignore = true },
-    },
-  })
+function config.rest()
+  require('nvim-rest').setup()
 end
 
 return config
