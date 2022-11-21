@@ -33,6 +33,7 @@ local load_core = function()
 
   create_dirs()
   leader_map()
+  vim.cmd([[set shell=/usr/local/bin/fish]])
 
   if pcall(require, 'impatient') then
     require('impatient')
