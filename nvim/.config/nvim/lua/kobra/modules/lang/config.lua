@@ -15,6 +15,7 @@ function config.navigator()
           gopls = {
             directoryFilters = {
               '-**/plz-out',
+              '-**/node_modules',
             },
           },
         },
