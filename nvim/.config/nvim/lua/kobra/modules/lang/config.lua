@@ -10,6 +10,15 @@ function config.navigator()
     combined_attach = 'their',
     lsp = {
       flow = { autostart = false },
+      gopls = {
+        settings = {
+          gopls = {
+            directoryFilters = {
+              '-**/plz-out',
+            },
+          },
+        },
+      },
     },
   }
 

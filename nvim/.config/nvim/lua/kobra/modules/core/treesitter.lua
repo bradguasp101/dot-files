@@ -1,6 +1,3 @@
-local enable = false
-local langtree = false
-
 local ts_ensure_installed = {
   'go',
   'css',
@@ -31,78 +28,18 @@ local treesitter = function()
     return
   end
 
-  local lines = vim.fn.line('$')
-  if lines > 30000 then -- skip some settings for large file
-    vim.cmd([[syntax manual]])
-    print('skip treesitter')
-    return
-  end
-
-  if lines > 7000 then
-    enable = false
-    langtree = false
-    vim.cmd([[syntax on]])
-  else
-    enable = true
-    langtree = true
-  end
-
   require('nvim-treesitter.configs').setup({
     highlight = {
-      enable = enable,
-      additional_vim_regex_highlighting = false,
-      use_languagetree = langtree,
+      enable = true,
+      additional_vim_regex_highlighting = true,
       custom_captures = { todo = 'Todo' },
     },
   })
 end
 
 local textobjects = function()
-  local lines = vim.fn.line('$')
-  if lines > 30000 then -- skip some settings for large file
-    print('skip treesitter obj')
-    return
-  end
-
   require('nvim-treesitter.configs').setup({
     indent = { enable = true },
-    incremental_selection = {
-      enable = enable,
-      keymaps = {
-        init_selection = 'gnn', -- maps in normal mode to init the node/scope selection
-        scope_incremental = 'gnn', -- increment to the upper scope (as defined in locals.scm)
-        node_incremental = '<TAB>', -- increment to the upper named parent
-        node_decremental = '<S-TAB>', -- decrement to the previous node
-      },
-    },
-    textobjects = {
-      lsp_interop = {
-        enable = enable,
-        peek_definition_code = { ['DF'] = '@function.outer', ['CF'] = '@class.outer' },
-      },
-      move = {
-        enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
-        goto_next_start = { [']m'] = '@function.outer', [']]'] = '@class.outer' },
-        goto_next_end = { [']M'] = '@function.outer', [']['] = '@class.outer' },
-        goto_previous_start = { ['[m'] = '@function.outer', ['[['] = '@class.outer' },
-        goto_previous_end = { ['[M'] = '@function.outer', ['[]'] = '@class.outer' },
-      },
-      select = {
-        enable = enable,
-        keymaps = {
-          ['af'] = '@function.outer',
-          ['if'] = '@function.inner',
-          ['ac'] = '@class.outer',
-          ['ic'] = '@class.inner',
-        },
-      },
-      swap = {
-        enable = enable,
-        swap_next = { ['<leader>a'] = '@parameter.inner' },
-        swap_previous = { ['<leader>A'] = '@parameter.inner' },
-      },
-    },
     ensure_installed = ts_ensure_installed,
   })
 end
@@ -122,13 +59,9 @@ local textsubjects = function()
 end
 
 local refactor = function()
-  if vim.fn.line('$') > 7000 then -- skip for large file
-    enable = false
-  end
-
   require('nvim-treesitter.configs').setup({
     refactor = {
-      highlight_definitions = { enable = enable },
+      highlight_definitions = { enable = true },
       highlight_current_scope = { enable = false },
       smart_rename = {
         enable = false,

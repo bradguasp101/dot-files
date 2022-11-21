@@ -71,8 +71,10 @@ function config.nvim_cmp()
           nvim_lua = ' ',
           spell = ' 暈',
           emoji = 'ﲃ',
-          cmp_tabnine = '🤖',
           look = '﬜',
+          nvim_lua = '[api]',
+          calc = '[calc]',
+          path = '[path]',
         })[entry.source.name]
         return vim_item
       end,
@@ -92,30 +94,29 @@ function config.nvim_cmp()
           vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<End>', true, true, true), 'i', true)
         end
       end,
-      ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-      ['<Tab>'] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end, { 'i', 's' }),
-      ['<S-Tab>'] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, { 'i', 's' }),
+      ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = sources,
-    experimental = { ghost_text = true },
+    experimental = {
+      ghost_text = false,
+      native_menu = false,
+    },
+  })
+
+  cmp.setup.cmdline({'/', '?'}, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' },
+    },
+  })
+
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' },
+    }, {
+      { name = 'cmdline' },
+    }),
   })
 
   require('packer').loader('nvim-autopairs')
