@@ -63,4 +63,8 @@ tools['folke/trouble.nvim'] = {
   config = conf.trouble,
 }
 
+tools['akinsho/toggleterm.nvim'] = {
+  config = conf.toggleterm,
+}
+
 return tools
