@@ -1,4 +1,5 @@
 local ts_ensure_installed = {
+  'bash',
   'go',
   'css',
   'html',
@@ -19,6 +20,7 @@ local ts_ensure_installed = {
   'sql',
   'vue',
   'vim',
+  'fish',
 }
 
 local treesitter = function()
