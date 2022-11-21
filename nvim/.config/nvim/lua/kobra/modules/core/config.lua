@@ -1,5 +1,9 @@
 local config = {}
 
+function config.nvim_tree_setup()
+  vim.cmd([[autocmd Filetype NvimTree set cursorline]])
+end
+
 function config.nvim_tree()
   local tree_cb = require('nvim-tree.config').nvim_tree_callback
   
@@ -26,6 +30,10 @@ function config.autotag()
   require('nvim-ts-autotag').setup()
 end
 
+function config.comment()
+  require('Comment').setup()
+end
+
 function config.commentstring()
   if packer_plugins['nvim-treesitter'] == nil or packer_plugins['nvim-treesitter'].loaded == false then
     require('packer').loader('nvim-treesitter')
@@ -38,8 +46,12 @@ function config.commentstring()
     },
   })
 
+  if packer_plugins['Comment.nvim'] == nil or packer_plugins['Comment.nvim'].loaded == false then
+    require('packer').loader('Comment.nvim')
+  end
+
   require('Comment').setup({
-    pre_hook = require('ts_context_commenstring.integrations.comment_nvim').create_pre_hook(),
+    pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
   })
 end
 

@@ -51,8 +51,8 @@ local function load_options()
     sidescrolloff = 8;
   }
 
-  for name, value in pairs(global_local) do
-    vim.o[name] = value
+  for k, v in pairs(global_local) do
+    vim.opt[k] = v
   end
 end
 

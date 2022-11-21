@@ -37,7 +37,7 @@ function config.barbar()
 end
 
 function config.lualine()
-  lualine.setup({
+  require('lualine').setup({
     options = {
       theme = 'moonlight',
     },

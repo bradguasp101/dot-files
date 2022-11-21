@@ -19,7 +19,7 @@ core['jdhao/better-escape.vim'] = {
 core['kyazdani42/nvim-web-devicons'] = {}
 
 core['nvim-tree/nvim-tree.lua'] = {
-  opt = true,
+  setup = conf.nvim_tree_setup,
   config = conf.nvim_tree,
 }
 
@@ -54,6 +54,11 @@ core['nvim-treesitter/playground'] = {
 core['windwp/nvim-ts-autotag'] = {
   opt = true,
   config = conf.autotag,
+}
+
+core['numToStr/Comment.nvim'] = {
+  opt = true,
+  config = conf.comment,
 }
 
 core['JoosepAlviste/nvim-ts-context-commentstring'] = {

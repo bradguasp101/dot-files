@@ -4,6 +4,7 @@ if not packer_plugins['telescope.nvim'].loaded then
 end
 
 local telescope = require('telescope')
+local actions = require('telescope.actions')
 
 local M = {}
 

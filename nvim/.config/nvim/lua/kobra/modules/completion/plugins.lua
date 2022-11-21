@@ -61,4 +61,9 @@ completion['ray-x/lsp_signature.nvim'] = {
   config = conf.lsp_signature,
 }
 
+completion['windwp/nvim-autopairs'] = {
+  opt = true,
+  config = conf.autopairs,
+}
+
 return completion

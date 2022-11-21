@@ -77,7 +77,7 @@ function Packer:load_packer()
 end
 
 function Packer:init_ensure_plugins()
-  local packer_dir = data_dir .. '/site/pack/packer/start/packer.nvim'
+  local packer_dir = data_dir .. '/pack/packer/start/packer.nvim'
   local state = vim.loop.fs_stat(packer_dir)
 
   if not state then

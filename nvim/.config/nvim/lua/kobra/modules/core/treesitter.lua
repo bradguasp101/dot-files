@@ -45,7 +45,6 @@ local treesitter = function()
   else
     enable = true
     langtree = true
-    lprint('ts enable')
   end
 
   require('nvim-treesitter.configs').setup({
@@ -53,7 +52,7 @@ local treesitter = function()
       enable = enable,
       additional_vim_regex_highlighting = false,
       use_languagetree = langtree,
-      custom_captures = { todod: 'Todo' },
+      custom_captures = { todo = 'Todo' },
     },
   })
 end
@@ -124,7 +123,6 @@ end
 
 local refactor = function()
   if vim.fn.line('$') > 7000 then -- skip for large file
-    lprint('skip treesitter')
     enable = false
   end
 

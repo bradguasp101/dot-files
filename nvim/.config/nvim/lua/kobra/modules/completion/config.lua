@@ -125,8 +125,8 @@ function config.nvim_cmp()
   if vim.o.ft == 'clap_input' or vim.o.ft == 'guihua' or vim.o.ft == 'guihua_rust' then
     require('cmp').setup.buffer({ completion = { enable = false } })
   end
-  vim.cmd('autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }')
-  vim.cmd('autocmd FileType clap_input lua require('cmp').setup.buffer { enabled = false }')
+  vim.cmd('autocmd FileType TelescopePrompt lua require("cmp").setup.buffer { enabled = false }')
+  vim.cmd('autocmd FileType clap_input lua require("cmp").setup.buffer { enabled = false }')
 end
 
 function config.lsp_signature()
@@ -146,6 +146,10 @@ function config.lsp_signature()
     toggle_key = [[<M-x>]],
     select_signature_key = [[<M-c>]],
   })
+end
+
+function config.autopairs()
+  require('nvim-autopairs').setup({})
 end
 
 return config
