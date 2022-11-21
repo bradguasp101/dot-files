@@ -166,9 +166,21 @@ local refactor = function()
   }
 end
 
+local playground = function()
+  require('nvim-treesitter.configs').setup({
+    playground = {
+      enable = true,
+      disable = {},
+      updatetime = 50,
+      persist_queries = true,
+    },
+  })
+end
+
 return {
   treesitter = treesitter,
   textobjects = textobjects,
   textsubjects = textsubjects,
   refactor = refactor,
+  playground = playground,
 }

@@ -11,6 +11,18 @@ core['ray-x/guihua.lua'] = {
   run = 'cd lua/fzy && make',
 }
 
+core['jdhao/better-escape.vim'] = {
+  opt = true,
+  event = 'InsertEnter',
+}
+
+core['kyazdani42/nvim-web-devicons'] = {}
+
+core['nvim-tree/nvim-tree.lua'] = {
+  opt = true,
+  config = conf.nvim_tree,
+}
+
 core['nvim-treesitter/nvim-treesitter'] = {
   opt = true,
   run = ':TSUpdate',
@@ -31,6 +43,12 @@ core['nvim-treesitter/nvim-treesitter-refactor'] = {
   opt = true,
   after = 'nvim-treesitter-textobjects',
   config = ts.refactor,
+}
+
+core['nvim-treesitter/playground'] = {
+  opt = true,
+  cmd = 'TSPlaygroundToggle',
+  config = ts.playground,
 }
 
 core['windwp/nvim-ts-autotag'] = {
