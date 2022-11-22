@@ -10,9 +10,7 @@ function pstat -d "Check pods for specific statuses"
   end
 
   set c (count $pods)
-  if test $c -eq 0
-    echo -e "\e[32mNo pods found with status $s\e[0m"
-  else
+  if test $c -gt 0
     printf '%s\n' $pods
   end
 end
