@@ -10,5 +10,5 @@ function mountdc -d "exec into the devclone pod"
 
   set name_length (math (string length $name) + 2)
   set container (string sub -s $name_length -e -17 $pod)
-  kubectl exec -n default $pod -c $container -t -- zsh
+  kubectl exec -n default $pod -c $container -it -- zsh
 end
