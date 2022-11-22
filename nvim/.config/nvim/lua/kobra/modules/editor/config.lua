@@ -55,7 +55,9 @@ function config.cinnamon()
 end
 
 function config.focus()
-  require('focus').setup()
+  require('focus').setup({
+    excluded_filetypes = { 'toggleterm' },
+  })
 end
 
 return config
