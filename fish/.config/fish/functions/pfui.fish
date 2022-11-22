@@ -17,7 +17,7 @@ function pfui -d "port forward a service and grpcui connect to it"
   kubectl -n default port-forward services/$argv[1] "$port:$port" &
 
   set pid (jobs -l | awk '{print $2}')
-  echo -e "\e[32m\e[1mForwarded $pod on process $pid\e[0m"
+  echo -e "\e[32m\e[1mForwarded $argv[1] on process $pid\e[0m"
 
   # TODO: auto kill process
   sleep 1
