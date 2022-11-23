@@ -1,10 +1,7 @@
 local completion = {}
 local conf = require('kobra.modules.completion.config')
 
-completion['neovim/nvim-lspconfig'] = {
-  opt = true,
-  config = conf.nvim_lsp,
-}
+completion['onsails/lspkind.nvim'] = {}
 
 completion['hrsh7th/nvim-cmp'] = {
   after = { 'LuaSnip' },
@@ -28,11 +25,6 @@ completion['L3MON4D3/LuaSnip'] = {
   event = 'InsertEnter',
   requires = { 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
   config = function() require('kobra.modules.completion.luasnip') end,
-}
-
-completion['ray-x/lsp_signature.nvim'] = {
-  opt = true,
-  config = conf.lsp_signature,
 }
 
 completion['windwp/nvim-autopairs'] = {

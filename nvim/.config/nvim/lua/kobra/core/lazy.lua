@@ -8,6 +8,17 @@ load_colorscheme('nightfox.nvim')
 
 -- load module but not init/config
 vim.cmd([[packadd nvim-treesitter]])
+
+function load_lsp()
+  loader('mason.nvim')
+  loader('mason-lspconfig.nvim')
+  loader('nvim-lspconfig')
+  loader('null-ls.nvim')
+  loader('mason-null-ls.nvim')
+  loader('lsp_signature.nvim')
+  loader('refactoring.nvim')
+end
+
 function LazyLoad()
   local disable_ft = {
     'NvimTree',
@@ -34,11 +45,7 @@ function LazyLoad()
 
   vim.g.vimsyn_embed = 'lPr'
 
-  loader('nvim-lspconfig')
-  loader('navigator.lua')
-  loader('null-ls.nvim')
-  loader('lsp_signature.nvim')
-  loader('refactoring.nvim')
+  load_lsp()
 end
 
 local lazy_timer = 20

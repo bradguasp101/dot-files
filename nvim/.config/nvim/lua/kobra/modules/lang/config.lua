@@ -1,5 +1,9 @@
 local config = {}
 
+function config.mason()
+  require('kobra.modules.lang.lsp')
+end
+
 function config.fidget()
   require('fidget').setup({
     sources = {
@@ -8,37 +12,13 @@ function config.fidget()
   })
 end
 
-function config.navigator()
-  local single = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' }
-  local nav_cfg = {
-    width = 0.7,
-    lsp_installer = false,
-    border = single,
-    lsp_signature_help = true,
-    combined_attach = 'their',
-    lsp = {
-      servers = { 'bufls' },
-      flow = { autostart = false },
-      gopls = {
-        settings = {
-          gopls = {
-            directoryFilters = {
-              '-**/plz-out',
-              '-**/node_modules',
-            },
-          },
-        },
-      },
-      bufls = {
-        filetypes = {
-          'proto',
-        },
-      },
-    },
-  }
-
-  vim.lsp.set_log_level('error')
-  require('navigator').setup(nav_cfg)
+function config.signature()
+  require('lsp_signature').setup({
+    bind = true,
+    fix_pos = true,
+    always_trigger = true,
+    hint_enable = false,
+  })
 end
 
 function config.symbols_outline()
@@ -50,7 +30,6 @@ end
 function config.go()
   require('go').setup({
     fillstruct = 'gopls',
-    lsp_codelens = false, -- use navigator
     dap_debug = true,
     goimport = 'gopls',
     dap_debug_vt = 'true',
@@ -58,11 +37,6 @@ function config.go()
     test_runner = 'go',
     luasnip = true,
   })
-
-  vim.cmd('augroup go')
-  vim.cmd('autocmd!')
-  vim.cmd('autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4')
-  vim.cmd('augroup END')
 end
 
 function config.rest()
