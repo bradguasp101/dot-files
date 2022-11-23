@@ -38,7 +38,7 @@ completion['ray-x/lsp_signature.nvim'] = {
 completion['windwp/nvim-autopairs'] = {
   opt = true,
   config = conf.autopairs,
-  event = 'BufReadPre',
+  module = 'cmp',
 }
 
 completion['andymass/vim-matchup'] = {

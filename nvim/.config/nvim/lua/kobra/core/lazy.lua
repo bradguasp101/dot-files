@@ -22,25 +22,23 @@ function LazyLoad()
     'defx',
   }
 
-  local syn_on = not vim.tbl_contains(disable_ft, vim.bo.filetype)
-  if not syn_on then
+  local syn_off = vim.tbl_contains(disable_ft, vim.bo.filetype)
+  if syn_off then
     vim.cmd([[syntax manual]])
   end
 
   loader('plenary.nvim')
-  loader('guihua.lua')
   loader('nvim-treesitter')
+  loader('guihua.lua')
   loader('which-key.nvim')
 
   vim.g.vimsyn_embed = 'lPr'
 
   loader('nvim-lspconfig')
-  loader('lsp_signature.nvim')
   loader('navigator.lua')
   loader('null-ls.nvim')
+  loader('lsp_signature.nvim')
   loader('refactoring.nvim')
-
-  loader('barbar.nvim')
 end
 
 local lazy_timer = 20
@@ -59,8 +57,8 @@ vim.defer_fn(function()
 end, lazy_timer)
 
 vim.defer_fn(function()
-  load_colorscheme('nightfox.nvim')
   loader('lualine.nvim')
+  loader('barbar.nvim')
 end, lazy_timer + 30)
 
 vim.defer_fn(function()
@@ -78,5 +76,3 @@ vim.defer_fn(function()
     loader('lazygit.nvim')
   end
 end, lazy_timer + 80)
-
-load_colorscheme('nightfox.nvim')
