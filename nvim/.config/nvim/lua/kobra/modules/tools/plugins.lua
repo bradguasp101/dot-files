@@ -21,11 +21,13 @@ tools['nvim-telescope/telescope.nvim'] = {
 tools['folke/neodev.nvim'] = {
   opt = true,
   config = conf.neodev,
+  ft = { 'lua' },
 }
 
 tools['danymat/neogen'] = {
   opt = true,
   config = conf.neogen,
+  event = 'BufReadPre',
 }
 
 tools['ThePrimeagen/refactoring.nvim'] = {
@@ -36,6 +38,7 @@ tools['ThePrimeagen/refactoring.nvim'] = {
 tools['m-demare/hlargs.nvim'] = {
   opt = true,
   config = conf.hlargs,
+  event = 'BufReadPre',
 }
 
 tools['lewis6991/gitsigns.nvim'] = {
@@ -73,6 +76,7 @@ tools['kdheepak/lazygit.nvim'] = {
 tools['folke/trouble.nvim'] = {
   opt = true,
   config = conf.trouble,
+  event = 'BufReadPre',
 }
 
 tools['akinsho/toggleterm.nvim'] = {

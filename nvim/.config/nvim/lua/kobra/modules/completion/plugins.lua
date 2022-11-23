@@ -38,16 +38,19 @@ completion['ray-x/lsp_signature.nvim'] = {
 completion['windwp/nvim-autopairs'] = {
   opt = true,
   config = conf.autopairs,
+  event = 'BufReadPre',
 }
 
 completion['andymass/vim-matchup'] = {
   opt = true,
   config = conf.matchup,
+  event = 'BufReadPre',
 }
 
 completion['RRethy/nvim-treesitter-endwise'] = {
   opt = true,
   config = conf.endwise,
+  event = 'BufReadPre',
 }
 
 completion['kristijanhusak/vim-dadbod-completion'] = {}

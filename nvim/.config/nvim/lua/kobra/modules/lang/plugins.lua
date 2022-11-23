@@ -21,6 +21,7 @@ lang['jose-elias-alvarez/null-ls.nvim'] = {
 lang['simrat39/symbols-outline.nvim'] = {
   opt = true,
   config = conf.symbols_outline,
+  event = 'BufReadPre',
 }
 
 lang['ray-x/go.nvim'] = {

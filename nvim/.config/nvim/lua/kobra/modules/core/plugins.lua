@@ -26,6 +26,7 @@ core['nvim-treesitter/nvim-treesitter'] = {
 
 core['nvim-treesitter/nvim-treesitter-context'] = {
   opt = true,
+  event = 'BufReadPre',
 }
 
 core['nvim-treesitter/playground'] = {

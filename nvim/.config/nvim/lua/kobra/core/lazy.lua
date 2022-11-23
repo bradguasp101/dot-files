@@ -28,47 +28,18 @@ function LazyLoad()
   end
 
   loader('plenary.nvim')
+  loader('guihua.lua')
   loader('nvim-treesitter')
   loader('which-key.nvim')
-
-  if vim.bo.filetype == 'lua' then
-    loader('neodev.nvim')
-  end
-
-  if vim.bo.filetype == 'go' then
-    loader('go.nvim')
-  end
-
-  if vim.bo.filetype == 'conf' then
-    loader('vim-kitty')
-  end
-
-  if vim.bo.filetype == 'http' then
-    loader('rest.nvim')
-  end
-
-  if vim.bo.filetype == 'markdown' then
-    loader('markdown-preview.nvim')
-  end
 
   vim.g.vimsyn_embed = 'lPr'
 
   loader('nvim-lspconfig')
   loader('lsp_signature.nvim')
-  loader('guihua.lua')
   loader('navigator.lua')
-
-  loader('nvim-treesitter-context')
-  loader('nvim-ts-autotag')
-  loader('nvim-ts-context-commentstring')
-  loader('neogen')
-  loader('refactoring.nvim')
-  loader('hlargs.nvim')
-  loader('vim-matchup')
-  loader('nvim-treesitter-endwise')
-  loader('symbols-outline.nvim')
-
   loader('null-ls.nvim')
+  loader('refactoring.nvim')
+
   loader('barbar.nvim')
 end
 
