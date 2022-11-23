@@ -29,6 +29,11 @@ function config.navigator()
           },
         },
       },
+      bufls = {
+        filetypes = {
+          'proto',
+        },
+      },
     },
   }
 
