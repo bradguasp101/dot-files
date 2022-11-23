@@ -38,10 +38,6 @@ function config.fugitive_gitlab()
   vim.g.fugitive_gitlab_domains = {'http://git', 'http://git.tcncloud.net'}
 end
 
-function config.trouble()
-  require('trouble').setup()
-end
-
 function config.toggleterm()
   require('toggleterm').setup({
     size = 20,

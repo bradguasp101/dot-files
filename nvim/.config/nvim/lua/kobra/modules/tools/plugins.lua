@@ -73,12 +73,6 @@ tools['kdheepak/lazygit.nvim'] = {
   opt = true,
 }
 
-tools['folke/trouble.nvim'] = {
-  opt = true,
-  config = conf.trouble,
-  event = 'BufReadPre',
-}
-
 tools['akinsho/toggleterm.nvim'] = {
   config = conf.toggleterm,
 }

@@ -14,7 +14,6 @@ core['ray-x/guihua.lua'] = {
 core['kyazdani42/nvim-web-devicons'] = {}
 
 core['nvim-tree/nvim-tree.lua'] = {
-  setup = conf.nvim_tree_setup,
   config = conf.nvim_tree,
 }
 

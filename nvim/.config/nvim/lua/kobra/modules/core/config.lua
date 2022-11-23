@@ -1,12 +1,8 @@
 local config = {}
 
-function config.nvim_tree_setup()
-  vim.cmd([[autocmd Filetype NvimTree set cursorline]])
-end
-
 function config.nvim_tree()
   local tree_cb = require('nvim-tree.config').nvim_tree_callback
-  
+
   require('nvim-tree').setup({
     update_focused_file = {
       enable = true,
@@ -14,6 +10,7 @@ function config.nvim_tree()
       ignore_list = {},
     },
     view = {
+      adaptive_size = true,
       number = true,
       relativenumber = true,
       mappings = {
@@ -27,7 +24,11 @@ function config.nvim_tree()
       group_empty = true,
     },
     filters = {
-      dotfiles = true,
+      custom = {
+        ".git",
+        "node_modules",
+        "plz-out",
+      },
     },
   })
 end
