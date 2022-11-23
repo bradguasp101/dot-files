@@ -17,6 +17,7 @@ function config.navigator()
     lsp_signature_help = true,
     combined_attach = 'their',
     lsp = {
+      servers = { 'bufls' },
       flow = { autostart = false },
       gopls = {
         settings = {
