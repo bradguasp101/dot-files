@@ -88,13 +88,24 @@ tools['dstein64/vim-startuptime'] = {}
 
 tools['iamcco/markdown-preview.nvim'] = {
   opt = true,
-  run = [[vim.fn['mkdp#util#install']()]],
+  run = function() vim.fn['mkdp#util#install']() end,
   setup = conf.mkdp_setup,
   ft = { 'markdown' },
 }
 
 tools['Pocco81/AbbrevMan.nvim'] = {
   config = conf.abbrevman(),
+}
+
+tools['nvim-neorg/neorg'] = {
+  opt = true,
+  ft = 'norg',
+  cmd = { 'Neorg', 'NeorgStart' },
+  after = {
+    'nvim-treesitter',
+    'telescope.nvim',
+  },
+  config = conf.neorg,
 }
 
 return tools

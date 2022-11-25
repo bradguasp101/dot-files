@@ -100,6 +100,13 @@ M.setup = function()
       t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
     },
 
+    n = {
+      name = "Neorg",
+      g = { "<cmd>Neorg gtd views<cr>", "Views" },
+      c = { "<cmd>Neorg gtd capture<cr>", "New Task" },
+      e = { "<cmd>Neorg gtd edit<cr>", "Edit Task" },
+    },
+
     P = {
       name = "Packer",
       c = { "<cmd>PackerCompile<cr>", "Compile" },

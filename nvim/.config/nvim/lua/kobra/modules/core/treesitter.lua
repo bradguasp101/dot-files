@@ -21,6 +21,8 @@ local ts_ensure_installed = {
   'vue',
   'vim',
   'fish',
+  'markdown',
+  'norg',
 }
 
 local treesitter = function()
