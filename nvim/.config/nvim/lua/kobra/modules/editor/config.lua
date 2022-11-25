@@ -60,4 +60,8 @@ function config.focus()
   })
 end
 
+function config.rooter()
+  vim.g.rooter_patterns = { '.git' }
+end
+
 return config

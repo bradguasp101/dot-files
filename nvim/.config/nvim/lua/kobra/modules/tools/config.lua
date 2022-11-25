@@ -109,13 +109,12 @@ function config.neorg()
           workspaces = {
             work = '~/notes/work',
             home = '~/notes/home',
-            examples = '~/notes/example/gtd',
           },
         },
       },
       ['core.gtd.base'] = {
         config = {
-          workspace = 'examples',
+          workspace = 'work',
         },
       },
       ['core.gtd.ui'] = {},

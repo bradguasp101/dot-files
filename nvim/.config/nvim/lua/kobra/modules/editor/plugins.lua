@@ -47,4 +47,8 @@ editor['beauwilliams/focus.nvim'] = {
   config = conf.focus,
 }
 
+editor['airblade/vim-rooter'] = {
+  config = conf.rooter,
+}
+
 return editor
