@@ -25,6 +25,7 @@ lang['jayp0521/mason-null-ls.nvim'] = {
   opt = true,
   after = 'null-ls.nvim',
   config = conf.mason,
+  event = 'BufReadPre',
 }
 
 lang['RRethy/vim-illuminate'] = {
