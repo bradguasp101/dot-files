@@ -21,6 +21,7 @@ core['nvim-treesitter/nvim-treesitter'] = {
   opt = true,
   run = ':TSUpdate',
   config = ts.treesitter,
+  event = 'BufReadPre',
 }
 
 core['nvim-treesitter/nvim-treesitter-context'] = {

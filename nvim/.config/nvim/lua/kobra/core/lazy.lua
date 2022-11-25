@@ -1,4 +1,5 @@
 local loader = require('packer').loader
+_G.packer_plugins = _G.packer_plugins or {}
 
 local function load_colorscheme(theme)
   require('packer').loader(theme)
@@ -9,7 +10,7 @@ load_colorscheme('nightfox.nvim')
 -- load module but not init/config
 vim.cmd([[packadd nvim-treesitter]])
 
-function load_lsp()
+function LoadLsp()
   loader('mason.nvim')
   loader('mason-lspconfig.nvim')
   loader('nvim-lspconfig')
@@ -45,7 +46,7 @@ function LazyLoad()
 
   vim.g.vimsyn_embed = 'lPr'
 
-  load_lsp()
+  LoadLsp()
 end
 
 local lazy_timer = 20
