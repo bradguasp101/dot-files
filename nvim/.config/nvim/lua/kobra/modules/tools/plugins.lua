@@ -86,10 +86,9 @@ tools['kristijanhusak/vim-dadbod-ui'] = {
 
 tools['dstein64/vim-startuptime'] = {}
 
-tools['iamcco/markdown-preview.nvim'] = {
+tools['davidgranstrom/nvim-markdown-preview'] = {
   opt = true,
-  run = function() vim.fn['mkdp#util#install']() end,
-  setup = conf.mkdp_setup,
+  cmd = { 'MarkdownPreview' },
   ft = { 'markdown' },
 }
 

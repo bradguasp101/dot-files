@@ -44,6 +44,14 @@ lang['ray-x/lsp_signature.nvim'] = {
   config = conf.signature,
 }
 
+lang['RishabhRD/nvim-lsputils'] = {
+  opt = true,
+  requires = {
+    { 'RishabhRD/popfix', opt = true },
+  },
+  config = conf.lsputils,
+}
+
 lang['simrat39/symbols-outline.nvim'] = {
   opt = true,
   config = conf.symbols_outline,

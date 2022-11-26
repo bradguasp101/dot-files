@@ -86,10 +86,6 @@ function config.dadbod()
   vim.g.db_ui_save_location = require('core.global').home .. '/.cache/vim/db_ui_queries'
 end
 
-function config.mkdp_setup()
-  vim.g.mkdp_filetypes = { 'markdown' }
-end
-
 function config.abbrevman()
   local status_ok, abbrev = pcall(require, 'abbrev-man')
   if not status_ok then

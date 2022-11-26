@@ -47,9 +47,8 @@ editor['beauwilliams/focus.nvim'] = {
   config = conf.focus,
 }
 
--- TODO: replace with https://github.com/nyngwang/NeoRoot.lua
-editor['airblade/vim-rooter'] = {
-  config = conf.rooter,
+editor['nyngwang/NeoRoot.lua'] = {
+  config = conf.neoroot,
 }
 
 return editor

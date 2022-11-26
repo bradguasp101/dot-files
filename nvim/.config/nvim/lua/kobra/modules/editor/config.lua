@@ -58,6 +58,14 @@ function config.focus()
   require('focus').setup()
 end
 
+function config.neoroot()
+  require('neo-root').setup({
+    CUR_MODE = 2,
+  })
+
+  vim.cmd([[au BufEnter * NeoRoot]])
+end
+
 function config.rooter()
   vim.g.rooter_patterns = { '.git' }
 end
