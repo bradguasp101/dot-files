@@ -47,8 +47,17 @@ editor['beauwilliams/focus.nvim'] = {
   config = conf.focus,
 }
 
-editor['nyngwang/NeoRoot.lua'] = {
-  config = conf.neoroot,
+editor['airblade/vim-rooter'] = {
+  config = conf.rooter,
+}
+
+editor['Ostralyan/scribe.nvim'] = {
+  opt = true,
+  cmd = { 'ScribeOpen', 'ScribeFind' },
+  requires = {
+    { 'nvim-telescope/telescope.nvim', opt = true },
+  },
+  config = conf.scribe,
 }
 
 return editor
