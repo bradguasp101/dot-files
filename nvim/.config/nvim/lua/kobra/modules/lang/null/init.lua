@@ -1,10 +1,8 @@
 return {
   config = function()
     local null_ls = require('null-ls')
-    local lspconfig = require('lspconfig')
 
     local diagnostics = null_ls.builtins.diagnostics
-    local hover = null_ls.builtins.hover
     local actions = null_ls.builtins.code_actions
     local sources = {
       null_ls.builtins.formatting.autopep8,
@@ -89,9 +87,6 @@ return {
       )
     end
 
-    table.insert(sources, null_ls.builtins.formatting.trim_newlines)
-    table.insert(sources, null_ls.builtins.formatting.trim_whitespace)
-
     table.insert(
       sources,
       require('null-ls.helpers').make_builtin({
@@ -101,7 +96,7 @@ return {
           command = 'java',
           args = { '$FILENAME' },
           to_stdin = false,
-          format = 'raw',
+          sormat = 'raw',
           from_stderr = true,
           on_output = require('null-ls.helpers').diagnostics.from_errorformat([[%f:%l: %trror: %m]], 'java'),
         },
@@ -125,7 +120,7 @@ return {
       ),
       on_attach = function(client)
         if client.server_capabilities.documentFormatting then
-          vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+          vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = false })')
         end
       end,
     }
