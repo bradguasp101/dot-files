@@ -23,7 +23,6 @@ function config.nvim_tree()
     },
     filters = {
       custom = {
-        ".git",
         "node_modules",
         "plz-out",
       },
