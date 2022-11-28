@@ -38,16 +38,6 @@ return {
       return vim.fn.exepath(bin) ~= ''
     end
 
-    table.insert(
-      sources,
-      null_ls.builtins.formatting.golines.with({
-        extra_args = {
-          '--max-len=180',
-          '--base-formatter=gofumpt',
-        },
-      })
-    )
-
     -- shell script
     if exist('shellcheck') then
       table.insert(sources, null_ls.builtins.diagnostics.shellcheck)
