@@ -11,7 +11,7 @@ function handlers.on_attach(client, bufnr)
   end
 
   if client.server_capabilities.documentFormattingProvider then
-    vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
+    vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = true })]])
   end
 end
 
