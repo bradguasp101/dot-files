@@ -1,0 +1,20 @@
+[note]
+language = "en"
+default-title = "Untitled"
+filename = "{{id}}-{{slug title}}"
+extension = "md"
+
+id-charset = "alphanum"
+id-length = 4
+id-case = "lower"
+
+[extra]
+author = "Kobra"
+
+[tool]
+editor = "nvim"
+
+[lsp]
+[lsp.diagnostics]
+wiki-title = "hint"
+dead-link = "error"
