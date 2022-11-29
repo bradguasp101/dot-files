@@ -19,3 +19,6 @@ editor = "nvim"
 [lsp.diagnostics]
 wiki-title = "hint"
 dead-link = "error"
+
+[alias]
+rm = "zk list --interactive --quiet --format path --delimiter0 $@ | xargs -0 rm -vf --"
