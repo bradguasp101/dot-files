@@ -3,7 +3,6 @@ language = "en"
 default-title = "Untitled"
 filename = "{{id}}-{{slug title}}"
 extension = "md"
-template = "default.md"
 
 id-charset = "alphanum"
 id-length = 4
@@ -20,5 +19,17 @@ editor = "nvim"
 wiki-title = "hint"
 dead-link = "error"
 
+[group.daily]
+paths = ["journal/daily"]
+
+[group.daily.note]
+filename = "{{date now '%Y-%m-%d'}}"
+extension = "md"
+template = "daily.md"
+
 [alias]
-rm = "zk list --interactive --quiet --format path --delimiter0 $@ | xargs -0 rm -vf --"
+rm = "zk list -iq --format path --delimiter0 $@ | xargs -0 rm -vf --"
+l = "zk list -q --format oneline"
+e = "zk edit -i"
+nt = 'zk new --title "$*"'
+daily = 'zk new --no-input "$ZK_NOTEBOOK_DIR/journal/daily'
