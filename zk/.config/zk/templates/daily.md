@@ -1,3 +1,13 @@
 # {{date now "medium"}}
 
-What did I do today?
+## Standup
+
+### Today
+
+### Tomorrow
+
+### Blockers
+
+### Review Status
+
+## Other
