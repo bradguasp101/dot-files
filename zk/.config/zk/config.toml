@@ -27,9 +27,23 @@ filename = "{{date now '%Y-%m-%d'}}"
 extension = "md"
 template = "daily.md"
 
+[group.todos]
+paths = ["journal/todos"]
+
+[group.todos.note]
+filename = "{{slug title}}"
+extension = "md"
+template = "todos.md"
+
 [alias]
 rm = "zk list -iq --format path --delimiter0 $@ | xargs -0 rm -vf --"
-l = "zk list -q --format oneline"
 e = "zk edit -i"
-nt = 'zk new --title "$*"'
-daily = 'zk new --no-input "$ZK_NOTEBOOK_DIR/journal/daily'
+n = 'zk new --title "$*"'
+
+l = "zk list -q --format oneline"
+todos = 'zk list -i journal/todos'
+todosl = 'zk list -i --linked-by "`zk list -q -f path -d "," journal/todos`"'
+linked = 'zk list -i --exclude "`zk list -q -f path -d "," --orphan`"'
+
+daily = 'zk new --no-input "$ZK_NOTEBOOK_DIR/journal/daily"'
+nt = 'zk new --no-input "$ZK_NOTEBOOK_DIR/journal/todos" --title "$*"'
