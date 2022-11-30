@@ -98,8 +98,7 @@ M.setup = function()
       name = "Plz and Project",
       -- b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },
       -- t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
-      p = { function() vim.cmd('NeoRootSwitchMode') end, "Switch Mode" },
-      r = { function() vim.cmd('NeoRootChange') end, "Switch Root" },
+      r = { function() require('kobra.scripts.revive').lint() end, "Revive" },
     },
 
     n = {
