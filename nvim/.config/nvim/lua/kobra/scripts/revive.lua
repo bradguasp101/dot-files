@@ -4,9 +4,9 @@ local revive = {}
 -- config.toml file in the root directory
 function revive.lint()
   local files = require('kobra.scripts.files')
-  local cmd = 'belowright split | resize 20 | term revive '
   local root = files.getRoot()
-  vim.api.nvim_command(cmd .. ' --config ' .. root .. '/config.toml --formatter stylish ' .. files.getRelativeFile())
+  local cmd = 'revive --config ' .. root .. '/config.toml --formatter stylish ' .. files.getRelativeFile()
+  vim.api.nvim_command('TermExec cmd="' .. cmd .. '"')
 end
 
 return revive

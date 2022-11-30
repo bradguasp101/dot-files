@@ -16,6 +16,9 @@ function files.getRoot()
   local result = handle:read('*a')
   handle:close()
 
+  result = string.gsub(result, '^%s+', '')
+  result = string.gsub(result, '%s+$', '')
+  result = string.gsub(result, '[\n\r]+', ' ')
   return result
 end
 
