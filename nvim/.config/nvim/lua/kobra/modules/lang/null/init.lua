@@ -8,7 +8,7 @@ return {
       null_ls.builtins.formatting.autopep8,
       null_ls.builtins.formatting.rustfmt,
       null_ls.builtins.diagnostics.yamllint,
-      null_ls.builtins.diagnostics.protolint,
+      -- null_ls.builtins.diagnostics.protolint,
       null_ls.builtins.code_actions.gitsigns,
       null_ls.builtins.code_actions.proselint,
       null_ls.builtins.code_actions.refactoring,
