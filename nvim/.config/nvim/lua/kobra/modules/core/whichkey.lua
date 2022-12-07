@@ -103,9 +103,6 @@ M.setup = function()
 
     n = {
       name = "Notes and Tasks",
-      g = { "<cmd>Neorg gtd views<cr>", "Views" },
-      c = { "<cmd>Neorg gtd capture<cr>", "New Task" },
-      e = { "<cmd>Neorg gtd edit<cr>", "Edit Task" },
       o = { "<cmd>ScribeOpen<cr>", "Open Notes" },
       f = { "<cmd>ScribeFind<cr>", "Find Notes" },
     },

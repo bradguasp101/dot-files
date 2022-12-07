@@ -96,15 +96,4 @@ tools['Pocco81/AbbrevMan.nvim'] = {
   config = conf.abbrevman(),
 }
 
-tools['nvim-neorg/neorg'] = {
-  opt = true,
-  ft = 'norg',
-  cmd = { 'Neorg', 'NeorgStart' },
-  after = {
-    'nvim-treesitter',
-    'telescope.nvim',
-  },
-  config = conf.neorg,
-}
-
 return tools
