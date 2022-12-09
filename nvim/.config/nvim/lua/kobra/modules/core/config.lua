@@ -2,8 +2,7 @@ local config = {}
 
 function config.nvim_tree()
   local tree_cb = require('nvim-tree.config').nvim_tree_callback
-
-  require('nvim-tree').setup({
+  local setup = {
     update_focused_file = {
       enable = true,
       ignore_list = {},
@@ -11,12 +10,6 @@ function config.nvim_tree()
     view = {
       number = true,
       relativenumber = true,
-      mappings = {
-        list = {
-          { key = 'h', cb = tree_cb 'close_node' },
-          { key = 'v', cb = tree_cb 'vsplit' },
-        },
-      },
     },
     renderer = {
       group_empty = true,
@@ -27,7 +20,22 @@ function config.nvim_tree()
         "plz-out",
       },
     },
-  })
+  }
+
+  local mappings = {
+    list = {
+      { key = 'h', cb = tree_cb 'close_node' },
+      { key = 'v', cb = tree_cb 'vsplit' },
+    },
+  }
+
+  setup.view.mappings = mappings
+
+  require('nvim-tree').setup(setup)
+end
+
+function config.better_escape()
+  vim.g.better_escape_shortcut = {'jk', 'ne'}
 end
 
 return config

@@ -40,4 +40,9 @@ core['folke/which-key.nvim'] = {
   config = require('kobra.modules.core.whichkey').setup,
 }
 
+core['jdhao/better-escape.vim'] = {
+  event = 'InsertEnter',
+  setup = conf.better_escape,
+}
+
 return core

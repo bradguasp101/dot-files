@@ -4,10 +4,6 @@ local conf = require('kobra.modules.editor.config')
 editor['tpope/vim-sleuth'] = {}
 editor['tpope/vim-repeat'] = {}
 
-editor['jdhao/better-escape.vim'] = {
-  event = 'InsertEnter',
-}
-
 editor['windwp/nvim-ts-autotag'] = {
   opt = true,
   config = conf.autotag,
