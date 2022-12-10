@@ -24,10 +24,6 @@ stow -v -R -t ~ zk
 Aside from cloning this repository, you should also add git config `user` information in the ignored
 [user](git/gituser) file.
 
-Colemak keyboard layout configurations are included by default, but can easily be turned off or ignored.
-There's a [Colemak.fish](fish/.config/fish/conf.d/colemak.fish) containing fish keybinds for colemak, as
-well as the [mapping](nvim/.config/nvim/lua/kobra/core/mapping.lua) file for nvim keybinds.
-
 There are also a few extra dependencies required to enjoy all the functionality available.
 These are:
 1. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)

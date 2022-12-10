@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
 
-bind \ct 'accept-autosuggestion'
+bind \ct accept-autosuggestion
