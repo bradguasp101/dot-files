@@ -24,6 +24,8 @@ stow -v -R -t ~ zk
 Aside from cloning this repository, you should also add git config `user` information in the ignored
 [user](git/gituser) file.
 
+There are also some COLEMAK keymaps in [mapping.lua](nvim/.config/nvim/lua/kobra/mapping.lua).
+
 There are also a few extra dependencies required to enjoy all the functionality available.
 These are:
 1. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
