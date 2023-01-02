@@ -29,6 +29,12 @@ function config.nvim_tree()
     },
   }
 
+  if COLEMAK then
+    table.insert(mappings.list, { key = 'i', cb = tree_cb 'edit' })
+  else
+    table.insert(mappings.list, { key = 'l', cb = tree_cb 'edit' })
+  end
+
   setup.view.mappings = mappings
 
   require('nvim-tree').setup(setup)
