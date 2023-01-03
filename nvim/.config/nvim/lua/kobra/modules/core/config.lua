@@ -41,7 +41,7 @@ function config.nvim_tree()
 end
 
 function config.better_escape()
-  vim.g.better_escape_shortcut = {'jk', 'ne'}
+  vim.g.better_escape_shortcut = {'jk', 'qn'}
 end
 
 return config

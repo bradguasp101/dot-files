@@ -53,7 +53,6 @@ local function colemak()
   keymap("t", "<C-n>", "<C-\\><C-N><C-w>j", term_opts)
   keymap("t", "<C-e>", "<C-\\><C-N><C-w>k", term_opts)
   keymap("t", "<C-i>", "<C-\\><C-N><C-w>l", term_opts)
-
 end
 
 local function qwerty()
