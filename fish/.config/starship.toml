@@ -20,7 +20,7 @@ $character"""
 success_symbol = "[➜](bold green)"
 
 [gcloud]
-format = 'using [$symbol$active]($style) '
+format = 'on [$active]($style) '
 
 [custom.short_branch]
 command = "short-branch"
