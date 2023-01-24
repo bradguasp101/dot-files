@@ -1,7 +1,7 @@
 return {
   cmd = {require('kobra.modules.lang.lsp.data').path .. '/bin/clangd'},
   filetypes = {
-    "c", "cpp", "objc", "objcpp", "cuda", -- don't wan't protos to get aggressively reformatted
+    "c", "cpp", "objc", "objcpp", "cuda", -- don't want protos to get aggressively reformatted
   },
   handlers = {
     ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

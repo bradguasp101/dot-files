@@ -22,6 +22,7 @@ local ts_ensure_installed = {
   'vim',
   'fish',
   'markdown',
+  'proto',
 }
 
 local treesitter = function()
