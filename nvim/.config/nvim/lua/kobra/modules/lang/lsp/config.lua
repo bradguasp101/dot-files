@@ -23,7 +23,6 @@ M.servers = {
 M.sources = {
   'codespell',
   'misspell',
-  'protolint',
   'revive',
   'goimports',
   'shfmt',
