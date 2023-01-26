@@ -180,6 +180,7 @@ M.setup = function()
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       R = { "<cmd>Telescope registers<cr>", "Registers" },
       t = { "<cmd>Telescope live_grep <cr>", "Text" },
+      g = { "<cmd>lua require'telescope'.extensions.live_grep_args.live_grep_args{}<cr>", "Text (args)" },
     },
 
     t = {
