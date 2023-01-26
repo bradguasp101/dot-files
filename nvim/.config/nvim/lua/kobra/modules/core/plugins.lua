@@ -21,12 +21,12 @@ core['nvim-treesitter/nvim-treesitter'] = {
   opt = true,
   run = ':TSUpdate',
   config = ts.treesitter,
-  event = 'BufReadPre',
+  event = 'BufRead',
 }
 
 core['nvim-treesitter/nvim-treesitter-context'] = {
   opt = true,
-  event = 'BufReadPre',
+  event = 'BufRead',
 }
 
 core['nvim-treesitter/playground'] = {

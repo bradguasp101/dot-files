@@ -22,7 +22,6 @@ end
 
 function LazyLoad()
   local disable_ft = {
-    'NvimTree',
     'guihua',
     'packer',
     'guihua_rust',
