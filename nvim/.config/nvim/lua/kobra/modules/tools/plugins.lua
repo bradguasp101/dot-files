@@ -14,8 +14,16 @@ tools['nvim-telescope/telescope.nvim'] = {
     { 'nvim-lua/plenary.nvim', opt = true },
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', opt = true },
     { 'nvim-telescope/telescope-live-grep-args.nvim', opt = true },
+    { 'nvim-telescope/telescope-project.nvim', opt = true },
+    { 'cljoly/telescope-repo.nvim', opt = true },
     { 'nvim-telescope/telescope-file-browser.nvim', opt = true },
+    { 'ahmedkhalf/project.nvim', opt = true },
   },
+}
+
+tools['ahmedkhalf/project.nvim'] = {
+  opt = true,
+  config = conf.project,
 }
 
 tools['folke/neodev.nvim'] = {

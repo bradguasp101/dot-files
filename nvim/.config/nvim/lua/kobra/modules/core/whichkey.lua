@@ -99,6 +99,8 @@ M.setup = function()
       -- b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },
       -- t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
       r = { function() require('kobra.scripts.revive').lint() end, "Revive" },
+      p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List" },
+      s = { "<cmd>Telescope repo list<cr>", "Search" },
     },
 
     n = {

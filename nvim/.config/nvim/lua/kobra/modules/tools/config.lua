@@ -10,6 +10,10 @@ function config.telescope()
   require('kobra.modules.tools.telescope').setup()
 end
 
+function config.project()
+  require('project_nvim').setup()
+end
+
 function config.neodev() end
 
 function config.neogen()

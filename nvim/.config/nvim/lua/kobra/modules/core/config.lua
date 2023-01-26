@@ -3,20 +3,25 @@ local config = {}
 function config.nvim_tree()
   local tree_cb = require('nvim-tree.config').nvim_tree_callback
   local setup = {
-    reload_on_bufenter = true,
-    update_focused_file = {
-      enable = true,
-      ignore_list = {},
-    },
+    disable_netrw = true,
+    hijack_netrw = true,
     view = {
       number = true,
       relativenumber = true,
+    },
+    update_cwd = true,
+    reload_on_bufenter = true,
+    update_focused_file = {
+      enable = true,
+      update_cwd = true,
+      ignore_list = {},
     },
     renderer = {
       group_empty = true,
     },
     filters = {
       custom = {
+        ".git",
         "node_modules",
         "plz-out",
       },
@@ -52,6 +57,8 @@ function config.nvim_tree()
   -- end
 
   require('nvim-tree').setup(setup)
+
+  vim.g.nvim_tree_respect_buf_cwd = 1
 end
 
 function config.better_escape()
