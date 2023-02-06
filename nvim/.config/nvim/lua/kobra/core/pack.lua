@@ -41,6 +41,7 @@ function Packer:load_packer()
   end
 
   packer.init({
+    ensure_dependencies = true,
     compile_path = packer_compiled,
     git = { clone_timeout = 240 },
     disable_commands = true,

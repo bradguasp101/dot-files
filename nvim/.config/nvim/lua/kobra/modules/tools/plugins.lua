@@ -104,4 +104,15 @@ tools['Pocco81/AbbrevMan.nvim'] = {
   config = conf.abbrevman(),
 }
 
+tools['jackMort/ChatGPT.nvim'] = {
+  opt = true,
+  cmd = { 'ChatGPT', 'ChatGPTActAs', 'ChatGPTEditWithInstructions' },
+  requires = {
+    { 'MunifTanjim/nui.nvim', opt = true },
+    { 'nvim-lua/plenary.nvim', opt = true },
+    { 'nvim-telescope/telescope.nvim', opt = true },
+  },
+  config = conf.chatgpt,
+}
+
 return tools

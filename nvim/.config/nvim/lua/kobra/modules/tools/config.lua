@@ -99,4 +99,9 @@ function config.abbrevman()
   abbrev.setup()
 end
 
+function config.chatgpt()
+  require('packer').loader('nui.nvim')
+  require('chatgpt').setup()
+end
+
 return config
