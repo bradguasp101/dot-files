@@ -29,7 +29,7 @@ completion[#completion+1] = {
   dependencies = {
     'rafamadriz/friendly-snippets',
   },
-  config = function() require('kobra.modules.completion.luasnip') end,
+  config = conf.luasnip,
 }
 
 completion[#completion+1] = {

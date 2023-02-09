@@ -40,12 +40,13 @@ core[#core+1] = {
 
 core[#core+1] = {
   'folke/which-key.nvim',
-  config = require('kobra.modules.core.whichkey').setup,
+  config = require('kobra.modules.config.whichkey').setup,
 }
 
 core[#core+1] = {
-  'jdhao/better-escape.vim',
-  setup = conf.better_escape,
+  'max397574/better-escape.nvim',
+  event = 'InsertEnter',
+  config = conf.better_escape,
 }
 
 return core

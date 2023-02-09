@@ -61,8 +61,9 @@ function config.nvim_tree()
 end
 
 function config.better_escape()
-  print('here')
-  vim.g.better_escape_shortcut = {'jk', 'qn'}
+  require('better_escape').setup({
+    mapping = {'jk', 'qn'},
+  })
 end
 
 return config
