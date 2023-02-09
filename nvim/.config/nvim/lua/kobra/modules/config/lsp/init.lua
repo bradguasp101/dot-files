@@ -1,5 +1,5 @@
-local config = require('kobra.modules.lang.lsp.config')
-local handlers = require('kobra.modules.lang.lsp.handlers')
+local config = require('kobra.modules.config.lsp.config')
+local handlers = require('kobra.modules.config.lsp.handlers')
 local lspconfig = require('lspconfig')
 
 config.setup_mason()

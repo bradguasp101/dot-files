@@ -1,8 +1,3 @@
-local loader = require('packer').loader
-if not packer_plugins['telescope.nvim'].loaded then
-  loader('telescope.nvim')
-end
-
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 
@@ -38,30 +33,21 @@ M.setup = function()
     },
   })
 
-  vim.defer_fn(function()
-    loader('telescope-live-grep-args.nvim')
-    loader('telescope-fzf-native.nvim')
-    loader('telescope-project.nvim')
-    loader('telescope-repo.nvim')
-    loader('telescope-file-browser.nvim')
-    loader('project.nvim')
+  local ext = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = 'smart_case',
+    },
+  }
 
-    local ext = {
-      fzf = {
-        fuzzy = true,
-        override_generic_sorter = true,
-        override_file_sorter = true,
-        case_mode = 'smart_case',
-      },
-    }
-
-    telescope.setup({ extensions = ext })
-    telescope.load_extension('fzf')
-    telescope.load_extension('project')
-    telescope.load_extension('repo')
-    telescope.load_extension('file_browser')
-    telescope.load_extension('projects')
-  end, 200)
+  telescope.setup({ extensions = ext })
+  telescope.load_extension('fzf')
+  telescope.load_extension('project')
+  telescope.load_extension('repo')
+  telescope.load_extension('file_browser')
+  telescope.load_extension('projects')
 end
 
 function colemak_mappings()

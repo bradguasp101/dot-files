@@ -96,4 +96,8 @@ function config.endwise()
   })
 end
 
+function config.luasnip()
+  require('luasnip')
+end
+
 return config
