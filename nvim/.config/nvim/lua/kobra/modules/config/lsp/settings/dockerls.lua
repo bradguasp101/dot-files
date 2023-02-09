@@ -1,4 +1,4 @@
 return {
-  cmd = {require('kobra.modules.lang.lsp.data').path .. '/bin/docker-langserver', '--stdio'},
+  cmd = {require('kobra.modules.config.lsp.data').path .. '/bin/docker-langserver', '--stdio'},
   root_dir = vim.loop.cwd,
 }

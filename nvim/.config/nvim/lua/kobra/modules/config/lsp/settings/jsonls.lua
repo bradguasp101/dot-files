@@ -1,6 +1,6 @@
 return {
   cmd = {
-    'node', require('kobra.modules.lang.lsp.data').path .. '/bin/vscode-json-language-server',
+    'node', require('kobra.modules.config.lsp.data').path .. '/bin/vscode-json-language-server',
     '--stdio',
   },
   commands = {

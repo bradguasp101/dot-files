@@ -1,3 +1,3 @@
 return {
-  cmd = {require('kobra.modules.lang.lsp.data').path .. '/bin/vim-language-server', '--stdio'},
+  cmd = {require('kobra.modules.config.lsp.data').path .. '/bin/vim-language-server', '--stdio'},
 }

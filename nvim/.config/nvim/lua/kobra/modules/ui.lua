@@ -19,21 +19,21 @@ ui[#ui+1] = {
 -- THEME
 ui[#ui+1] = {
   'shaunsingh/moonlight.nvim',
-  lazy = false, -- make sure it load this during startup
-  priority = 1000, -- make sure to load this before all other start plugins
+  lazy = true,
   config = conf.moonlight,
-  disabled = true,
 }
 
 ui[#ui+1] = {
   'marko-cerovac/material.nvim',
+  lazy = true,
   config = conf.material,
-  disabled = true,
 }
 
 ui[#ui+1] = {
   'EdenEast/nightfox.nvim',
   config = conf.nightfox,
+  lazy = false, -- make sure it load this during startup
+  priority = 1000, -- make sure to load this before all other start plugins
   disabled = true,
 }
 

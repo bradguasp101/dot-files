@@ -1,4 +1,4 @@
 return {
-  cmd = {require('kobra.modules.lang.lsp.data').path .. '/bin/bufls', 'serve'},
+  cmd = {require('kobra.modules.config.lsp.data').path .. '/bin/bufls', 'serve'},
   filetypes = {'proto'},
 }

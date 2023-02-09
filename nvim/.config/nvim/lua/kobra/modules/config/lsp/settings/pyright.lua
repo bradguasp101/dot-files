@@ -1,5 +1,5 @@
 return {
-  cmd = {require('kobra.modules.lang.lsp.data').path .. '/bin/pyright-langserver', '--stdio'},
+  cmd = {require('kobra.modules.config.lsp.data').path .. '/bin/pyright-langserver', '--stdio'},
   handlers = {
     ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
       virtual_text = {spacing = 0, prefix = ''},
