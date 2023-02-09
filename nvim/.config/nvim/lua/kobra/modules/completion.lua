@@ -5,9 +5,8 @@ completion[#completion+1] = 'onsails/lspkind.nvim'
 
 completion[#completion+1] = {
   'hrsh7th/nvim-cmp',
-  event = 'InsertEnter',
   dependencies = {
-    'LuaSnip',
+    'L3MON4D3/LuaSnip',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-nvim-lua',
     'hrsh7th/cmp-calc',
@@ -27,7 +26,7 @@ completion[#completion+1] = {
   'L3MON4D3/LuaSnip',
   event = 'InsertEnter',
   dependencies = {
-    'rafamadriz/friendly-snippets',
+    {'rafamadriz/friendly-snippets', event = 'InsertEnter' },
   },
   config = conf.luasnip,
 }

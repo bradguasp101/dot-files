@@ -7,6 +7,13 @@ ui[#ui+1] = {
 }
 
 ui[#ui+1] = {
+  'nanozuki/tabby.nvim',
+  lazy = true,
+  config = conf.tabby,
+  disabled = true,
+}
+
+ui[#ui+1] = {
   'romgrk/barbar.nvim',
   config = conf.barbar,
 }
