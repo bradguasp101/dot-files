@@ -1,13 +1,10 @@
 local config = {}
 
 function config.telescope_setup()
-  if not packer_plugins['plenary.nvim'].loaded then
-    require('packer').loader('plenary.nvim')
-  end
 end
 
 function config.telescope()
-  require('kobra.modules.tools.telescope').setup()
+  require('kobra.modules.config.telescope').setup()
 end
 
 function config.project()
@@ -79,10 +76,7 @@ function config.toggleterm()
 end
 
 function config.dadbod()
-  if packer_plugins['vim-dadbod'] and not packer_pugins['vim-dadbod'].loaded then
-    require('packer').loader('vim-dadbod')
-  end
-
+  require('vim-dadbod')
   vim.g.db_ui_show_help = 0
   vim.g.db_ui_win_position = 'left'
   vim.g.db_ui_use_nerd_fonts = 1

@@ -31,7 +31,7 @@ local load_core = function()
   require('kobra.core.options')
   require('kobra.core.mapping')
 
-  require('lazy').setup('modules')
+  require('lazy').setup('kobra.modules')
 end
 
 load_core()

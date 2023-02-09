@@ -1,5 +1,5 @@
 local completion = {}
-local conf = require('kobra.modules.completion.config')
+local conf = require('kobra.modules.config.completion')
 
 completion[#completion+1] = 'onsails/lspkind.nvim'
 

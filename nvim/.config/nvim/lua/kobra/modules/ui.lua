@@ -1,5 +1,5 @@
 local ui = {}
-local conf = require('kobra.modules.ui.config')
+local conf = require('kobra.modules.config.ui')
 
 ui[#ui+1] = {
   'rcarriga/nvim-notify',
@@ -19,6 +19,8 @@ ui[#ui+1] = {
 -- THEME
 ui[#ui+1] = {
   'shaunsingh/moonlight.nvim',
+  lazy = false, -- make sure it load this during startup
+  priority = 1000, -- make sure to load this before all other start plugins
   config = conf.moonlight,
   disabled = true,
 }
@@ -31,9 +33,8 @@ ui[#ui+1] = {
 
 ui[#ui+1] = {
   'EdenEast/nightfox.nvim',
-  lazy = false, -- make sure it load this during startup
-  priority = 1000, -- make sure to load this before all other start plugins
   config = conf.nightfox,
+  disabled = true,
 }
 
 return ui

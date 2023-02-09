@@ -1,8 +1,8 @@
 local tools = {}
-local conf = require('kobra.modules.tools.config')
+local conf = require('kobra.modules.config.tools')
 
 tools[#tools+1] = {
-  'jardnsm/vim-import-cost',
+  'yardnsm/vim-import-cost',
   cmd = { 'ImportCost', 'ImportCostClear' },
 }
 
@@ -13,7 +13,7 @@ tools[#tools+1] = {
   config = conf.telescope,
   dependencies = {
     'nvim-lua/plenary.nvim',
-    { 'nvim-telescope/telescope-fzf-native.vnim', build = 'make' },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-telescope/telescope-live-grep-args.nvim',
     'nvim-telescope/telescope-project.nvim',
     'cljoly/telescope-repo.nvim',
@@ -98,7 +98,7 @@ tools[#tools+1] = {
 }
 
 tools[#tools+1] = {
-  'Pocco81/AbbrevMan',
+  'Pocco81/abbrev-man.nvim',
   config = conf.abbrevman,
 }
 

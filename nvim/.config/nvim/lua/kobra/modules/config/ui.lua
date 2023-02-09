@@ -48,6 +48,7 @@ end
 function config.moonlight()
   vim.g.moonlight_borders = true
   require('moonlight').set()
+  vim.cmd 'colorscheme moonlight'
 end
 
 function config.material()

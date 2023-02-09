@@ -1,6 +1,6 @@
 local core = {}
-local conf = require('kobra.modules.core.config')
-local ts = require('kobra.modules.core.treesitter')
+local conf = require('kobra.modules.config.core')
+local ts = require('kobra.modules.config.treesitter')
 
 core[#core+1] = {
   'nvim-lua/plenary.nvim',
@@ -40,13 +40,11 @@ core[#core+1] = {
 
 core[#core+1] = {
   'folke/which-key.nvim',
-  lazy = true,
   config = require('kobra.modules.core.whichkey').setup,
 }
 
 core[#core+1] = {
   'jdhao/better-escape.vim',
-  event = 'InsertEnter',
   setup = conf.better_escape,
 }
 
