@@ -20,25 +20,24 @@ lang[#lang+1] = {
 
 lang[#lang+1] = {
   'RRethy/vim-illuminate',
-  event = 'BufReadPre',
+  event = 'BufRead',
 }
 
 lang[#lang+1] = {
   'j-hui/fidget.nvim',
   event = 'BufReadPre',
   config = conf.fidget,
-  disabled = true,
 }
 
 lang[#lang+1] = {
   'ray-x/lsp_signature.nvim',
-  event = 'BufReadPre',
+  event = 'InsertEnter',
   config = conf.signature,
 }
 
 lang[#lang+1] = {
   'RishabhRD/nvim-lsputils',
-  event = 'BufReadPre',
+  keys = { '<leader>l' },
   dependencies = {
     'RishabhRD/popfix',
   },
@@ -47,7 +46,7 @@ lang[#lang+1] = {
 
 lang[#lang+1] = {
   'simrat39/symbols-outline.nvim',
-  event = 'BufReadPre',
+  cmd = { 'SymbolsOutline', 'SymbolsOutlineOpen', 'SymbolsOutlineClose' },
   config = conf.symbols_outline,
 }
 

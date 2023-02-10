@@ -1,12 +1,11 @@
-local telescope = require('telescope')
-local actions = require('telescope.actions')
-
 local M = {}
 
 local colemak_mappings
 local qwerty_mappings
 
 M.setup = function()
+  local telescope = require('telescope')
+
   local mappings
   if COLEMAK then
     mappings = colemak_mappings()
@@ -51,7 +50,9 @@ M.setup = function()
 end
 
 function colemak_mappings()
- return {
+  local actions = require('telescope.actions')
+
+  return {
     i = {
       ['<C-j>'] = actions.cycle_history_next,
       ['<C-k>'] = actions.cycle_history_prev,
@@ -62,6 +63,8 @@ function colemak_mappings()
 end
 
 function qwerty_mappings()
+  local actions = require('telescope.actions')
+
   return {
     i = {
       ['<C-n>'] = actions.cycle_history_next,

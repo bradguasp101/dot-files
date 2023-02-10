@@ -1,10 +1,14 @@
 local completion = {}
 local conf = require('kobra.config.completion')
 
-completion[#completion+1] = 'onsails/lspkind.nvim'
+completion[#completion+1] = {
+  'onsails/lspkind.nvim',
+  event = 'InsertEnter',
+}
 
 completion[#completion+1] = {
   'hrsh7th/nvim-cmp',
+  event = 'InsertEnter',
   dependencies = {
     'L3MON4D3/LuaSnip',
     'hrsh7th/cmp-buffer',
@@ -39,16 +43,19 @@ completion[#completion+1] = {
 
 completion[#completion+1] = {
   'andymass/vim-matchup',
-  event = 'BufReadPre',
+  event = 'InsertEnter',
   config = conf.matchup,
 }
 
 completion[#completion+1] = {
   'RRethy/nvim-treesitter-endwise',
-  event = 'BufReadPre',
+  event = 'InsertEnter',
   config = conf.endwise,
 }
 
-completion[#completion+1] = 'kristijanhusak/vim-dadbod-completion'
+completion[#completion+1] = {
+  'kristijanhusak/vim-dadbod-completion',
+  ft = { 'sql' },
+}
 
 return completion

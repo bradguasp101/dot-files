@@ -9,8 +9,7 @@ tools[#tools+1] = {
 tools[#tools+1] = {
   'nvim-telescope/telescope.nvim',
   lazy = true,
-  setup = conf.telescope_setup,
-  config = conf.telescope,
+  config = require('kobra.config.telescope').setup,
   dependencies = {
     'nvim-lua/plenary.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -24,6 +23,7 @@ tools[#tools+1] = {
 
 tools[#tools+1] = {
   'ahmedkhalf/project.nvim',
+  lazy = true,
   config = conf.project,
 }
 
@@ -35,49 +35,74 @@ tools[#tools+1] = {
 
 tools[#tools+1] = {
   'danymat/neogen',
-  event = 'BufReadPre',
+  cmd = { 'Neogen' },
   config = conf.neogen,
 }
 
 tools[#tools+1] = {
   'ThePrimeagen/refactoring.nvim',
+  lazy = true,
   config = conf.refactor,
 }
 
 tools[#tools+1] = {
   'm-demare/hlargs.nvim',
-  event = 'BufReadPre',
+  event = 'BufRead',
   config = conf.hlargs,
 }
 
 tools[#tools+1] = {
   'lewis6991/gitsigns.nvim',
+  event = 'BufRead',
+  cmd = { 'Gitsigns' },
   config = conf.gitsigns,
 }
 
 tools[#tools+1] = {
   'akinsho/git-conflict.nvim',
+  cmd = {
+    'GitConflictChooseOurs',
+    'GitConflictChooseTheirs',
+    'GitConflictChooseBoth',
+    'GitConflictChooseNone',
+    'GitConflictNextConflict',
+    'GitConflictPrevConflict',
+    'GitConflictListQf',
+  },
   config = conf.git_conflict,
 }
 
 tools[#tools+1] = {
   'tpope/vim-fugitive',
-  cmd = { 'Gvsplit', 'Git', 'Gedit', 'Gstatus', 'Gdiffsplit', 'Gvdiffsplit', 'Flog', 'Flogsplit' },
+  cmd = { 'GBrowse', 'Gvsplit', 'Git', 'Gedit', 'Gstatus', 'Gdiffsplit', 'Gvdiffsplit', 'Flog', 'Flogsplit' },
 }
 
 tools[#tools+1] = {
   'shumphrey/fugitive-gitlab.vim',
+  cmd = { 'GBrowse' },
   config = conf.fugitive_gitlab,
 }
 
-tools[#tools+1] = 'tpope/vim-rhubarb'
-tools[#tools+1] = 'f-person/git-blame.nvim'
-tools[#tools+1] = 'kdheepak/lazygit.nvim'
+tools[#tools+1] = {
+  'tpope/vim-rhubarb',
+  cmd = { 'GBrowse' },
+}
+
+tools[#tools+1] = {
+  'f-person/git-blame.nvim',
+  event = 'BufEnter',
+}
+
+tools[#tools+1] = {
+  'kdheepak/lazygit.nvim',
+  cmd = { 'LazyGit' },
+}
 
 tools[#tools+1] = {
   'akinsho/toggleterm.nvim',
-  config = conf.toggleterm,
+  event = 'TermOpen',
   keys = { '<C-\\>' },
+  config = conf.toggleterm,
 }
 
 tools[#tools+1] = {
@@ -97,6 +122,8 @@ tools[#tools+1] = {
 
 tools[#tools+1] = {
   'Pocco81/abbrev-man.nvim',
+  event = 'InsertEnter',
+  cmd = { 'AMLoad', 'AMUnload' },
   config = conf.abbrevman,
 }
 

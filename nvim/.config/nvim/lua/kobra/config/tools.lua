@@ -1,12 +1,5 @@
 local config = {}
 
-function config.telescope_setup()
-end
-
-function config.telescope()
-  require('kobra.config.telescope').setup()
-end
-
 function config.project()
   require('project_nvim').setup()
 end

@@ -3,6 +3,10 @@ local conf = require('kobra.config.ui')
 
 ui[#ui+1] = {
   'rcarriga/nvim-notify',
+  event = 'VimEnter',
+  dependencies = {
+    'nvim-telescope/telescope.nvim',
+  },
   config = conf.notify,
 }
 
@@ -15,11 +19,13 @@ ui[#ui+1] = {
 
 ui[#ui+1] = {
   'romgrk/barbar.nvim',
+  event = 'BufRead',
   config = conf.barbar,
 }
 
 ui[#ui+1] = {
   'feline-nvim/feline.nvim',
+  event = 'VimEnter',
   config = require('kobra.config.feline').setup,
 }
 

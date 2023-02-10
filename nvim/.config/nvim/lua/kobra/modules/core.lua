@@ -17,6 +17,7 @@ core[#core+1] = 'kyazdani42/nvim-web-devicons'
 
 core[#core+1] = {
   'nvim-tree/nvim-tree.lua',
+  event = 'VimEnter',
   config = conf.nvim_tree,
 }
 
@@ -29,7 +30,7 @@ core[#core+1] = {
 
 core[#core+1] = {
   'nvim-treesitter/nvim-treesitter-context',
-  event = 'BufReadPre',
+  event = 'BufRead',
 }
 
 core[#core+1] = {
@@ -40,6 +41,7 @@ core[#core+1] = {
 
 core[#core+1] = {
   'folke/which-key.nvim',
+  event = 'VimEnter',
   config = require('kobra.config.whichkey').setup,
 }
 
