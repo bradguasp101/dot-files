@@ -115,7 +115,7 @@ end
 local function line()
   local filename = require("tabby.filename")
 
-  local line = {
+  return {
     hl = "TabLineFill",
     layout = "active_wins_at_tail",
     head = {
@@ -167,14 +167,10 @@ local function line()
       { "  ", hl = "UserTLHead" },
     },
   }
-
-  return line
 end
 
 function M.setup()
-  require('tabby').setup({
-    tabline = line(),
-  })
+  require('tabby').setup(line())
 end
 
 return M

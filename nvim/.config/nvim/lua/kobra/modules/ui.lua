@@ -10,6 +10,12 @@ ui[#ui+1] = {
   'nanozuki/tabby.nvim',
   lazy = true,
   config = require('kobra.config.tabby').setup,
+  disabled = true,
+}
+
+ui[#ui+1] = {
+  'romgrk/barbar.nvim',
+  config = conf.barbar,
 }
 
 ui[#ui+1] = {
