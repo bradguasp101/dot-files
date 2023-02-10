@@ -109,6 +109,16 @@ function config.lualine()
   })
 end
 
+function config.feline()
+  require('feline').setup({
+    force_inactive = {
+      filetypes = {
+        'NvimTree',
+      },
+    },
+  })
+end
+
 -- THEME
 function config.moonlight()
   vim.g.moonlight_borders = true

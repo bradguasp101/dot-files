@@ -20,7 +20,14 @@ ui[#ui+1] = {
 
 ui[#ui+1] = {
   'nvim-lualine/lualine.nvim',
+  lazy = true,
   config = conf.lualine,
+  disabled = true,
+}
+
+ui[#ui+1] = {
+  'feline-nvim/feline.nvim',
+  config = require('kobra.modules.config.feline').setup,
 }
 
 -- THEME
