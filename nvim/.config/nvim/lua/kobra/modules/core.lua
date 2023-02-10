@@ -1,6 +1,6 @@
 local core = {}
-local conf = require('kobra.modules.config.core')
-local ts = require('kobra.modules.config.treesitter')
+local conf = require('kobra.config.core')
+local ts = require('kobra.config.treesitter')
 
 core[#core+1] = {
   'nvim-lua/plenary.nvim',

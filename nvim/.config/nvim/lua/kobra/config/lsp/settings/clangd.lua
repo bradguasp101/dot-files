@@ -1,5 +1,5 @@
 return {
-  cmd = {require('kobra.modules.config.lsp.data').path .. '/bin/clangd'},
+  cmd = {require('kobra.config.lsp.data').path .. '/bin/clangd'},
   filetypes = {
     "c", "cpp", "objc", "objcpp", "cuda", -- don't want protos to get aggressively reformatted
   },

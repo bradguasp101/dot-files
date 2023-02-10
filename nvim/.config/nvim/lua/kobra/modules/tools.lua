@@ -1,5 +1,5 @@
 local tools = {}
-local conf = require('kobra.modules.config.tools')
+local conf = require('kobra.config.tools')
 
 tools[#tools+1] = {
   'yardnsm/vim-import-cost',
@@ -88,8 +88,6 @@ tools[#tools+1] = {
   },
   config = conf.dadbod,
 }
-
-tools[#tools+1] = 'dstein64/vim-startuptime'
 
 tools[#tools+1] = {
   'davidgranstrom/nvim-markdown-preview',

@@ -4,7 +4,7 @@ function config.telescope_setup()
 end
 
 function config.telescope()
-  require('kobra.modules.config.telescope').setup()
+  require('kobra.config.telescope').setup()
 end
 
 function config.project()
@@ -94,7 +94,6 @@ function config.abbrevman()
 end
 
 function config.chatgpt()
-  require('packer').loader('nui.nvim')
   require('chatgpt').setup()
 end
 

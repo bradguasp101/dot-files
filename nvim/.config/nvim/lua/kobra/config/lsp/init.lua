@@ -1,5 +1,5 @@
-local config = require('kobra.modules.config.lsp.config')
-local handlers = require('kobra.modules.config.lsp.handlers')
+local config = require('kobra.config.lsp.config')
+local handlers = require('kobra.config.lsp.handlers')
 local lspconfig = require('lspconfig')
 
 config.setup_mason()
@@ -17,7 +17,7 @@ for _, server in pairs(config.servers) do
 
   server = vim.split(server, '@')[1]
 
-  local require_ok, conf_opts = pcall(require, 'kobra.modules.config.lsp.settings.' .. server)
+  local require_ok, conf_opts = pcall(require, 'kobra.config.lsp.settings.' .. server)
   if require_ok then
     opts = vim.tbl_deep_extend('force', conf_opts, opts)
   end

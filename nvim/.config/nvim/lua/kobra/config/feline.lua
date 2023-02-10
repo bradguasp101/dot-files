@@ -216,13 +216,17 @@ local icons = {
   right_rounded = "",
   right_rounded_thin = "",
   circle = "●",
+  error = "",
+  warn = "",
+  info = "",
+  hint = "",
 }
 
-local function get_diag(str)
+local function get_diag(icon, str)
   local diagnostics = vim.diagnostic.get(0, { severity = vim.diagnostic.severity[str] })
   local count = #diagnostics
 
-  return (count > 0) and " " .. count .. " " or ""
+  return (count > 0) and icon .. " " .. count .. " " or ""
 end
 
 local function vi_mode_hl()
@@ -287,17 +291,18 @@ local c = {
   },
   cur_position = {
     provider = function()
-      return fmt(" %4d:%-3d ", unpack(vim.api.nvim_win_get_cursor(0)))
+      return fmt(" %d:%d ", unpack(vim.api.nvim_win_get_cursor(0)))
     end,
     hl = vi_mode_hl,
     left_sep = { str = icons.left_filled, hl = vi_sep_hl },
   },
   cur_percent = {
     provider = function()
-      return " " .. require("feline.providers.cursor").line_percentage() .. "  "
+      return " " .. require("feline.providers.cursor").line_percentage() .. " "
     end,
     hl = vi_mode_hl,
     left_sep = { str = icons.left, hl = vi_mode_hl },
+    truncate_hide = true,
   },
   default = { -- needed to pass the parent StatusLine hl group to right hand side
     provider = "",
@@ -305,7 +310,7 @@ local c = {
   },
   lsp_status = {
     provider = function()
-      return vim.tbl_count(vim.lsp.buf_get_clients(0)) == 0 and "" or " ◦ "
+      return vim.tbl_count(vim.lsp.buf_get_clients(0)) == 0 and "" or " "..icons.connected.." "
     end,
     hl = "UserSLStatus",
     left_sep = { str = "", hl = "UserSLStatusBg", always_visible = true },
@@ -313,28 +318,28 @@ local c = {
   },
   lsp_error = {
     provider = function()
-      return get_diag("ERROR")
+      return get_diag(icons.error, "ERROR")
     end,
     hl = "UserSLError",
     right_sep = { str = "", hl = "UserSLWarnError", always_visible = true },
   },
   lsp_warn = {
     provider = function()
-      return get_diag("WARN")
+      return get_diag(icons.warn, "WARN")
     end,
     hl = "UserSLWarn",
     right_sep = { str = "", hl = "UserSLInfoWarn", always_visible = true },
   },
   lsp_info = {
     provider = function()
-      return get_diag("INFO")
+      return get_diag(icons.info, "INFO")
     end,
     hl = "UserSLInfo",
     right_sep = { str = "", hl = "UserSLHintInfo", always_visible = true },
   },
   lsp_hint = {
     provider = function()
-      return get_diag("HINT")
+      return get_diag(icons.hint, "HINT")
     end,
     hl = "UserSLHint",
     right_sep = { str = "", hl = "UserSLFtHint", always_visible = true },

@@ -1,5 +1,5 @@
 local lang = {}
-local conf = require('kobra.modules.config.lang')
+local conf = require('kobra.config.lang')
 
 lang[#lang+1] = {
   'williamboman/mason.nvim',

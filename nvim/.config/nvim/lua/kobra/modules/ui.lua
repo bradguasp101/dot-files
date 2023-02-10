@@ -1,5 +1,5 @@
 local ui = {}
-local conf = require('kobra.modules.config.ui')
+local conf = require('kobra.config.ui')
 
 ui[#ui+1] = {
   'rcarriga/nvim-notify',
@@ -9,25 +9,12 @@ ui[#ui+1] = {
 ui[#ui+1] = {
   'nanozuki/tabby.nvim',
   lazy = true,
-  config = conf.tabby,
-  disabled = true,
-}
-
-ui[#ui+1] = {
-  'romgrk/barbar.nvim',
-  config = conf.barbar,
-}
-
-ui[#ui+1] = {
-  'nvim-lualine/lualine.nvim',
-  lazy = true,
-  config = conf.lualine,
-  disabled = true,
+  config = require('kobra.config.tabby').setup,
 }
 
 ui[#ui+1] = {
   'feline-nvim/feline.nvim',
-  config = require('kobra.modules.config.feline').setup,
+  config = require('kobra.config.feline').setup,
 }
 
 -- THEME

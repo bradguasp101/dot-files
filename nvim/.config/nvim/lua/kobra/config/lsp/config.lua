@@ -31,7 +31,7 @@ M.sources = {
 
 M.setup_mason = function()
   require('mason').setup({
-    install_root_dir = require('kobra.modules.config.lsp.data').path,
+    install_root_dir = require('kobra.config.lsp.data').path,
     ui = {
       icons = {
         package_installed = '✓',
@@ -56,7 +56,7 @@ M.setup_mason_null = function()
 
   local handlers = {}
   for _, source in ipairs(M.sources) do
-    local require_ok, handler = pcall(require, 'kobra.modules.config.lsp.null.' .. source)
+    local require_ok, handler = pcall(require, 'kobra.config.lsp.null.' .. source)
     if require_ok then
       handlers[source] = handler
     end
