@@ -40,7 +40,7 @@ core[#core+1] = {
 
 core[#core+1] = {
   'folke/which-key.nvim',
-  config = require('kobra.modules.config.whichkey').setup,
+  config = require('kobra.config.whichkey').setup,
 }
 
 core[#core+1] = {
