@@ -276,7 +276,7 @@ local c = {
     hl = "UserSLAlt",
   },
   fileinfo = {
-    provider = { name = "file_info", opts = { type = "relative" } },
+    provider = require('kobra.scripts.files').get_current_ufn,
     hl = "UserSLAlt",
     left_sep = { str = " ", hl = "UserSLAltSep" },
     right_sep = { str = " ", hl = "UserSLAltSep" },
