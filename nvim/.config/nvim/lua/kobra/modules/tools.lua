@@ -1,24 +1,9 @@
 local tools = {}
-local conf = require('kobra.config.tools')
+local conf = require('kobra.modules.config.tools.config')
 
 tools[#tools+1] = {
   'yardnsm/vim-import-cost',
   cmd = { 'ImportCost', 'ImportCostClear' },
-}
-
-tools[#tools+1] = {
-  'nvim-telescope/telescope.nvim',
-  lazy = true,
-  config = require('kobra.config.telescope').setup,
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    'nvim-telescope/telescope-live-grep-args.nvim',
-    'nvim-telescope/telescope-project.nvim',
-    'cljoly/telescope-repo.nvim',
-    'nvim-telescope/telescope-file-browser.nvim',
-    'ahmedkhalf/project.nvim',
-  },
 }
 
 tools[#tools+1] = {

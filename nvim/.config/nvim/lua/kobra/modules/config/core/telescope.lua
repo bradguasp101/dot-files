@@ -13,7 +13,7 @@ M.setup = function()
     mappings = qwerty_mappings()
   end
 
-  telescope.setup({
+  local config = {
     defaults = {
       prompt_prefix = ' ',
       selection_caret = ' ',
@@ -30,23 +30,29 @@ M.setup = function()
       },
       mappings = mappings,
     },
-  })
-
-  local ext = {
-    fzf = {
-      fuzzy = true,
-      override_generic_sorter = true,
-      override_file_sorter = true,
-      case_mode = 'smart_case',
-    },
   }
 
-  telescope.setup({ extensions = ext })
+  local extensions = {}
+
+  extensions.fzf = {
+    fuzzy = true,
+    override_generic_sorter = true,
+    override_file_sorter = true,
+    case_mode = 'smart_case',
+  }
+
+  extensions.file_browser = {
+    hijack_netrw = true,
+  }
+
+  config.extensions = extensions
+  telescope.setup(config)
+
   telescope.load_extension('fzf')
-  telescope.load_extension('project')
-  telescope.load_extension('repo')
   telescope.load_extension('file_browser')
+  telescope.load_extension('project')
   telescope.load_extension('projects')
+  telescope.load_extension('repo')
 end
 
 function colemak_mappings()

@@ -57,13 +57,13 @@ M.setup = function()
   }
 
   local mappings = {
-    q = { "<cmd>q!<cr>", "Quit" },
-    w = { "<cmd>w<cr>", "Write" },
-    e = { "<cmd>NvimTreeToggle<cr>", "File Tree" },
-
-    f = { "<cmd>Telescope find_files <cr>", "Find File" },
-    g = { "<cmd>Telescope live_grep <cr>", "Grep String" },
-    H = { ":set hlsearch!<cr>", "No Highlight" },
+    b = {
+      name = "Buffers",
+      c = { "<cmd>BufferClose<cr>", "Close" },
+      f = { "<cmd>Telescope file_browser<cr>", "Browse Currend Directory" },
+      F = { "<cmd>Telescope folder_browser<cr>", "Browse Files" },
+      l = { "<cmd>Telescope buffers<cr>", "List buffers" },
+    },
 
     d = {
       name = "Diagnostics",
@@ -79,43 +79,6 @@ M.setup = function()
       o = { "<cmd>:terminal kubectl port-forward $(kubectl get pods -l=app=matrix-db-cloudsql -o jsonpath=\"{.items[0].metadata.name}\") 5432:5432 <cr> :DBUI <cr>",
         "Open dev db" },
       u = { "<cmd>NvimTreeClose<cr><cmd>DBUI<cr>", "View Connections" },
-    },
-
-    h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Type Information. Hover LSP" },
-
-    b = {
-      name = "Buffers",
-      c = { "<cmd>BufferClose<cr>", "Close" },
-      p = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-      e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
-      l = { "<cmd>BufferCloseBuffersLeft<cr>", "Close all to the left" },
-      r = { "<cmd>BufferCloseBuffersRight<cr>", "Close all to the right" },
-      D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
-      L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language" },
-    },
-
-    p = {
-      name = "Plz and Project",
-      -- b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },
-      -- t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
-      r = { function() require('kobra.scripts.revive').lint() end, "Revive" },
-      p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List" },
-      s = { "<cmd>Telescope repo list<cr>", "Search" },
-    },
-
-    n = {
-      name = "Notes and Tasks",
-      o = { "<cmd>ScribeOpen<cr>", "Open Notes" },
-      f = { "<cmd>ScribeFind<cr>", "Find Notes" },
-    },
-
-    P = {
-      name = "Packer",
-      c = { "<cmd>PackerCompile<cr>", "Compile" },
-      i = { "<cmd>PackerInstall<cr>", "Install" },
-      s = { "<cmd>PackerSync<cr>", "Sync" },
-      S = { "<cmd>PackerStatus<cr>", "Status" },
-      u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
     G = {
@@ -142,6 +105,8 @@ M.setup = function()
       },
     },
 
+    H = { ":set hlsearch!<cr>", "No Highlight" },
+
     l = {
       name = "+LSP",
       d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
@@ -156,6 +121,13 @@ M.setup = function()
       S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
       s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
       t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
+      T = {
+        name = "Telescope",
+        r = { "<cmd>Telescope lsp_references<cr>", "References" },
+        I = { "<cmd>Telescope lsp_incoming_calls<cr>", "Incoming Calls" },
+        O = { "<cmd>Telescope lsp_outgoing_calls<cr>", "Outgoing Calls" },
+        d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics" },
+      },
       w = {
         name = "Workspace",
         l = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folders" },
@@ -169,9 +141,40 @@ M.setup = function()
       o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
     },
 
+    p = {
+      name = "Plz and Project",
+      -- b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },
+      -- t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
+      r = { function() require('kobra.scripts.revive').lint() end, "Revive" },
+      p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List" },
+      s = { "<cmd>Telescope repo list<cr>", "Search" },
+    },
+
+    P = {
+      name = "Packer",
+      c = { "<cmd>PackerCompile<cr>", "Compile" },
+      i = { "<cmd>PackerInstall<cr>", "Install" },
+      s = { "<cmd>PackerSync<cr>", "Sync" },
+      S = { "<cmd>PackerStatus<cr>", "Status" },
+      u = { "<cmd>PackerUpdate<cr>", "Update" },
+    },
+
+    q = { "<cmd>q!<cr>", "Quit" },
+
+    Q = {
+      name = "Quickfix List",
+      n = { "<cmd>cn<cr>", "Next" },
+      p = { "<cmd>cp<cr>", "Previous" },
+      c = { "<cmd>cclose<cr>", "Close" },
+      o = { "<cmd>copen<cr>", "Open" },
+      v = { "<cmd>vopen<cr>", "Open item in vertical split" },
+      q = { "<cmd>cdo g//norm @q <cr>", "Run @q macro on quickfix list" },
+    },
+
     s = {
       name = "+Search",
-      b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+      b = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
+      B = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
       c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
       d = { "<cmd>Telescope diagnostics<cr>", "Document Diagnostics" },
       f = { "<cmd>Telescope find_files <cr>", "Find File" },
@@ -179,12 +182,15 @@ M.setup = function()
       M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       R = { "<cmd>Telescope registers<cr>", "Registers" },
+      s = { "<cmd>Telescope grep_string<cr>", "Current String" },
       t = { "<cmd>Telescope live_grep <cr>", "Text" },
+      T = { "<cmd>Telescope treesitter<cr>", "Treesitter" },
       g = { "<cmd>lua require'telescope'.extensions.live_grep_args.live_grep_args{}<cr>", "Text (args)" },
     },
 
     t = {
       name = "Telescope",
+      c = { "<cmd>Telescope colorscheme<cr>", "Colors" },
       r = { "<cmd>Telescope resume<cr>", "Resume" },
       f = {
         name = "Find",
@@ -203,15 +209,7 @@ M.setup = function()
       },
     },
 
-    Q = {
-      name = "Quickfix List",
-      n = { "<cmd>cn<cr>", "Next" },
-      p = { "<cmd>cp<cr>", "Previous" },
-      c = { "<cmd>cclose<cr>", "Close" },
-      o = { "<cmd>copen<cr>", "Open" },
-      v = { "<cmd>vopen<cr>", "Open item in vertical split" },
-      q = { "<cmd>cdo g//norm @q <cr>", "Run @q macro on quickfix list" },
-    },
+    w = { "<cmd>w<cr>", "Write" },
 
     z = {
       name = "Spelling",

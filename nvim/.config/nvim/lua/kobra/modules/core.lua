@@ -1,6 +1,6 @@
 local core = {}
-local conf = require('kobra.config.core')
-local ts = require('kobra.config.treesitter')
+local conf = require('kobra.modules.config.core.config')
+local ts = require('kobra.modules.config.core.treesitter')
 
 core[#core+1] = {
   'nvim-lua/plenary.nvim',
@@ -14,12 +14,6 @@ core[#core+1] = {
 }
 
 core[#core+1] = 'kyazdani42/nvim-web-devicons'
-
-core[#core+1] = {
-  'nvim-tree/nvim-tree.lua',
-  event = 'VimEnter',
-  config = conf.nvim_tree,
-}
 
 core[#core+1] = {
   'nvim-treesitter/nvim-treesitter',
@@ -42,13 +36,29 @@ core[#core+1] = {
 core[#core+1] = {
   'folke/which-key.nvim',
   event = 'VimEnter',
-  config = require('kobra.config.whichkey').setup,
+  config = require('kobra.modules.config.core.whichkey').setup,
 }
 
 core[#core+1] = {
   'max397574/better-escape.nvim',
   event = 'InsertEnter',
   config = conf.better_escape,
+}
+
+core[#core+1] = {
+  'nvim-telescope/telescope.nvim',
+  version = '0.1.1',
+  lazy = true,
+  config = require('kobra.modules.config.core.telescope').setup,
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-live-grep-args.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    'nvim-telescope/telescope-file-browser.nvim',
+    'nvim-telescope/telescope-project.nvim',
+    'cljoly/telescope-repo.nvim',
+    'ahmedkhalf/project.nvim',
+  },
 }
 
 return core

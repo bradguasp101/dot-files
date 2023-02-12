@@ -1,5 +1,5 @@
 local editor = {}
-local conf = require('kobra.config.editor')
+local conf = require('kobra.modules.config.editor.config')
 
 editor[#editor+1] = {
   'tpope/vim-sleuth',
