@@ -1,6 +1,6 @@
 local util = require('lspconfig/util')
 
-local bin_name = require('kobra.config.lsp.data').path .. '/bin/kotlin-language-server'
+local bin_name = require('kobra.config.lang.lsp.data').path .. '/bin/kotlin-language-server'
 if vim.fn.has('win32') == 1 then
   bin_name = bin_name .. '.bat'
 end

@@ -56,9 +56,4 @@ editor[#editor+1] = {
   config = conf.focus,
 }
 
-editor[#editor+1] = {
-  'airblade/vim-rooter',
-  config = conf.rooter,
-}
-
 return editor

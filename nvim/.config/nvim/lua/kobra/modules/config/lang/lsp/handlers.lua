@@ -6,7 +6,7 @@ handlers.capabilities.textDocument.completion.completionItem.snippetSupport = tr
 function handlers.on_attach(client, bufnr)
   require('illuminate').on_attach(client)
 
-  if client.name == 'sumneko_lua' then
+  if client.name == 'lua_ls' then
     client.server_capabilities.documentFormattingProvider = false
   end
 

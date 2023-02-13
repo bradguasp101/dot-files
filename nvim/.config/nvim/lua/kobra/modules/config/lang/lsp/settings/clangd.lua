@@ -1,5 +1,8 @@
 return {
-  cmd = {require('kobra.config.lsp.data').path .. '/bin/pyright-langserver', '--stdio'},
+  cmd = {require('kobra.config.lang.lsp.data').path .. '/bin/clangd'},
+  filetypes = {
+    "c", "cpp", "objc", "objcpp", "cuda", -- don't want protos to get aggressively reformatted
+  },
   handlers = {
     ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
       virtual_text = {spacing = 0, prefix = ''},
@@ -7,14 +10,5 @@ return {
       underline = true,
       update_in_insert = true,
     }),
-  },
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = 'basic',
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-      },
-    },
   },
 }

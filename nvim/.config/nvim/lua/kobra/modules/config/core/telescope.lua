@@ -49,6 +49,7 @@ M.setup = function()
   telescope.setup(config)
 
   telescope.load_extension('fzf')
+  telescope.load_extension('z')
   telescope.load_extension('file_browser')
   telescope.load_extension('project')
   telescope.load_extension('projects')

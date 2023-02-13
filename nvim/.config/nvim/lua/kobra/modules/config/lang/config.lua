@@ -1,7 +1,7 @@
 local config = {}
 
 function config.mason()
-  require('kobra.modules.lsp')
+  require('kobra.modules.config.lang.lsp')
 end
 
 function config.fidget()

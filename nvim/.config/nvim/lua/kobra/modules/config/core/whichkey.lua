@@ -60,8 +60,6 @@ M.setup = function()
     b = {
       name = "Buffers",
       c = { "<cmd>BufferClose<cr>", "Close" },
-      f = { "<cmd>Telescope file_browser<cr>", "Browse Currend Directory" },
-      F = { "<cmd>Telescope folder_browser<cr>", "Browse Files" },
       l = { "<cmd>Telescope buffers<cr>", "List buffers" },
     },
 
@@ -79,6 +77,12 @@ M.setup = function()
       o = { "<cmd>:terminal kubectl port-forward $(kubectl get pods -l=app=matrix-db-cloudsql -o jsonpath=\"{.items[0].metadata.name}\") 5432:5432 <cr> :DBUI <cr>",
         "Open dev db" },
       u = { "<cmd>NvimTreeClose<cr><cmd>DBUI<cr>", "View Connections" },
+    },
+
+    f = {
+      name = "+Find",
+      f = { "<cmd>Telescope file_browser path=%:p:h hidden=true<cr>", "Browse File and Folders" },
+      z = { "<cmd>Telescope z list hidden=true<cr>", "Z" },
     },
 
     G = {
@@ -177,7 +181,7 @@ M.setup = function()
       B = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
       c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
       d = { "<cmd>Telescope diagnostics<cr>", "Document Diagnostics" },
-      f = { "<cmd>Telescope find_files <cr>", "Find File" },
+      f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
       m = { "<cmd>Telescope marks<cr>", "Marks" },
       M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },

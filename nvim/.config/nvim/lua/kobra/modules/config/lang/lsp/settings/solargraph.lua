@@ -1,8 +1,5 @@
 return {
-  cmd = {require('kobra.config.lsp.data').path .. '/bin/clangd'},
-  filetypes = {
-    "c", "cpp", "objc", "objcpp", "cuda", -- don't want protos to get aggressively reformatted
-  },
+  cmd = {require('kobra.config.lang.lsp.data').path .. '/bin/solargraph', '--stdio'},
   handlers = {
     ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
       virtual_text = {spacing = 0, prefix = ''},
@@ -11,4 +8,5 @@ return {
       update_in_insert = true,
     }),
   },
+  filetypes = {'rb', 'erb', 'rakefile'},
 }
