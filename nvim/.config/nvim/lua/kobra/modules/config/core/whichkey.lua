@@ -94,6 +94,7 @@ M.setup = function()
 
     f = {
       name = "+Find",
+      d = { "<cmd>Telescope file_browser depth=false hidden=true<cr>", "Browse All Files and Folders" },
       f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
       F = { "<cmd>Telescope file_browser path=%:p:h hidden=true<cr>", "Browse File and Folders" },
       z = { "<cmd>Telescope z list hidden=true<cr>", "Z" },
