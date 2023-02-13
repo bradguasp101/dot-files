@@ -45,6 +45,19 @@ M.setup = function()
     hijack_netrw = true,
   }
 
+  if COLEMAK then
+    local actions = require('telescope').extensions.file_browser.actions
+    extensions.file_browser.mappings = {
+      i = {
+        ['<C-a>'] = actions.create,
+        ['<C-r>'] = actions.rename,
+        ['<C-y>'] = actions.copy,
+        ['<C-d>'] = actions.remove,
+        ['<C-h>'] = actions.toggle_hidden,
+      },
+    }
+  end
+
   config.extensions = extensions
   telescope.setup(config)
 
