@@ -12,9 +12,8 @@ ui[#ui+1] = {
 
 ui[#ui+1] = {
   'nanozuki/tabby.nvim',
-  lazy = true,
+  event = 'VimEnter',
   config = require('kobra.modules.config.ui.tabby').setup,
-  disabled = true,
 }
 
 ui[#ui+1] = {

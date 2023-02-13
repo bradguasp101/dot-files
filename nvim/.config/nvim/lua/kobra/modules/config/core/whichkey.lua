@@ -57,6 +57,19 @@ M.setup = function()
   }
 
   local mappings = {
+    a = {
+      a = { ":$tabnew<cr>", "New Tab" },
+      c = { ":tabclose<cr>", "Close Tab" },
+      o = { ":tabonly<cr>", "Close All Other Tabs" },
+      n = { ":tabn<cr>", "Next Tab" },
+      p = { ":tabp<cr>", "Previous Tab" },
+      m = {
+        name= "Tab Move",
+        p = { ":-tabmove<cr>", "Move Current Tab to Previous" },
+        n = { ":+tabmove<cr>", "Move Current Tab to Next" },
+      },
+    },
+
     b = {
       name = "Buffers",
       c = { "<cmd>BufferClose<cr>", "Close" },
@@ -81,7 +94,8 @@ M.setup = function()
 
     f = {
       name = "+Find",
-      f = { "<cmd>Telescope file_browser path=%:p:h hidden=true<cr>", "Browse File and Folders" },
+      f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
+      F = { "<cmd>Telescope file_browser path=%:p:h hidden=true<cr>", "Browse File and Folders" },
       z = { "<cmd>Telescope z list hidden=true<cr>", "Z" },
     },
 

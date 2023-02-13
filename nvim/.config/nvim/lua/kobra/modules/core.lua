@@ -35,7 +35,7 @@ core[#core+1] = {
 
 core[#core+1] = {
   'folke/which-key.nvim',
-  event = 'VimEnter',
+  keys = { "<leader>" },
   config = require('kobra.modules.config.core.whichkey').setup,
 }
 

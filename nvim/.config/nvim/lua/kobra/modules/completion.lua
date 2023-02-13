@@ -37,7 +37,7 @@ completion[#completion+1] = {
 
 completion[#completion+1] = {
   'windwp/nvim-autopairs',
-  event = 'InsertEnter',
+  keys = { '{', '[', '(', },
   config = conf.autopairs,
 }
 
