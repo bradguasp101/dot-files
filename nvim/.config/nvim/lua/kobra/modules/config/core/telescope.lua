@@ -29,6 +29,11 @@ M.setup = function()
         '--hidden',
       },
       mappings = mappings,
+      file_ignore_patterns = {
+        '.git/',
+        'node_modules',
+        'plz-out',
+      },
     },
   }
 
@@ -43,6 +48,7 @@ M.setup = function()
 
   extensions.file_browser = {
     hijack_netrw = true,
+    grouped = true,
   }
 
   if COLEMAK then
@@ -52,7 +58,7 @@ M.setup = function()
         ['<C-a>'] = actions.create,
         ['<C-r>'] = actions.rename,
         ['<C-y>'] = actions.copy,
-        ['<C-d>'] = actions.remove,
+        ['<C-x>'] = actions.remove,
         ['<C-h>'] = actions.toggle_hidden,
       },
     }
