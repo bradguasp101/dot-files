@@ -1,5 +1,5 @@
 return {
-  cmd = {require('kobra.config.lang.lsp.data').path .. '/bin/typescript-language-server', '--stdio'},
+  cmd = {require('kobra.modules.config.lang.lsp.data').path .. '/bin/typescript-language-server', '--stdio'},
   filetypes = {'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx'},
   root_dir = require('lspconfig/util').root_pattern('package.json', 'tsconfig.json', 'jsconfig.json', '.git'),
   settings = {

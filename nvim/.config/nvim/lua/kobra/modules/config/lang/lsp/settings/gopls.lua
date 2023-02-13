@@ -1,5 +1,5 @@
 return {
-  cmd = {require('kobra.config.lang.lsp.data').path .. '/bin/gopls'},
+  cmd = {require('kobra.modules.config.lang.lsp.data').path .. '/bin/gopls'},
   settings = {
     gopls = {
       directoryFilters = {

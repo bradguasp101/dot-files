@@ -1,5 +1,5 @@
 return {
-  cmd = { require('kobra.config.lang.lsp.data').path .. '/bin/lua-language-server' },
+  cmd = { require('kobra.modules.config.lang.lsp.data').path .. '/bin/lua-language-server' },
   settings = {
     Lua = {
       runtime = {
