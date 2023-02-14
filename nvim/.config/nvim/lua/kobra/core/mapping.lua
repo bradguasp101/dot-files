@@ -23,8 +23,8 @@ local function colemak()
   keymap('n', '<C-i>', '<C-w>l', opts)
 
   -- navigate buffers
-  keymap('n', '<S-h>', ':bnext<cr>', opts)
-  keymap('n', '<S-i>', ':bprevious<cr>', opts)
+  keymap('n', '<S-h>', ':bprevious<cr>', opts)
+  keymap('n', '<S-i>', ':bnext<cr>', opts)
 
   -- Move text up and down
   keymap("n", "<A-n>", "<Esc>:m .+1<CR>==gi", opts)
