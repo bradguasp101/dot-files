@@ -86,6 +86,7 @@ tools[#tools+1] = {
 tools[#tools+1] = {
   'akinsho/toggleterm.nvim',
   event = 'TermOpen',
+  cmd = { 'TermExec' },
   keys = { '<C-\\>' },
   config = conf.toggleterm,
 }
