@@ -44,6 +44,5 @@ function grpcc -d "makes a request to the selected method from grpclist, or list
     set cmd $loc
   end
 
-  echo -e "\e[36mgrpcurl -plaintext $cmd\e[0m"
   grpcurl -plaintext $cmd
 end
