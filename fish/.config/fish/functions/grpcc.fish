@@ -2,7 +2,7 @@
 
 function grpcc -d "makes a request to the selected method from grpclist, or lists available services/methods"
   if test -z "$argv[1]"
-    echo -e "\e[31mUsage: grpclist port [service-num]\e[0m"
+    echo -e "\e[31mUsage: grpcc port [service-num] [method-num] [d] [options]\e[0m"
     return 1
   end
 
@@ -29,7 +29,21 @@ function grpcc -d "makes a request to the selected method from grpclist, or list
     return 1
   end
 
-  set methods (string split . $methods[$argv[3]])
-  set method $methods[-1]
-  grpcurl -plaintext $argv[4..-1] localhost:$argv[1] $service/$method
+  if test "$argv[4]" = "d"
+    set loc localhost:$argv[1] describe $methods[$argv[3]]
+    set opts $argv[5..-1]
+  else
+    set methods (string split . $methods[$argv[3]])
+    set loc localhost:$argv[1] $service/$methods[-1]
+    set opts $argv[4..-1]
+  end
+
+  if test (count $opts) -gt 0
+    set cmd $opts $loc
+  else
+    set cmd $loc
+  end
+
+  echo -e "\e[36mgrpcurl -plaintext $cmd\e[0m"
+  grpcurl -plaintext $cmd
 end
