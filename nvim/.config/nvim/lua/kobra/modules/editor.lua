@@ -2,6 +2,12 @@ local editor = {}
 local conf = require('kobra.modules.config.editor.config')
 
 editor[#editor+1] = {
+  'stevearc/oil.nvim',
+  cmd = { 'Oil' },
+  config = conf.oil,
+}
+
+editor[#editor+1] = {
   'tpope/vim-sleuth',
   event = 'BufReadPre',
 }

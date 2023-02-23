@@ -1,5 +1,13 @@
 local config = {}
 
+function config.oil()
+  require('oil').setup({
+    view_options = {
+      show_hidden = true,
+    },
+  })
+end
+
 function config.autotag()
   require('nvim-ts-autotag').setup()
 end

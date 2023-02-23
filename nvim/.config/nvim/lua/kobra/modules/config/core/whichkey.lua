@@ -74,6 +74,14 @@ M.setup = function()
       name = "Buffers",
       c = { "<cmd>BufferClose<cr>", "Close" },
       l = { "<cmd>Telescope buffers<cr>", "List buffers" },
+      o = {
+        function()
+          local path = vim.fn.expand("%:p:h")
+          print(path)
+          vim.cmd('Oil ' .. path)
+        end,
+        "Open Current Directory",
+      }
     },
 
     d = {
