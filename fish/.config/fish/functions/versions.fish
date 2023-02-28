@@ -3,5 +3,5 @@
 # this requires https://git.tcncloud.net/k8s/replicas
 
 function versions
-  ~/Projects/replicas/replicas.sh -v $argv
+  $REPLICAS_PATH/replicas.sh -v $argv
 end
