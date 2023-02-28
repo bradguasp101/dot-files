@@ -20,6 +20,5 @@ function klogs -d "print logs for a pod given the container name, assuming the p
     return 1
   end
 
-  echo -e "\e[32mk logs $pods[1] $argv[1]\e[0m"
   k logs $pods[1] $argv[1]
 end
