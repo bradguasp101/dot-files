@@ -56,10 +56,16 @@ editor[#editor+1] = {
   config = conf.cinnamon,
 }
 
+-- editor[#editor+1] = {
+--   'beauwilliams/focus.nvim',
+--   event = 'BufRead',
+--   config = conf.focus,
+-- }
+
 editor[#editor+1] = {
-  'beauwilliams/focus.nvim',
+  'sindrets/winshift.nvim',
   event = 'BufRead',
-  config = conf.focus,
+  config = conf.winshift,
 }
 
 return editor

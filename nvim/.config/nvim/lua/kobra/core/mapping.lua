@@ -22,6 +22,12 @@ local function colemak()
   keymap('n', '<C-e>', '<C-w>k', opts)
   keymap('n', '<C-i>', '<C-w>l', opts)
 
+  -- WinShift
+  keymap('n', '<C-M-H>', '<cmd>WinShift left<cr>', opts)
+  keymap('n', '<C-M-N>', '<cmd>WinShift down<cr>', opts)
+  keymap('n', '<C-M-E>', '<cmd>WinShift up<cr>', opts)
+  keymap('n', '<C-M-I>', '<cmd>WinShift right<cr>', opts)
+
   -- navigate buffers
   keymap('n', '<S-h>', ':bprevious<cr>', opts)
   keymap('n', '<S-i>', ':bnext<cr>', opts)
@@ -65,6 +71,13 @@ local function qwerty()
   keymap('n', '<C-j>', '<C-w>j', opts)
   keymap('n', '<C-k>', '<C-w>k', opts)
   keymap('n', '<C-l>', '<C-w>l', opts)
+
+  -- WinShift
+  keymap('n', '<C-M-H>', '<cmd>WinShift left<cr>', opts)
+  keymap('n', '<C-M-J>', '<cmd>WinShift down<cr>', opts)
+  keymap('n', '<C-M-K>', '<cmd>WinShift up<cr>', opts)
+  keymap('n', '<C-M-L>', '<cmd>WinShift right<cr>', opts)
+
 
   -- navigate buffers
   keymap('n', '<S-h>', ':bnext<cr>', opts)

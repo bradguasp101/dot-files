@@ -237,6 +237,11 @@ M.setup = function()
     },
 
     w = { "<cmd>w<cr>", "Write" },
+    W = {
+      name = "WinShift",
+      m = { "<cmd>WinShift<cr>", "Enter WinShift Mode" },
+      x = { "<cmd>WinShift swap<cr>", "Swap Two Windows" },
+    },
 
     z = {
       name = "Spelling",

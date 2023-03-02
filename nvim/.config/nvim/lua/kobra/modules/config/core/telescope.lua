@@ -84,6 +84,7 @@ function colemak_mappings()
       ['<C-k>'] = actions.cycle_history_prev,
       ['<C-n>'] = actions.move_selection_next,
       ['<C-e>'] = actions.move_selection_previous,
+      ['<C-b>'] = actions.file_split,
       ['<C-x>'] = actions.delete_buffer,
     },
   }
@@ -98,6 +99,7 @@ function qwerty_mappings()
       ['<C-p>'] = actions.cycle_history_prev,
       ['<C-j>'] = actions.move_selection_next,
       ['<C-k>'] = actions.move_selection_previous,
+      ['<C-b>'] = actions.file_split,
       ['<C-x>'] = actions.delete_buffer,
     },
   }

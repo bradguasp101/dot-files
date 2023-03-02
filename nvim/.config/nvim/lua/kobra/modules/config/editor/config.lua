@@ -58,4 +58,22 @@ function config.focus()
   require('focus').setup()
 end
 
+function config.winshift()
+  local setup = {}
+  if COLEMAK then
+    setup.keymaps = {
+      win_move_mode = {
+        n = 'down',
+        e = 'up',
+        i = 'right',
+        N = 'far_down',
+        E = 'far_up',
+        I = 'far_right',
+      },
+    }
+  end
+
+  require('winshift').setup(setup)
+end
+
 return config
