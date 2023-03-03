@@ -64,7 +64,7 @@ editor[#editor+1] = {
 
 editor[#editor+1] = {
   'sindrets/winshift.nvim',
-  event = 'BufRead',
+  cmd = { 'WinShift' },
   config = conf.winshift,
 }
 

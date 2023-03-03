@@ -17,7 +17,7 @@ ui[#ui+1] = {
 }
 
 ui[#ui+1] = {
-  'feline-nvim/feline.nvim',
+  'freddiehaddad/feline.nvim',
   event = 'VimEnter',
   config = require('kobra.modules.config.ui.feline').setup,
 }
