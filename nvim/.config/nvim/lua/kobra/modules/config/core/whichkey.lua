@@ -60,20 +60,21 @@ M.setup = function()
     a = {
       a = { ":$tabnew<cr>", "New Tab" },
       c = { ":tabclose<cr>", "Close Tab" },
-      o = { ":tabonly<cr>", "Close All Other Tabs" },
-      n = { ":tabn<cr>", "Next Tab" },
-      p = { ":tabp<cr>", "Previous Tab" },
       m = {
         name= "Tab Move",
         p = { ":-tabmove<cr>", "Move Current Tab to Previous" },
         n = { ":+tabmove<cr>", "Move Current Tab to Next" },
       },
+      n = { ":tabn<cr>", "Next Tab" },
+      o = { ":tabonly<cr>", "Close All Other Tabs" },
+      p = { ":tabp<cr>", "Previous Tab" },
     },
 
     b = {
       name = "Buffers",
       c = { "<cmd>BufferClose<cr>", "Close" },
       l = { "<cmd>Telescope buffers<cr>", "List buffers" },
+      m = { "<cmd>WinShift<cr>", "Enter WinShift Mode" },
       o = {
         function()
           local path = vim.fn.expand("%:p:h")
@@ -81,7 +82,8 @@ M.setup = function()
           vim.cmd('Oil ' .. path)
         end,
         "Open Current Directory",
-      }
+      },
+      s = { "<cmd>WinShift swap<cr>", "Swap Two Windows" },
     },
 
     d = {
@@ -110,39 +112,40 @@ M.setup = function()
 
     G = {
       name = "+Git",
-      j = { "<cmd>NextHunk<cr>", "Next Hunk" },
-      k = { "<cmd>PrevHunk<cr>", "Prev Hunk" },
-      p = { "<cmd>PreviewHunk<cr>", "Preview Hunk" },
-      r = { "<cmd>ResetHunk<cr>", "Reset Hunk" },
-      R = { "<cmd>ResetBuffer<cr>", "Reset Buffer" },
-      s = { "<cmd>StageHunk<cr>", "Stage Hunk" },
-      u = { "<cmd>UndoStageHunk<cr>", "Undo Stage Hunk" },
-      o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+      a = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
       b = { "<cmd>Git blame<cr>", "Open blame window" },
       B = { "<cmd>GitBlameToggle<cr>", "Toggle blame on current line" },
-      w = { "<cmd>GBrowse<cr>", "Open in git browser" },
       c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
       C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
-      a = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
       d = {
         name = "Diff",
         o = { "<cmd>DiffviewOpen<cr>", "Open View" },
         c = { "<cmd>DiffviewClose<cr>", "Close View" },
         h = { "<cmd>DiffviewFileHistory<cr>", "History" },
       },
+      j = { "<cmd>NextHunk<cr>", "Next Hunk" },
+      k = { "<cmd>PrevHunk<cr>", "Prev Hunk" },
+      o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+      p = { "<cmd>PreviewHunk<cr>", "Preview Hunk" },
+      r = { "<cmd>ResetHunk<cr>", "Reset Hunk" },
+      R = { "<cmd>ResetBuffer<cr>", "Reset Buffer" },
+      s = { "<cmd>StageHunk<cr>", "Stage Hunk" },
+      u = { "<cmd>UndoStageHunk<cr>", "Undo Stage Hunk" },
+      w = { "<cmd>GBrowse<cr>", "Open in git browser" },
     },
 
     H = { ":set hlsearch!<cr>", "No Highlight" },
 
     l = {
       name = "+LSP",
+      a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
       d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
       D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
-      I = { "<cmd>LspInfo<cr>", "Info" },
-      i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-      a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
       f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
       h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover Type Information" },
+      I = { "<cmd>LspInfo<cr>", "Info" },
+      i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+      o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
       r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
       R = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
       S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
@@ -150,10 +153,10 @@ M.setup = function()
       t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
       T = {
         name = "Telescope",
-        r = { "<cmd>Telescope lsp_references<cr>", "References" },
-        I = { "<cmd>Telescope lsp_incoming_calls<cr>", "Incoming Calls" },
-        O = { "<cmd>Telescope lsp_outgoing_calls<cr>", "Outgoing Calls" },
         d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics" },
+        i = { "<cmd>Telescope lsp_incoming_calls<cr>", "Incoming Calls" },
+        o = { "<cmd>Telescope lsp_outgoing_calls<cr>", "Outgoing Calls" },
+        r = { "<cmd>Telescope lsp_references<cr>", "References" },
       },
       w = {
         name = "Workspace",
@@ -165,15 +168,14 @@ M.setup = function()
         -- TODO get this working :) the query is bad
         -- x = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"},
       },
-      o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
     },
 
     p = {
       name = "Plz and Project",
       -- b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },
       -- t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
-      r = { function() require('kobra.scripts.revive').lint() end, "Revive" },
       p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List" },
+      r = { function() require('kobra.scripts.revive').lint() end, "Revive" },
       s = { "<cmd>Telescope repo list<cr>", "Search" },
     },
 
@@ -190,12 +192,12 @@ M.setup = function()
 
     Q = {
       name = "Quickfix List",
-      n = { "<cmd>cn<cr>", "Next" },
-      p = { "<cmd>cp<cr>", "Previous" },
       c = { "<cmd>cclose<cr>", "Close" },
+      n = { "<cmd>cn<cr>", "Next" },
       o = { "<cmd>copen<cr>", "Open" },
-      v = { "<cmd>vopen<cr>", "Open item in vertical split" },
+      p = { "<cmd>cp<cr>", "Previous" },
       q = { "<cmd>cdo g//norm @q <cr>", "Run @q macro on quickfix list" },
+      v = { "<cmd>vopen<cr>", "Open item in vertical split" },
     },
 
     s = {
@@ -205,6 +207,7 @@ M.setup = function()
       c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
       d = { "<cmd>Telescope diagnostics<cr>", "Document Diagnostics" },
       f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
+      g = { "<cmd>lua require'telescope'.extensions.live_grep_args.live_grep_args{}<cr>", "Text (args)" },
       m = { "<cmd>Telescope marks<cr>", "Marks" },
       M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
@@ -212,24 +215,23 @@ M.setup = function()
       s = { "<cmd>Telescope grep_string<cr>", "Current String" },
       t = { "<cmd>Telescope live_grep <cr>", "Text" },
       T = { "<cmd>Telescope treesitter<cr>", "Treesitter" },
-      g = { "<cmd>lua require'telescope'.extensions.live_grep_args.live_grep_args{}<cr>", "Text (args)" },
     },
 
     t = {
       name = "Telescope",
       c = { "<cmd>Telescope colorscheme<cr>", "Colors" },
-      r = { "<cmd>Telescope resume<cr>", "Resume" },
       f = {
         name = "Find",
-        f = { "<cmd>Telescope find_files <cr>", "Find File" },
-        s = { "<cmd>Telescope grep_string<cr>", "Find String Under Cursor" },
-        g = { "<cmd>Telescope live_grep <cr>", "Live Grep" },
         b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
-        h = { "<cmd>Telescope help_tags<cr>", "Find Help Tags" },
         c = { "<cmd>Telescope command_history<cr>", "List Commands That Were Executed" },
-        q = { "<cmd>Telescope quickfix<cr>", "List Items In The Quikcfix List" },
         e = { "<cmd>Telescope notify<cr>", "Notifications" },
+        f = { "<cmd>Telescope find_files <cr>", "Find File" },
+        g = { "<cmd>Telescope live_grep <cr>", "Live Grep" },
+        h = { "<cmd>Telescope help_tags<cr>", "Find Help Tags" },
+        q = { "<cmd>Telescope quickfix<cr>", "List Items In The Quikcfix List" },
+        s = { "<cmd>Telescope grep_string<cr>", "Find String Under Cursor" },
       },
+      r = { "<cmd>Telescope resume<cr>", "Resume" },
       t = {
         name = "Treesitter",
         t = { "<cmd>Telescope treesitter<cr>", "List Function names, variables, from Treesitter" },
@@ -237,19 +239,14 @@ M.setup = function()
     },
 
     w = { "<cmd>w<cr>", "Write" },
-    W = {
-      name = "WinShift",
-      m = { "<cmd>WinShift<cr>", "Enter WinShift Mode" },
-      x = { "<cmd>WinShift swap<cr>", "Swap Two Windows" },
-    },
 
     z = {
       name = "Spelling",
-      n = { "]s", "Next" },
-      p = { "[s", "Previous" },
       a = { "zg", "Add word" },
       f = { "1z=", "Use 1. correction" },
       l = { "<cmd>Telescope spell_suggest<cr>", "List corrections" },
+      n = { "]s", "Next" },
+      p = { "[s", "Previous" },
     },
   }
 
