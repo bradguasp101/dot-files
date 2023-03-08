@@ -142,10 +142,10 @@ keybinds clear-defaults=true {
         bind "¬" "Alt Right" { MoveFocusOrTab "Right"; } // Alt l
         bind "∆" "Alt Down" { MoveFocus "Down"; } // Alt j
         bind "˚" "Alt Up" { MoveFocus "Up"; } // Alt k
-        bind "Alt =" "Alt +" { Resize "Increase"; }
-        bind "Alt -" { Resize "Decrease"; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
+        bind "≠" "±" { Resize "Increase"; } // Alt =, Alt +
+        bind "–" { Resize "Decrease"; } // Alt -
+        bind "“" { PreviousSwapLayout; } // Alt [
+        bind "‘" { NextSwapLayout; } // Alt ]
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
