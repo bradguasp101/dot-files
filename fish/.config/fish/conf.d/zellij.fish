@@ -2,5 +2,5 @@
 
 if set -q ZELLIJ
 else
-  zellij
+  zellij --layout default
 end
