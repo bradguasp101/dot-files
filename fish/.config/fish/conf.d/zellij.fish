@@ -2,5 +2,5 @@
 
 if set -q ZELLIJ
 else
-  zellij --layout compact
+  zellij
 end
