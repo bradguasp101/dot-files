@@ -1,15 +1,18 @@
 layout {
-  tab name="nvim" {
+  tab_template name="t" {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+  t name="nvim" {
     pane
   }
-  tab name="term" split_direction="vertical" {
+  t name="term" split_direction="vertical" {
     pane
     pane split_direction="horizontal" {
       pane
       pane
     }
-  }
-  pane size=1 borderless=true {
-    plugin location="zellij:compact-bar"
   }
 }
