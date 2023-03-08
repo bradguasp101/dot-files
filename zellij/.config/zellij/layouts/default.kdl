@@ -1,0 +1,12 @@
+layout {
+  tab name="nvim" {
+    pane
+  }
+  tab name="term" split_direction="vertical" {
+    pane
+    pane split_direction="horizontal" {
+      pane
+      pane
+    }
+  }
+}
