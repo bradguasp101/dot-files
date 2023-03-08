@@ -1,15 +1,15 @@
 layout {
-  tab_template name="t" {
+  default_tab_template name="t" {
     children
     pane size=1 borderless=true {
       plugin location="zellij:compact-bar"
     }
   }
-  t name="nvim" {
-    pane
+  tab name="nvim" focus=true {
+    pane command="nvim"
   }
-  t name="term" split_direction="vertical" {
-    pane
+  tab name="term" split_direction="vertical" {
+    pane focus=true
     pane split_direction="horizontal" {
       pane
       pane

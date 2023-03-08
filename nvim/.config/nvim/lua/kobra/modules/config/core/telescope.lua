@@ -51,6 +51,12 @@ M.setup = function()
     grouped = true,
   }
 
+  extensions.project = {
+    base_dirs = {
+      '~/Projects',
+    },
+  }
+
   if COLEMAK then
     local actions = require('telescope').extensions.file_browser.actions
     extensions.file_browser.mappings = {
