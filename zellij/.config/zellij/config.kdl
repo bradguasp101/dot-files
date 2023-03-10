@@ -169,7 +169,7 @@ keybinds clear-defaults=true {
         bind "˙" { SwitchToMode "Move"; } // Alt h
     }
     shared_except "tmux" "locked" {
-        bind "∫" { SwitchToMode "Tmux"; }
+        bind "∫" { SwitchToMode "Tmux"; } // Alt b
     }
 }
 
