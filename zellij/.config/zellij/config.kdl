@@ -9,14 +9,15 @@ keybinds clear-defaults=true {
     }
     resize {
         bind "˜" { SwitchToMode "Normal"; } // Alt n
+        bind "p" { SwitchToMode "Pane"; }
         bind "h" "Left" { Resize "Increase Left"; }
-        bind "j" "Down" { Resize "Increase Down"; }
-        bind "k" "Up" { Resize "Increase Up"; }
-        bind "l" "Right" { Resize "Increase Right"; }
+        bind "n" "Down" { Resize "Increase Down"; } // j
+        bind "e" "Up" { Resize "Increase Up"; } // k
+        bind "i" "Right" { Resize "Increase Right"; } // l
         bind "H" { Resize "Decrease Left"; }
-        bind "J" { Resize "Decrease Down"; }
-        bind "K" { Resize "Decrease Up"; }
-        bind "L" { Resize "Decrease Right"; }
+        bind "N" { Resize "Decrease Down"; } // J
+        bind "E" { Resize "Decrease Up"; } // K
+        bind "I" { Resize "Decrease Right"; } // L
         bind "=" "+" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
     }
@@ -30,6 +31,7 @@ keybinds clear-defaults=true {
         bind "l" { NewPane; SwitchToMode "Normal"; } // n
         bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "R" { SwitchToMode "Resize"; }
         bind "x" { CloseFocus; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
@@ -138,10 +140,10 @@ keybinds clear-defaults=true {
         bind "©" { SwitchToMode "Locked"; } // Alt g
         bind "œ" { Quit; } // Alt q
         bind "˜" { NewPane; } // Alt n
-        bind "˙" "Alt Left" { MoveFocusOrTab "Left"; } // Alt h
-        bind "¬" "Alt Right" { MoveFocusOrTab "Right"; } // Alt l
-        bind "∆" "Alt Down" { MoveFocus "Down"; } // Alt j
-        bind "˚" "Alt Up" { MoveFocus "Up"; } // Alt k
+        bind "˙" { MoveFocusOrTab "Left"; } // Alt h, Alt Left
+        bind "¬" { MoveFocusOrTab "Right"; } // Alt l, Alt Right
+        bind "∆" { MoveFocus "Down"; } // Alt j, Alt Down
+        bind "˚" { MoveFocus "Up"; } // Alt k, Alt Up
         bind "≠" "±" { Resize "Increase"; } // Alt =, Alt +
         bind "–" { Resize "Decrease"; } // Alt -
         bind "“" { PreviousSwapLayout; } // Alt [
@@ -186,7 +188,7 @@ plugins {
 //   - detach (Default)
 //   - quit
 //
-// on_force_close "quit"
+on_force_close "quit"
 
 //  Send a request for a simplified ui (without arrow fonts) to plugins
 //  Options:
@@ -242,7 +244,7 @@ plugins {
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
