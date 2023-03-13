@@ -7,12 +7,6 @@ tools[#tools+1] = {
 }
 
 tools[#tools+1] = {
-  'ahmedkhalf/project.nvim',
-  lazy = true,
-  config = conf.project,
-}
-
-tools[#tools+1] = {
   'folke/neodev.nvim',
   ft = { 'lua' },
   config = conf.neodev,

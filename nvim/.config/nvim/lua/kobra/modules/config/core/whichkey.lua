@@ -170,22 +170,18 @@ M.setup = function()
       },
     },
 
+    L = {
+      name = "+Lazy",
+      l = { "<cmd>Lazy<cr>", "Lazy" },
+    },
+
     p = {
       name = "Plz and Project",
       -- b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },
       -- t = { function() require('kobra.utils.please').plzTest() end, "Plz Test" },
-      p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List" },
+      p = { "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>", "List" },
       r = { function() require('kobra.scripts.revive').lint() end, "Revive" },
       s = { "<cmd>Telescope repo list<cr>", "Search" },
-    },
-
-    P = {
-      name = "Packer",
-      c = { "<cmd>PackerCompile<cr>", "Compile" },
-      i = { "<cmd>PackerInstall<cr>", "Install" },
-      s = { "<cmd>PackerSync<cr>", "Sync" },
-      S = { "<cmd>PackerStatus<cr>", "Status" },
-      u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
     q = { "<cmd>q!<cr>", "Quit" },

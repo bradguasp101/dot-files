@@ -62,4 +62,10 @@ core[#core+1] = {
   },
 }
 
+core[#core+1] = {
+  'ahmedkhalf/project.nvim',
+  lazy = true,
+  config = conf.project,
+}
+
 return core

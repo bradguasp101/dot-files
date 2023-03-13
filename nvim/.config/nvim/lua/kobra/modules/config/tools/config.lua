@@ -1,9 +1,5 @@
 local config = {}
 
-function config.project()
-  require('project_nvim').setup()
-end
-
 function config.neodev() end
 
 function config.neogen()
