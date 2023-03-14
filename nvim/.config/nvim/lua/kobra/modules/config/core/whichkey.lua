@@ -214,7 +214,13 @@ M.setup = function()
       T = { "<cmd>Telescope treesitter<cr>", "Treesitter" },
     },
 
-    S = { "<cmd>SearchSession<cr>", "Sessions" },
+    S = {
+      name = "Sessions",
+      d = { "<cmd>DeleteSession<cr>", "Delete Session" },
+      r = { "<cmd>RestoreSession<cr>", "Restore Session" },
+      s = { "<cmd>SearchSession<cr>", "List Sessions" },
+      w = { "<cmd>SaveSession<cr>", "Save Session" },
+    },
 
     t = {
       name = "Telescope",
