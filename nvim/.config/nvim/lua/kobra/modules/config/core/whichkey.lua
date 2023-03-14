@@ -220,6 +220,7 @@ M.setup = function()
       r = { "<cmd>RestoreSession<cr>", "Restore Session" },
       s = { "<cmd>SearchSession<cr>", "List Sessions" },
       w = { "<cmd>SaveSession<cr>", "Save Session" },
+      W = { function() require('kobra.scripts.session').saveSession() end, "Save Session (input)" },
     },
 
     t = {
