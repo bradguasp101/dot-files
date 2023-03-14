@@ -269,6 +269,14 @@ local c = {
       return vim.b.gitsigns_status_dict ~= nil
     end,
   },
+  session = {
+    provider = require('auto-session-library').current_session_name,
+    hl = 'StatusLine',
+    enabled = function()
+      local ok, _ = pcall(require, 'auto-session-library')
+      return ok
+    end,
+  },
   file_type = {
     provider = function()
       return fmt(" %s ", vim.bo.filetype:upper())
@@ -364,6 +372,7 @@ local active = {
     c.vimode,
     c.gitbranch,
     c.fileinfo,
+    -- c.session,
     c.default, -- must be last
   },
   { -- right

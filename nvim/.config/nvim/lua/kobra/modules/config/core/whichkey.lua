@@ -209,9 +209,12 @@ M.setup = function()
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       R = { "<cmd>Telescope registers<cr>", "Registers" },
       s = { "<cmd>Telescope grep_string<cr>", "Current String" },
+      S = { "<cmd>SearchSession<cr>", "Sessions" },
       t = { "<cmd>Telescope live_grep <cr>", "Text" },
       T = { "<cmd>Telescope treesitter<cr>", "Treesitter" },
     },
+
+    S = { "<cmd>SearchSession<cr>", "Sessions" },
 
     t = {
       name = "Telescope",

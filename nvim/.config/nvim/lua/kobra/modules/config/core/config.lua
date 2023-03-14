@@ -12,4 +12,12 @@ function config.project()
   })
 end
 
+function config.autoSession()
+  require('auto-session').setup({})
+end
+
+function config.sessionLens()
+  require('session-lens').setup({})
+end
+
 return config

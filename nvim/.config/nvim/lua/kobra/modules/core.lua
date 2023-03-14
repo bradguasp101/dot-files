@@ -68,4 +68,16 @@ core[#core+1] = {
   config = conf.project,
 }
 
+-- want to replace this with vim startify, but couldn't change mappings for colemak
+core[#core+1] = {
+  'rmagatti/auto-session',
+  config = conf.autoSession,
+}
+
+core[#core+1] = {
+  'rmagatti/session-lens',
+  cmd = { 'SearchSession' },
+  config = conf.sessionLens,
+}
+
 return core
