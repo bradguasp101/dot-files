@@ -46,6 +46,16 @@ M.setup = function()
     case_mode = 'smart_case',
   }
 
+  local lga_actions = require('telescope-live-grep-args.actions')
+  extensions.live_grep_args = {
+    mappings = {
+      i = {
+        ['<C-k>'] = lga_actions.quote_prompt(),
+        ['<C-i>'] = lga_actions.quote_prompt({ postfix = ' --iglob ' }),
+      },
+    },
+  }
+
   extensions.file_browser = {
     hijack_netrw = true,
     grouped = true,
