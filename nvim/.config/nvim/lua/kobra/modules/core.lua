@@ -68,16 +68,27 @@ core[#core+1] = {
   config = conf.project,
 }
 
--- want to replace this with vim startify, but couldn't change mappings for colemak
 core[#core+1] = {
-  'rmagatti/auto-session',
-  config = conf.autoSession,
+  'jedrzejboczar/possession.nvim',
+  cmd = {
+    'PossessionSave',
+    'PossessionLoad',
+    'PossessionClose',
+    'PossessionDelete',
+    'PossessionShow',
+    'PossessionList',
+    'PossessionMigrate',
+  },
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
+  config = conf.possession,
 }
 
 core[#core+1] = {
-  'rmagatti/session-lens',
-  cmd = { 'SearchSession' },
-  config = conf.sessionLens,
+  'goolord/alpha-nvim',
+  lazy = false,
+  config = conf.alpha,
 }
 
 return core

@@ -270,12 +270,8 @@ local c = {
     end,
   },
   session = {
-    provider = require('auto-session-library').current_session_name,
+    provider = require('possession.session').session_name or '',
     hl = 'StatusLine',
-    enabled = function()
-      local ok, _ = pcall(require, 'auto-session-library')
-      return ok
-    end,
   },
   file_type = {
     provider = function()
@@ -372,7 +368,7 @@ local active = {
     c.vimode,
     c.gitbranch,
     c.fileinfo,
-    -- c.session,
+    c.session,
     c.default, -- must be last
   },
   { -- right

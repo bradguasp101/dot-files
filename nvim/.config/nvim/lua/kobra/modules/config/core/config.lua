@@ -12,12 +12,12 @@ function config.project()
   })
 end
 
-function config.autoSession()
-  require('auto-session').setup({})
+function config.possession()
+  require('possession').setup({})
 end
 
-function config.sessionLens()
-  require('session-lens').setup({})
+function config.alpha()
+  require('kobra.modules.config.core.start-screen').config()
 end
 
 return config

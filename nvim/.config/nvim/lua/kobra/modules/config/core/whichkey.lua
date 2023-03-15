@@ -216,12 +216,13 @@ M.setup = function()
 
     S = {
       name = "Sessions",
-      d = { "<cmd>DeleteSession<cr>", "Delete Session" },
-      D = { function() require('kobra.scripts.session').deleteSession() end, "Delete Session (input)" },
-      r = { "<cmd>RestoreSession<cr>", "Restore Session" },
-      s = { "<cmd>SearchSession<cr>", "List Sessions" },
-      w = { "<cmd>SaveSession<cr>", "Save Session" },
-      W = { function() require('kobra.scripts.session').saveSession() end, "Save Session (input)" },
+      c = { "<cmd>PossessionClose<cr>", "Close Session" },
+      d = { "<cmd>PossessionDelete<cr>", "Delete Session" },
+      l = { "<cmd>PossessionLoad<cr>", "Load Session" },
+      m = { "<cmd>PossessionMigrate<cr>", "Migrate Sessions" },
+      s = { "<cmd>Telescope possession list<cr>", "List Sessions" },
+      S = { "<cmd>PossessionShow<cr>", "Show Session" },
+      w = { "<cmd>PossessionSave<cr>", "Save Session" },
     },
 
     t = {
