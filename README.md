@@ -48,5 +48,5 @@ If something doesn't work right, first try running `:checkhealth` and resolving 
 warnings or errors found.
 
 # Special Thanks
-@bheadwhite for suggesting so many of the plugins and tools I have integrated into my daily
+https://github.com/bheadwhite for suggesting so many of the plugins and tools I have integrated into my daily
 workflow.
