@@ -13,4 +13,18 @@ function session.saveSession()
   end)
 end
 
+function session.deleteSession()
+  vim.ui.input({
+    prompt = 'Enter session name: ',
+    default = 'custom',
+  }, function(input)
+    if not input then
+      return
+    end
+
+    vim.api.nvim_command('DeleteSession ' .. vim.fn.stdpath('data') .. '/sessions/' .. input)
+  end)
+
+end
+
 return session

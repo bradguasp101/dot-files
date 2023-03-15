@@ -217,6 +217,7 @@ M.setup = function()
     S = {
       name = "Sessions",
       d = { "<cmd>DeleteSession<cr>", "Delete Session" },
+      D = { function() require('kobra.scripts.session').deleteSession() end, "Delete Session (input)" },
       r = { "<cmd>RestoreSession<cr>", "Restore Session" },
       s = { "<cmd>SearchSession<cr>", "List Sessions" },
       w = { "<cmd>SaveSession<cr>", "Save Session" },

@@ -17,6 +17,7 @@ stow -v -R -t ~ nvim
 stow -v -R -t ~ kitty
 stow -v -R -t ~ fish
 stow -v -R -t ~ git
+stow -v -R -t ~ zellij
 stow -v -R -t ~ zk
 ```
 
@@ -45,3 +46,7 @@ These are:
 
 If something doesn't work right, first try running `:checkhealth` and resolving any
 warnings or errors found.
+
+# Special Thanks
+@bheadwhite for suggesting so many of the plugins and tools I have integrated into my daily
+workflow.
