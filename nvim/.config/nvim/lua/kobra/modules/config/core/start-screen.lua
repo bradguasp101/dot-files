@@ -22,18 +22,74 @@ end
 
 local workspaces = {
   {
-    'Projects',
+    'Project Sessions',
     'p',
     '~/Projects/',
   },
   {
-    'Dotfiles',
+    'Dotfile Sessions',
     'd',
     '~/dot-files/',
   },
 }
 
-local get_layout = function()
+local function scandir(dir)
+  local t = {}
+  local i = 0
+  for fn in vim.fs.dir(dir) do
+    if fn == '.' or fn == '..' or fn == '.DS_Store' then goto continue end
+
+    i = i + 1
+    t[i] = dir .. fn
+
+    ::continue::
+  end
+
+  return t
+end
+
+local get_projects = function()
+  local files = scandir('~/Projects/')
+
+  local buttons = {}
+  for i, fn in ipairs(files) do
+    local ico_txt
+    local fb_hl = {}
+
+    local ico, hl = startify.icon(fn)
+    local hl_option_type = type(startify.nvim_web_devicons.highlight)
+
+    if hl_option_type == 'boolean' then
+      if hl and startify.nvim_web_devicons.highlight then
+        table.insert(fb_hl, { hl, 0, #ico })
+      end
+    end
+
+    if hl_option_type == 'string' then
+      table.insert(fb_hl, { startify.nvim_web_devicons.highlight, 0, #ico })
+    end
+
+    ico_txt = ico .. ' '
+
+    local short_fn = vim.fn.fnamemodify(fn, ':~')
+    local cd_cmd = ' | cd %:p:h'
+    local file_button_el = startify.button(tostring(i), ico_txt .. short_fn, '<cmd>e ' .. fn .. cd_cmd .. '<cr>')
+    local fn_start = short_fn:match('.*[/\\]')
+    if fn_start ~= nil then
+      table.insert(fb_hl, { 'Comment', #ico_txt, #fn_start + #ico_txt })
+    end
+
+    file_button_el.opts.hl = fb_hl
+    buttons[i] = file_button_el
+  end
+
+  return {
+    type = 'group',
+    val = buttons,
+  }
+end
+
+local get_sessions = function()
   return query.alpha_workspace_layout(workspaces, startify.button, {
     others_name = 'Other Sessions',
   })
@@ -62,10 +118,31 @@ function screen.config()
 
   table.insert(config.layout, 5, {
     type = 'group',
-    val = utils.throttle(get_layout, 5000),
+    val = {
+      { type = 'padding', val = 1 },
+      { type = 'text', val = 'Projects', opts = { hl = 'SpecialComment' } },
+      { type = 'padding', val = 1 },
+      {
+        type = 'group',
+        val = function()
+          return { get_projects() }
+        end,
+      },
+    },
+  })
+
+  table.insert(config.layout, 6, {
+    type = 'group',
+    val = utils.throttle(get_sessions, 5000),
   })
 
   alpha.setup(config)
 end
+
+screen.fun = {
+  scandir = scandir,
+  get_projects = get_projects,
+  get_sessions = get_sessions,
+}
 
 return screen

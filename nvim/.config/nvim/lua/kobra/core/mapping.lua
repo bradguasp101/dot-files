@@ -11,6 +11,7 @@ local function colemak()
   keymap('', 'j', 'n', opts)
   keymap('', 'k', 'e', opts)
   keymap('', 'l', 'i', opts)
+  keymap('', '<C-l>', '<C-i>', opts)
 
   -- remap terminal mode to escape
   vim.cmd([[tnoremap jj <C-\><C-n>]])
@@ -27,10 +28,6 @@ local function colemak()
   keymap('n', '<C-M-N>', '<cmd>WinShift down<cr>', opts)
   keymap('n', '<C-M-E>', '<cmd>WinShift up<cr>', opts)
   keymap('n', '<C-M-I>', '<cmd>WinShift right<cr>', opts)
-
-  -- navigate buffers
-  keymap('n', '<S-h>', ':bprevious<cr>', opts)
-  keymap('n', '<S-i>', ':bnext<cr>', opts)
 
   -- Move text up and down
   keymap("n", "<A-n>", "<Esc>:m .+1<CR>==gi", opts)
