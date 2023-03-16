@@ -105,7 +105,7 @@ M.setup = function()
     f = {
       name = "+Find",
       d = { "<cmd>Telescope file_browser depth=false hidden=true<cr>", "Browse All Files and Folders" },
-      f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
+      f = { "<cmd>Telescope find_files hidden=true<cr>", "Find Files" },
       F = { "<cmd>Telescope file_browser path=%:p:h hidden=true<cr>", "Browse File and Folders" },
       z = { "<cmd>Telescope z list hidden=true<cr>", "Z" },
     },
@@ -217,12 +217,13 @@ M.setup = function()
     S = {
       name = "Sessions",
       c = { "<cmd>PossessionClose<cr>", "Close Session" },
-      d = { "<cmd>PossessionDelete<cr>", "Delete Session" },
-      l = { "<cmd>PossessionLoad<cr>", "Load Session" },
+      d = { function() require('kobra.scripts.input').exec('PossessionDelete') end, "Delete Session" },
+      l = { function() require('kobra.scripts.input').exec('PossessionLoad') end, "Load Session" },
       m = { "<cmd>PossessionMigrate<cr>", "Migrate Sessions" },
       s = { "<cmd>Telescope possession list<cr>", "List Sessions" },
       S = { "<cmd>PossessionShow<cr>", "Show Session" },
       w = { "<cmd>PossessionSave<cr>", "Save Session" },
+      W = { function() require('kobra.scripts.input').exec('PossessionSave') end, "Save Session" },
     },
 
     t = {
