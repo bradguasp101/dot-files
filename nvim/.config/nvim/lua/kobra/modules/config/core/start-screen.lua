@@ -33,6 +33,19 @@ local workspaces = {
   },
 }
 
+local header = {
+  [[                                                                       ]],
+	[[                                                                     ]],
+	[[       ████ ██████           █████      ██                     ]],
+	[[      ███████████             █████                             ]],
+	[[      █████████ ███████████████████ ███   ███████████   ]],
+	[[     █████████  ███    █████████████ █████ ██████████████   ]],
+	[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+	[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+	[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+	[[                                                                       ]],
+}
+
 local function scandir(dir)
   local t = {}
   local i = 0
@@ -96,25 +109,42 @@ local get_sessions = function()
 end
 
 function screen.config()
+  startify.section.header = {
+    type = 'text',
+    val = header,
+    opts = {
+      hl = 'Type',
+      shrink_margin = false,
+    }
+  }
+
   startify.section.top_buttons.val = {
-    startify.button("f", "New file", ":ene <BAR> startinsert <CR>"),
-    startify.button("df", "Dot Files", ":cd ~/dot-files<cr><cmd>Telescope file_browser path=%:p:h hidden=true<cr>"),
+    startify.button('f', 'New file', ':ene <BAR> startinsert <CR>'),
+    startify.button('df', 'Dot Files', ':cd ~/dot-files<cr><cmd>Telescope file_browser path=%:p:h hidden=true<cr>'),
   }
 
   startify.section.mru.val[2].val = 'Recent Files'
 
   -- disable MRU cwd
-  startify.section.mru_cwd.val = {{ type = "padding", val = 0 }}
+  startify.section.mru_cwd.val = {{ type = 'padding', val = 0 }}
 
   startify.section.bottom_buttons.val = {
-    startify.button("q", "Quit NVIM", ":qa<CR>"),
+    startify.button('q', 'Quit NVIM', ':qa<CR>'),
   }
 
   startify.section.footer = {
-    { type = "text", val = "footer" },
+    { type = 'text', val = 'footer' },
   }
 
   local config = startify.config
+  config.layout[2] = {
+    type = 'text',
+    val = header,
+    opts = {
+      hl = 'Type',
+      shrink_margin = false,
+    }
+  }
 
   table.insert(config.layout, 5, {
     type = 'group',
