@@ -52,17 +52,6 @@ tools[#tools+1] = {
 }
 
 tools[#tools+1] = {
-  'tpope/vim-fugitive',
-  cmd = { 'GBrowse', 'Gvsplit', 'Git', 'Gedit', 'Gstatus', 'Gdiffsplit', 'Gvdiffsplit', 'Flog', 'Flogsplit' },
-}
-
-tools[#tools+1] = {
-  'shumphrey/fugitive-gitlab.vim',
-  cmd = { 'GBrowse' },
-  config = conf.fugitive_gitlab,
-}
-
-tools[#tools+1] = {
   'tpope/vim-rhubarb',
   cmd = { 'GBrowse' },
 }
@@ -116,6 +105,29 @@ tools[#tools+1] = {
     'nvim-telescope/telescope.nvim',
   },
   config = conf.chatgpt,
+}
+
+tools[#tools+1] = {
+  'ray-x/sad.nvim',
+  config = conf.sad,
+}
+
+tools[#tools+1] = {
+  'axkirillov/easypick.nvim',
+  cmd = { 'Easypick' },
+  dependencies = {
+    'nvim-telescope/telescope.nvim',
+  },
+  config = conf.easypick,
+}
+
+tools[#tools+1] = {
+  'ruifm/gitlinker.nvim',
+  keys = { '<leader>gy' },
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
+  config = conf.gitlinker,
 }
 
 return tools

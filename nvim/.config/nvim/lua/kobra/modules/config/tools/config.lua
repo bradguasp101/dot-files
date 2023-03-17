@@ -24,10 +24,6 @@ function config.git_conflict()
   require('git-conflict').setup()
 end
 
-function config.fugitive_gitlab()
-  vim.g.fugitive_gitlab_domains = {'http://git', 'http://git.tcncloud.net'}
-end
-
 function config.toggleterm()
   require('toggleterm').setup({
     size = 20,
@@ -80,6 +76,21 @@ end
 
 function config.chatgpt()
   require('chatgpt').setup()
+end
+
+function config.sad()
+  require('sad').setup({})
+end
+
+function config.easypick()
+  require('easypick').setup({
+    -- add custom pickers here
+    pickers = {},
+  })
+end
+
+function config.gitlinker()
+  require('gitlinker').setup()
 end
 
 return config

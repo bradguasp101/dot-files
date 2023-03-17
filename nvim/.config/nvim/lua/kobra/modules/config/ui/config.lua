@@ -14,6 +14,13 @@ function config.alpha()
   require('kobra.modules.config.ui.start-screen').config()
 end
 
+function config.windows()
+  vim.o.winwidth = 10
+  vim.o.winminwidth = 10
+  vim.o.equalalways = false
+  require('windows').setup()
+end
+
 -- THEME
 function config.moonlight()
   vim.g.moonlight_borders = true

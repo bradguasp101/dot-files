@@ -28,6 +28,24 @@ ui[#ui+1] = {
   config = conf.alpha,
 }
 
+ui[#ui+1] = {
+  'anuvyklack/windows.nvim',
+  cmd = {
+    'WindowsMaximize',
+    'WindowsMaximizeVertically',
+    'WindowsMaximizeHorizontally',
+    'WindowsEqualize',
+    'WindowsEnableAutowidth',
+    'WindowsDisableAutowidth',
+    'WindowsToggleAutowidth',
+  },
+  dependencies = {
+    'anuvyklack/middleclass',
+    'anuvyklack/middleclass',
+  },
+  config = conf.windows,
+}
+
 -- THEME
 ui[#ui+1] = {
   'shaunsingh/moonlight.nvim',
