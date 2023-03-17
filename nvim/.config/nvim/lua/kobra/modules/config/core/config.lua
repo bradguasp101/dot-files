@@ -16,8 +16,4 @@ function config.possession()
   require('possession').setup({})
 end
 
-function config.alpha()
-  require('kobra.modules.config.core.start-screen').config()
-end
-
 return config

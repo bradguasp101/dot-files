@@ -76,4 +76,8 @@ function config.winshift()
   require('winshift').setup(setup)
 end
 
+function config.trailblazer()
+  require('trailblazer').setup({})
+end
+
 return config

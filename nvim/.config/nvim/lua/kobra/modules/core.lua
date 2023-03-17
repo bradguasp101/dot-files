@@ -85,10 +85,4 @@ core[#core+1] = {
   config = conf.possession,
 }
 
-core[#core+1] = {
-  'goolord/alpha-nvim',
-  lazy = false,
-  config = conf.alpha,
-}
-
 return core

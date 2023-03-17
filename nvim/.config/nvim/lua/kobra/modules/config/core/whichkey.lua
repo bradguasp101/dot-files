@@ -175,6 +175,23 @@ M.setup = function()
       l = { "<cmd>Lazy<cr>", "Lazy" },
     },
 
+    m = {
+      name = "+Marks",
+      b = { "<cmd>TrailBlazerTrackBack<cr>", "Track Back" },
+      e = { "<cmd>TrailBlazerPeekMovePreviousUp<cr>", "Peek Move Previous Up" },
+      j = { "<cmd>TrailBlazerMoveToNearest<cr>", "Move To Nearest" },
+      l = { "<cmd>TrailBlazerNewTrailMark<cr>", "New Mark" },
+      L = { "<cmd>TrailBlazerDeleteAllTrailMarks<cr>", "Delete All" },
+      m = { "<cmd>TrailBlazerToggleTrailMarkList<cr>", "Toggle List" },
+      n = { "<cmd>TrailBlazerPeekMoveNextDown<cr>", "Peek Move Next Down" },
+      p = { "<cmd>TrailBlazerPasteAtLastTrailMark<cr>", "Paste At Last" },
+      P = { "<cmd>TrailBlazerPasteAtAllTrailMarks<cr>", "Paste At All" },
+      s = { "<cmd>TrailBlazerSetTrailMarkStackSortMode<cr>", "Set Stack Sort Mode" },
+      t = { "<cmd>TrailBlazerTrailMarkSelectMode<cr>", "Set Select Mode" },
+      ['.'] = { "<cmd>TrailBlazerSwitchNextTrailMarkStack<cr>", "Switch To Next Stack" },
+      [','] = { "<cmd>TrailBlazerSwitchPreviousTrailMarkStack<cr>", "Switch To Previous Stack" },
+    },
+
     p = {
       name = "Plz and Project",
       -- b = { function() require('kobra.utils.please').plzBuild() end, "Plz Build" },

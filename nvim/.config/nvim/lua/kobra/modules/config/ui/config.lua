@@ -10,12 +10,8 @@ function config.notify()
   require('telescope').load_extension('notify')
 end
 
-function config.lualine()
-  require('lualine').setup({
-    options = {
-      theme = 'auto',
-    },
-  })
+function config.alpha()
+  require('kobra.modules.config.ui.start-screen').config()
 end
 
 -- THEME

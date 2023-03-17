@@ -56,16 +56,40 @@ editor[#editor+1] = {
   config = conf.cinnamon,
 }
 
--- editor[#editor+1] = {
---   'beauwilliams/focus.nvim',
---   event = 'BufRead',
---   config = conf.focus,
--- }
-
 editor[#editor+1] = {
   'sindrets/winshift.nvim',
   cmd = { 'WinShift' },
   config = conf.winshift,
+}
+
+editor[#editor+1] = {
+  'LeonHeidelbach/trailblazer.nvim',
+  cmd = {
+    'TrailBlazerNewTrailMark',
+    'TrailBlazerTrackBack',
+    'TrailBlazerPeekMovePreviousUp',
+    'TrailBlazerPeekMoveNextDown',
+    'TrailBlazerMoveToNearest',
+    'TrailBlazerMoveToTrailMarkCursor',
+    'TrailBlazerDeleteAllTrailMarks',
+    'TrailBlazerPasteAtLastTrailMark',
+    'TrailBlazerPasteAtAllTrailMarks',
+    'TrailBlazerTrailMarkSelectMode',
+    'TrailBlazerToggleTrailMarkList',
+    'TrailBlazerOpenTrailMarkList',
+    'TrailBlazerCloseTrailMarkList',
+    'TrailBlazerSwitchTrailMarkStack',
+    'TrailBlazerAddTrailMarkStack',
+    'TrailBlazerDeleteTrailMarkStacks',
+    'TrailBlazerDeleteAllTrailMarkStacks',
+    'TrailBlazerSwitchNextTrailMarkStack',
+    'TrailBlazerSwitchPreviousTrailMarkStack',
+    'TrailBlazerSetTrailMarkStackSortMode',
+    'TrailBlazerSaveSession',
+    'TrailBlazerLoadSession',
+    'TrailBlazerDeleteSession',
+  },
+  config = conf.trailblazer,
 }
 
 return editor

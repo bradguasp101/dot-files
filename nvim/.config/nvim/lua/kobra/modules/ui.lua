@@ -22,6 +22,12 @@ ui[#ui+1] = {
   config = require('kobra.modules.config.ui.feline').setup,
 }
 
+ui[#ui+1] = {
+  'goolord/alpha-nvim',
+  lazy = false,
+  config = conf.alpha,
+}
+
 -- THEME
 ui[#ui+1] = {
   'shaunsingh/moonlight.nvim',
