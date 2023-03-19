@@ -21,6 +21,10 @@ function config.windows()
   require('windows').setup()
 end
 
+function config.goto_preview()
+  require('goto-preview').setup({})
+end
+
 -- THEME
 function config.moonlight()
   vim.g.moonlight_borders = true

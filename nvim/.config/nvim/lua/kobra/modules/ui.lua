@@ -46,6 +46,12 @@ ui[#ui+1] = {
   config = conf.windows,
 }
 
+ui[#ui+1] = {
+  'rmagatti/goto-preview',
+  keys = { '<leader>l' },
+  config = conf.goto_preview,
+}
+
 -- THEME
 ui[#ui+1] = {
   'shaunsingh/moonlight.nvim',
