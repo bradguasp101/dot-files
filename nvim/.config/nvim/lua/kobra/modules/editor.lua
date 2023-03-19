@@ -25,13 +25,21 @@ editor[#editor+1] = {
 
 editor[#editor+1] = {
   'numToStr/Comment.nvim',
-  keys = { 'gc', 'gcc', 'gbc' },
+  keys = {
+    { 'gc', mode = { 'n', 'v' } },
+    { 'gcc', mode = { 'n', 'v' } },
+    { 'gbc', mode = { 'n', 'v' } },
+  },
   config = conf.comment,
 }
 
 editor[#editor+1] = {
   'JoosepAlviste/nvim-ts-context-commentstring',
-  keys = { 'gc', 'gcc', 'gbc' },
+  keys = {
+    { 'gc', mode = { 'n', 'v' } },
+    { 'gcc', mode = { 'n', 'v' } },
+    { 'gbc', mode = { 'n', 'v' } },
+  },
   dependencies = {
     'Comment.nvim',
   },

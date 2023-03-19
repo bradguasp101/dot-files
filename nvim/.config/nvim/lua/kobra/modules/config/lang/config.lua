@@ -4,11 +4,17 @@ function config.mason()
   require('kobra.modules.config.lang.lsp')
 end
 
-function config.fidget()
-  require('fidget').setup({
-    sources = {
-      ['null-ls'] = { ignore = true },
-    },
+function config.lsp_progress()
+  require('lsp-progress').setup({
+    client_format = function(client_name, spinner, series_messages)
+      return #series_messages > 0
+          and client_name ~= 'null-ls'
+          and ('[' .. client_name .. '] ' .. spinner .. ' ' .. table.concat(
+            series_messages,
+            ', '
+          ))
+        or nil
+    end,
   })
 end
 

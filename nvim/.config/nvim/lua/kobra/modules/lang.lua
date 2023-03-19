@@ -24,9 +24,9 @@ lang[#lang+1] = {
 }
 
 lang[#lang+1] = {
-  'j-hui/fidget.nvim',
+  'linrongbin16/lsp-progress.nvim',
   event = 'BufReadPre',
-  config = conf.fidget,
+  config = conf.lsp_progress,
 }
 
 lang[#lang+1] = {

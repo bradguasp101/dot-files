@@ -314,7 +314,12 @@ local c = {
   },
   lsp_status = {
     provider = function()
-      return vim.tbl_count(vim.lsp.buf_get_clients(0)) == 0 and "" or " "..icons.connected.." "
+      local lsp_val = ' ' .. icons.connected .. ' '
+      local progress_ok, progress = pcall(require, 'lsp-progress')
+      if progress_ok then
+        lsp_val = progress.progress()
+      end
+      return vim.tbl_count(vim.lsp.buf_get_clients(0)) == 0 and "" or lsp_val
     end,
     hl = "UserSLStatus",
     left_sep = { str = "", hl = "UserSLStatusBg", always_visible = true },
