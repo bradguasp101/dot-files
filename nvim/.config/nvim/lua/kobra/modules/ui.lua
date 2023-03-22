@@ -54,6 +54,7 @@ ui[#ui+1] = {
 ui[#ui+1] = {
   'dnlhc/glance.nvim',
   keys = { '<leader>l' },
+  cmd = { 'Glance' },
   config = conf.glance,
 }
 
