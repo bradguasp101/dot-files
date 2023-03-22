@@ -132,7 +132,7 @@ end
 
 local get_mru = function()
   local opts = startify.mru_opts
-  local items_number = 10
+  local items_number = 5
   local old_files = {}
   for _, v in pairs(vim.v.oldfiles) do
     if #old_files == items_number then
