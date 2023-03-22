@@ -80,4 +80,18 @@ function config.trailblazer()
   require('trailblazer').setup({})
 end
 
+function config.hlchunk()
+  require('hlchunk').setup({
+    chunk = {
+      chars = {
+        horizontal_line = "─",
+        vertical_line = "│",
+        left_top = "┌",
+        left_bottom = "└",
+        right_arrow = "─",
+      },
+    },
+  })
+end
+
 return config

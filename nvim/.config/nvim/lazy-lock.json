@@ -29,6 +29,7 @@
   "go.nvim": { "branch": "master", "commit": "96e5768fd4b237207d15024c91ffc5229f512ce0" },
   "guihua.lua": { "branch": "master", "commit": "a19ac4447021f21383fadd7a9e1fc150d0b67e1f" },
   "hlargs.nvim": { "branch": "main", "commit": "a7ad6ed8d6e27ea4dd13fda63fa732e9196ba4ea" },
+  "hlchunk.nvim": { "branch": "main", "commit": "9339c315efc0c0ded0d13519436f131a30a0480c" },
   "lazygit.nvim": { "branch": "main", "commit": "32bffdebe273e571588f25c8a708ca7297928617" },
   "leap.nvim": { "branch": "main", "commit": "f74473d23ebf60957e0db3ff8172349a82e5a442" },
   "lsp-progress.nvim": { "branch": "main", "commit": "14b1761e7f3127dea744e3993ebae036ca7f2f59" },

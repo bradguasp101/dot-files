@@ -100,4 +100,10 @@ editor[#editor+1] = {
   config = conf.trailblazer,
 }
 
+editor[#editor+1] = {
+  'shellRaining/hlchunk.nvim',
+  event = 'BufRead',
+  config = conf.hlchunk,
+}
+
 return editor
