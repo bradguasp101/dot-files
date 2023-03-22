@@ -21,8 +21,29 @@ function config.windows()
   require('windows').setup()
 end
 
-function config.goto_preview()
-  require('goto-preview').setup({})
+function config.glance()
+  local glance = require('glance')
+  local actions = glance.actions
+
+  local setup = {}
+  if COLEMAK then
+    setup.mappings = {
+      list = {
+        ['j'] = false,
+        ['k'] = false,
+        ['n'] = actions.next,
+        ['e'] = actions.previous,
+        ['<leader>l'] = false,
+        ['<C-l>'] = actions.enter_win('preview'),
+      },
+      preview = {
+        ['<leader>l'] = false,
+        ['<C-l>'] = actions.enter_win('list'),
+      },
+    }
+  end
+
+  glance.setup(setup)
 end
 
 -- THEME

@@ -47,9 +47,9 @@ ui[#ui+1] = {
 }
 
 ui[#ui+1] = {
-  'rmagatti/goto-preview',
+  'dnlhc/glance.nvim',
   keys = { '<leader>l' },
-  config = conf.goto_preview,
+  config = conf.glance,
 }
 
 -- THEME
