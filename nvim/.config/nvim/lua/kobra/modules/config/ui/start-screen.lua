@@ -121,6 +121,44 @@ local get_sessions = function()
   })
 end
 
+local get_extension = function(fn)
+  local match = fn:match('^.+(%..+)$')
+  local ext = ''
+  if match ~= nil then
+    ext = match:sub(2)
+  end
+  return ext
+end
+
+local get_mru = function()
+  local opts = startify.mru_opts
+  local items_number = 10
+  local old_files = {}
+  for _, v in pairs(vim.v.oldfiles) do
+    if #old_files == items_number then
+      break
+    end
+
+    local ignore = (opts.ignore and opts.ignore(v, get_extension(v))) or false
+    if (vim.fn.filereadable(v) == 1) and not ignore then
+      old_files[#old_files+1] = v
+    end
+  end
+
+  local tbl = {}
+  for i, fn in ipairs(old_files) do
+    local short_fn = vim.fn.fnamemodify(fn, ':~')
+    local file_button_el = startify.file_button(fn, 'r' .. tostring(i - 1), short_fn, opts.autocd)
+    tbl[i] = file_button_el
+  end
+
+  return {
+    type = 'group',
+    val = tbl,
+    opts = {},
+  }
+end
+
 function screen.config()
   startify.section.header = {
     type = 'text',
@@ -137,6 +175,9 @@ function screen.config()
   }
 
   startify.section.mru.val[2].val = 'Recent Files'
+  startify.section.mru.val[4].val = function()
+    return { get_mru() }
+  end
 
   -- disable MRU cwd
   startify.section.mru_cwd.val = {{ type = 'padding', val = 0 }}
