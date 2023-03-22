@@ -47,6 +47,11 @@ ui[#ui+1] = {
 }
 
 ui[#ui+1] = {
+  'sedm0784/vim-resize-mode',
+  keys = { '<C-w>' },
+}
+
+ui[#ui+1] = {
   'dnlhc/glance.nvim',
   keys = { '<leader>l' },
   config = conf.glance,
