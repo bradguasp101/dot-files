@@ -6,8 +6,6 @@ function config.notify()
     render = 'minimal',
     timeout = 5000,
   })
-
-  require('telescope').load_extension('notify')
 end
 
 function config.alpha()

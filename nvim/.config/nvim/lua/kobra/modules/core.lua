@@ -48,7 +48,8 @@ core[#core+1] = {
 core[#core+1] = {
   'nvim-telescope/telescope.nvim',
   version = '0.1.1',
-  lazy = true,
+  event = 'BufEnter',
+  cmd = { 'Telescope' },
   config = require('kobra.modules.config.core.telescope').setup,
   dependencies = {
     'nvim-lua/plenary.nvim',

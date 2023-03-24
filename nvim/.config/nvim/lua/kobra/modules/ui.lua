@@ -4,9 +4,6 @@ local conf = require('kobra.modules.config.ui.config')
 ui[#ui+1] = {
   'rcarriga/nvim-notify',
   event = 'VimEnter',
-  dependencies = {
-    'nvim-telescope/telescope.nvim',
-  },
   config = conf.notify,
 }
 
