@@ -25,14 +25,7 @@ function config.luasnip()
 end
 
 function config.copilot()
-  require('copilot').setup({
-    suggestion = { enabled = false },
-    panel = { enabled = false },
-  })
-end
-
-function config.copilot_cmp()
-  require('copilot_cmp').setup()
+  vim.cmd('imap <silent><script><expr> <C-J> copilot#Accept("<CR>")')
 end
 
 return config

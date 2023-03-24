@@ -22,7 +22,6 @@ completion[#completion+1] = {
     'f3fora/cmp-spell',
     'octaltree/cmp-look',
     'saadparwaiz1/cmp_luasnip',
-    'zbirenbaum/copilot-cmp',
   },
   config = conf.nvim_cmp,
 }
@@ -60,16 +59,9 @@ completion[#completion+1] = {
 }
 
 completion[#completion+1] = {
-  'zbirenbaum/copilot.lua',
-  cmd = 'Copilot',
-  event = 'InsertEnter',
+  'github/copilot.vim',
+  event = 'VimEnter',
   config = conf.copilot,
-}
-
-completion[#completion+1] = {
-  'zbirenbaum/copilot-cmp',
-  lazy = true,
-  config = conf.copilot_cmp,
 }
 
 return completion
