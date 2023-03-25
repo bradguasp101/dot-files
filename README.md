@@ -57,7 +57,7 @@ stow -v -R -t ~ kitty
 stow -v -R -t ~ fish
 stow -v -R -t ~ git
 stow -v -R -t ~ zellij
-stow -v -R -t ~ zk
+// etc.
 ```
 
 ## Extra Setup
