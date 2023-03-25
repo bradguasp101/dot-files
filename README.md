@@ -37,10 +37,15 @@ Mac Setup:
   gem install neovim
   ```
 - Install [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep): `brew install ripgrep`
-- Install [go](https://go.dev/doc/install)
+- Install go: `brew install go`
 - Install cargo via rustup: `curl https://sh.rustup.rs -sSf | sh`
 - Install bat: `brew install bat`
 - Install glow: `brew install glow`
+- Install wget: `brew install wget`
+- Install tsc: `npm install -g typescript`
+- Install [revive](https://github.com/mgechev/revive)
+- Install [wollemi](https://github.com/tcncloud/wollemi)
+- Install [grpcui](https://github.com/fullstorydev/grpcui)
 - Install neovim: `brew install neovim`
 
 To install any of these configurations, you will need to have installed [GNU stow](https://www.gnu.org/software/stow/)
@@ -59,24 +64,7 @@ stow -v -R -t ~ zk
 Aside from cloning this repository, you should also add git config `user` information in the ignored
 user (git/gituser) file.
 
-There are also some COLEMAK keymaps in [mapping.lua](nvim/.config/nvim/lua/kobra/mapping.lua).
-
-There are also a few extra dependencies required to enjoy all the functionality available.
-These are:
-1. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-2. [autopep8](https://pypi.org/project/autopep8/)
-3. [rustfmt](https://github.com/rust-lang/rustfmt)
-4. [yamllint](https://yamllint.readthedocs.io/en/stable/)
-5. [proselint](https://github.com/amperser/proselint)
-6. [misspell](https://github.com/client9/misspell)
-7. [write-good](https://github.com/btford/write-good)
-8. [golines](https://pkg.go.dev/github.com/wrype/golines)
-9. [golangci_lint](https://golangci-lint.run/usage/install/)
-10. [revive](https://github.com/mgechev/revive)
-11. awk
-12. Java
-13. [wollemi](https://github.com/tcncloud/wollemi)
-14. [grpcui](https://github.com/fullstorydev/grpcui)
+You can also turn off COLEMAK keymaps in [mapping.lua](nvim/.config/nvim/lua/kobra/core/mapping.lua) with `COLEMAK = false`.
 
 If something doesn't work right, first try running `:checkhealth` and resolving any
 warnings or errors found.
