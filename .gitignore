@@ -1,6 +1,5 @@
 # Secret configs
 /fish/.config/fish/conf.d/secrets.fish
-/fish/.config/fish/functions/secrets.fish
 /git/gituser
 /zsh/.config/zsh/config.zsh
 /zsh/.config/zsh/docker-secret.zsh
