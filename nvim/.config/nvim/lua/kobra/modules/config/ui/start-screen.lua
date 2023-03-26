@@ -148,7 +148,7 @@ local get_mru = function()
   local tbl = {}
   for i, fn in ipairs(old_files) do
     local short_fn = vim.fn.fnamemodify(fn, ':~')
-    local file_button_el = startify.file_button(fn, 'r' .. tostring(i - 1), short_fn, opts.autocd)
+    local file_button_el = startify.file_button(fn, 'r' .. tostring(i), short_fn, opts.autocd)
     tbl[i] = file_button_el
   end
 
