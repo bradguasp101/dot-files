@@ -63,6 +63,14 @@ stow -v -R -t ~ zellij
 ## Extra Setup
 Aside from cloning this repository, you should also add git config `user` information in the ignored
 user (git/gituser) file.
+```
+[user]
+  name = <name>
+  email = <email>
+```
+
+There is also a secrets (fish/.config/fish/conf.d/secrets.fish) file that is excluded where you can put any of your secrets. For example,
+to get the ChatGPT plugin to work, you will need to put `set -gx OPENAI_API_KEY "<api-key>"` in that file.
 
 You can also turn off COLEMAK keymaps in [mapping.lua](nvim/.config/nvim/lua/kobra/core/mapping.lua) with `COLEMAK = false`.
 
