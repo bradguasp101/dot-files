@@ -14,6 +14,7 @@ Mac Setup:
 - Install the [font](fonts/Go%20Mono%20Nerd%20Font%20Complete%20Mono.ttf) bundled with this config
   - You just need to open the file for the system to install it
 - Install grc: `brew install grc`
+- Install zoxide: `brew install zoxide`
 - Install fish: `brew install fish`
   - You should also add fish to `/etc/shells`: `echo /usr/local/bin/fish | sudo tee -a /etc/shells`
   - Then make fish the default shell: `chsh -s /usr/local/bin/fish`
