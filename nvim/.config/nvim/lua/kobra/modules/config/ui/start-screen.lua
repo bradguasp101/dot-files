@@ -171,7 +171,7 @@ function screen.config()
 
   startify.section.top_buttons.val = {
     startify.button('f', 'New file', ':ene <BAR> startinsert <CR>'),
-    startify.button('df', 'Dot Files', ':cd ~/dot-files<cr><cmd>Telescope file_browser path=%:p:h hidden=true<cr>'),
+    startify.button('df', 'Dot Files', '<cmd>e ~/dot-files/ | cd %:p:h<cr>')
   }
 
   startify.section.mru.val[2].val = 'Recent Files'
