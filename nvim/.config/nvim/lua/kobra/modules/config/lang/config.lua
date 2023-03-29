@@ -6,6 +6,7 @@ end
 
 function config.lsp_progress()
   require('lsp-progress').setup({
+    spinner = { '⣷', '⣯', '⣟', '⡿', '⢿', '⣻', '⣽', '⣾' },
     client_format = function(client_name, spinner, series_messages)
       return #series_messages > 0
           and client_name ~= 'null-ls'

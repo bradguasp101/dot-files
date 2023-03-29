@@ -59,6 +59,7 @@ M.setup = function()
   extensions.file_browser = {
     hijack_netrw = true,
     grouped = true,
+    display_stat = false,
   }
 
   extensions.project = {
