@@ -26,6 +26,11 @@ local ts_ensure_installed = {
 }
 
 local treesitter = function()
+  vim.opt.foldmethod = 'expr'
+  vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+  vim.api.nvim_create_autocmd({ 'BufEnter' }, { pattern = { '*' }, command = 'normal zx zR' })
+
   local has_ts = pcall(require, 'nvim-treesitter.configs')
   if not has_ts then
     vim.notify('ts not installed')

@@ -13,6 +13,12 @@ ui[#ui+1] = {
   config = require('kobra.modules.config.ui.tabby').setup,
 }
 
+-- ui[#ui+1] = {
+--   'rebelot/heirline.nvim',
+--   event = 'VimEnter',
+--   config = conf.heirline,
+-- }
+
 ui[#ui+1] = {
   'freddiehaddad/feline.nvim',
   event = 'VimEnter',

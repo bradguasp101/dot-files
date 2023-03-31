@@ -12,6 +12,13 @@ function config.alpha()
   require('kobra.modules.config.ui.start-screen').config()
 end
 
+function config.heirline()
+  local line = require('kobra.modules.config.ui.statusline')
+  require('heirline').setup({
+    statusline = line.statusline(),
+  })
+end
+
 function config.windows()
   vim.o.winwidth = 10
   vim.o.winminwidth = 10

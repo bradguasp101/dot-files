@@ -94,4 +94,40 @@ function config.hlchunk()
   })
 end
 
+function config.prettyfold()
+  require('pretty-fold').setup({
+    keep_indentation = false,
+    fill_char = '━',
+    sections = {
+      left = {
+        '━ ', function() return string.rep('*', vim.v.foldlevel) end, ' ━┫', 'content', '┣'
+      },
+      right = {
+        '┫ ', 'number_of_folded_lines', ': ', 'percentage', ' ┣━━',
+      }
+    },
+    key = false,
+  })
+end
+
+function config.foldpreview()
+  local fp = require('fold-preview')
+  local map = require('fold-preview').mapping
+  local keymap = vim.keymap
+  keymap.amend = require('keymap-amend')
+
+  fp.setup({
+    default_keybindings = false
+  })
+
+  keymap.amend('n', 'K', function(original)
+    if not fp.toggle_preview() then original() end
+  end)
+  keymap.amend('n', 'zo', map.close_preview)
+  keymap.amend('n', 'zO', map.close_preview)
+  keymap.amend('n', 'zc', map.close_preview_without_defer)
+  keymap.amend('n', 'zR', map.close_preview)
+  keymap.amend('n', 'zM', map.close_preview_without_defer)
+end
+
 return config

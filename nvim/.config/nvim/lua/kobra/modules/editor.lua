@@ -105,4 +105,32 @@ editor[#editor+1] = {
 --   config = conf.hlchunk,
 -- }
 
+editor[#editor+1] = {
+  'anuvyklack/pretty-fold.nvim',
+  keys = {
+    'zf', -- (zf#j) creates a fold # lines down
+          -- (zf/string) creates a fold from cursor to string
+    'zj', -- move to next fold
+    'zk', -- move to previous fold
+    'zo', -- open a fold at the cursor
+    'z0', -- open all folds at the cursor
+    'zm', -- increase the fold level by one
+    'zM', -- close all open folds
+    'zr', -- decrease the fold level by one
+    'zR', -- decrease the fold level to zero
+    'zd', -- delete the fold at the cursor
+    'zE', -- delete all folds
+    '[z', -- move to the start of the open fold
+    ']z', -- move to the start of the open fold
+  },
+  config = conf.prettyfold,
+}
+
+editor[#editor+1] = {
+  'anuvyklack/fold-preview.nvim',
+  keys = { 'K', 'zo', 'z0', 'zc', 'zR', 'zM' },
+  dependencies = { 'anuvyklack/keymap-amend.nvim' },
+  config = conf.foldpreview,
+}
+
 return editor
