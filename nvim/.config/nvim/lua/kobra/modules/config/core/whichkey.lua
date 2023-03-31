@@ -168,10 +168,7 @@ M.setup = function()
       },
     },
 
-    L = {
-      name = "+Lazy",
-      l = { "<cmd>Lazy<cr>", "Lazy" },
-    },
+    L = { "<cmd>Lazy<cr>", "Lazy" },
 
     p = {
       name = "Plz and Project",
