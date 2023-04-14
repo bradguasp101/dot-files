@@ -27,3 +27,5 @@
 
 [init]
 	defaultBranch = master
+[url "git@git.tcncloud.net:"]
+	insteadOf = https://git.tcncloud.net/
