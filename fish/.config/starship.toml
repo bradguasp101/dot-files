@@ -24,6 +24,8 @@ format = 'on [$active]($style) '
 
 [custom.short_branch]
 command = "short-branch"
-when = "git rev-parse --is-inside-work-tree"
+when = "git rev-parse --is-inside-work-tree > /dev/null 2>&1"
+description = "The current git branch, shortened"
 symbol = " "
 style = "bold purple"
+format = "[$symbol$output]($style) "

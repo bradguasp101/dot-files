@@ -23,10 +23,11 @@ Mac Setup:
 - Install fd: ` brew install fd`
 - Install [ms-jpq/sad/sad](https://github.com/ms-jpq/sad): `brew install ms-jpq/sad/sad`
 - Install exa: `brew install exa`
-- Install node: `brew install node`
+- Install nvm: `brew install nvm`
+- Install node using `nvm`
 - Install yarn
   ```
-  brew install yarn
+  npm i -g yarn
   yarn global add neovim
   ```
 - Install pynvim: `pip3 install pynvim`
