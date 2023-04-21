@@ -3,7 +3,7 @@ oh-my-fish/plugin-extract
 oh-my-fish/plugin-osx
 oh-my-fish/plugin-grc
 jethrokuan/fzf
-jorgebucaran/fish-nvm
 laughedelic/brew-completions
 jorgebucaran/autopair.fish
 patrickf1/fzf.fish
+edc/bass
