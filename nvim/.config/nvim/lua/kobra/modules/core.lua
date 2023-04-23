@@ -60,6 +60,7 @@ core[#core+1] = {
     'nvim-telescope/telescope-project.nvim',
     'cljoly/telescope-repo.nvim',
     'ahmedkhalf/project.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
   },
 }
 

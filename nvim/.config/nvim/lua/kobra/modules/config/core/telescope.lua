@@ -113,6 +113,7 @@ M.setup = function()
   telescope.load_extension('project')
   telescope.load_extension('projects')
   telescope.load_extension('repo')
+  telescope.load_extension('ui-select')
 end
 
 function colemak_mappings()

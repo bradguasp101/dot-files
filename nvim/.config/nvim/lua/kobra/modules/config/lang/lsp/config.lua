@@ -50,10 +50,6 @@ M.setup_mason_lsp = function()
 end
 
 M.setup_mason_null = function()
-  require('mason-null-ls').setup({
-    ensure_installed = M.sources,
-  })
-
   local handlers = {}
   for _, source in ipairs(M.sources) do
     local require_ok, handler = pcall(require, 'kobra.modules.config.lang.lsp.null.' .. source)
@@ -62,7 +58,10 @@ M.setup_mason_null = function()
     end
   end
 
-  require('mason-null-ls').setup_handlers(handlers)
+  require('mason-null-ls').setup({
+    ensure_installed = M.sources,
+    handlers = handlers,
+  })
 end
 
 M.setup_null = function()
