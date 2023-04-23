@@ -12,13 +12,11 @@ function short-branch
   set branch_name (git rev-parse --abbrev-ref HEAD)
   switch $branch_name
     case "*/*"
-      set short_name (echo $branch_name | rev | cut -d '/' -f1 | rev)
+      echo $branch_name | rev | cut -d '/' -f1 | rev
     case "*-*"
       set split_name (string split - $branch_name)
-      set short_name $split_name[1]
+      echo $split_name[1]
     case "*"
-      set short_name $branch_name
+      echo $branch_name
   end
-
-  echo $short_name
 end
