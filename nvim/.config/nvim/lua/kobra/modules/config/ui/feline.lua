@@ -220,6 +220,7 @@ local icons = {
   warn = "",
   info = "",
   hint = "",
+  cog = '',
 }
 
 local function get_diag(icon, str)
@@ -314,7 +315,7 @@ local c = {
   },
   lsp_status = {
     provider = function()
-      local lsp_val = ' ' .. icons.connected .. ' '
+      local lsp_val = ' ' .. icons.cog .. ' '
       local progress_ok, progress = pcall(require, 'lsp-progress')
       if progress_ok then
         lsp_val = progress.progress()
