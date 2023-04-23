@@ -6,6 +6,7 @@ function config.notify()
     render = 'minimal',
     timeout = 5000,
   })
+  vim.notify = require('notify')
 end
 
 function config.alpha()

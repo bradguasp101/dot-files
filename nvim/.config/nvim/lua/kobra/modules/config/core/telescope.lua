@@ -3,6 +3,68 @@ local M = {}
 local colemak_mappings
 local qwerty_mappings
 
+local pickers = function()
+  return {
+    commands = {
+      theme = 'cursor',
+      previewer = false,
+    },
+  }
+end
+
+local fzf = function()
+  return {
+    fuzzy = true,
+    override_generic_sorter = true,
+    override_file_sorter = true,
+    case_mode = 'smart_case',
+  }
+end
+
+local live_grep_args = function()
+  local lga_actions = require('telescope-live-grep-args.actions')
+  return {
+    mappings = {
+      i = {
+        ['<C-k>'] = lga_actions.quote_prompt(),
+        ['<C-i>'] = lga_actions.quote_prompt({ postfix = ' --iglob ' }),
+      },
+    },
+  }
+end
+
+local file_browser = function()
+  local res = {
+    hijack_netrw = true,
+    grouped = true,
+    display_stat = false,
+    hidden = true,
+  }
+
+  if COLEMAK then
+    local actions = require('telescope').extensions.file_browser.actions
+    res.mappings = {
+      i = {
+        ['<C-a>'] = actions.create,
+        ['<C-r>'] = actions.rename,
+        ['<C-y>'] = actions.copy,
+        ['<C-x>'] = actions.remove,
+        ['<C-h>'] = actions.toggle_hidden,
+      },
+    }
+  end
+
+  return res
+end
+
+local project = function()
+  return {
+    base_dirs = {
+      '~/Projects',
+    },
+  }
+end
+
 M.setup = function()
   local telescope = require('telescope')
 
@@ -13,7 +75,7 @@ M.setup = function()
     mappings = qwerty_mappings()
   end
 
-  local config = {
+  telescope.setup({
     defaults = {
       prompt_prefix = ' ',
       selection_caret = ' ',
@@ -35,55 +97,14 @@ M.setup = function()
         'plz-out',
       },
     },
-  }
-
-  local extensions = {}
-
-  extensions.fzf = {
-    fuzzy = true,
-    override_generic_sorter = true,
-    override_file_sorter = true,
-    case_mode = 'smart_case',
-  }
-
-  local lga_actions = require('telescope-live-grep-args.actions')
-  extensions.live_grep_args = {
-    mappings = {
-      i = {
-        ['<C-k>'] = lga_actions.quote_prompt(),
-        ['<C-i>'] = lga_actions.quote_prompt({ postfix = ' --iglob ' }),
-      },
-    },
-  }
-
-  extensions.file_browser = {
-    hijack_netrw = true,
-    grouped = true,
-    display_stat = false,
-    hidden = true,
-  }
-
-  extensions.project = {
-    base_dirs = {
-      '~/Projects',
-    },
-  }
-
-  if COLEMAK then
-    local actions = require('telescope').extensions.file_browser.actions
-    extensions.file_browser.mappings = {
-      i = {
-        ['<C-a>'] = actions.create,
-        ['<C-r>'] = actions.rename,
-        ['<C-y>'] = actions.copy,
-        ['<C-x>'] = actions.remove,
-        ['<C-h>'] = actions.toggle_hidden,
-      },
+    pickers = pickers(),
+    extensions = {
+      fzf = fzf(),
+      live_grep_args = live_grep_args(),
+      file_browser = file_browser(),
+      project = project(),
     }
-  end
-
-  config.extensions = extensions
-  telescope.setup(config)
+  })
 
   telescope.load_extension('fzf')
   telescope.load_extension('z')
