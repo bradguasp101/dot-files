@@ -60,6 +60,7 @@ M.setup = function()
     hijack_netrw = true,
     grouped = true,
     display_stat = false,
+    hidden = true,
   }
 
   extensions.project = {
