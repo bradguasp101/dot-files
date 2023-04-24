@@ -44,6 +44,7 @@ function config.editorconfig()
     'NeogitStatus',
     'DiffViewFiles',
   }
+  vim.g.EditorConfig_disable_rules = {'max_line_length'}
 end
 
 function config.leap()
