@@ -7,7 +7,6 @@ end
 function config.lsp_progress()
   require('lsp-progress').setup({
     spinner = { '⣷', '⣯', '⣟', '⡿', '⢿', '⣻', '⣽', '⣾' },
-    max_size = 50,
     series_format = function(title, _, percentage, _)
       local builder = {}
       if title and title ~= '' then
@@ -20,6 +19,7 @@ function config.lsp_progress()
     end,
     client_format = function(client_name, spinner, series_messages)
       return #series_messages > 0
+          and client_name ~= 'null-ls'
           and ('[' .. client_name .. '] ' .. spinner .. ' ' .. table.concat(
             series_messages,
             ', '
