@@ -3,7 +3,7 @@ local handlers = {}
 handlers.capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 handlers.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-function handlers.on_attach(client, bufnr)
+function handlers.on_attach(client, _) -- bufnr)
   require('illuminate').on_attach(client)
 
   if client.name == 'lua_ls' then

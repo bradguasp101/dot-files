@@ -95,7 +95,7 @@ return {
           command = 'java',
           args = { '$FILENAME' },
           to_stdin = false,
-          sormat = 'raw',
+          format = 'raw',
           from_stderr = true,
           on_output = require('null-ls.helpers').diagnostics.from_errorformat([[%f:%l: %trror: %m]], 'java'),
         },
