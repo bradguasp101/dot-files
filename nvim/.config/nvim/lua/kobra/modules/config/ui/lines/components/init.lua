@@ -60,7 +60,7 @@ components.statusline = function()
   return {
     utils.surround_mode({ '', '' }, vi_mode),
     git,
-    utils.surround({ '', '' }, 'UserSL', file),
+    utils.surround({ '', '' }, 'UserDirSep', file),
     align,
     lsp,
     utils.surround({ '', '' }, 'UserSLAltSep', ruler),

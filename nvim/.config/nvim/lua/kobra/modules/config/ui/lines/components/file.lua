@@ -37,21 +37,21 @@ local file_flags = {
       return vim.bo.modified
     end,
     provider = '[+]',
-    hl = 'UserGreenSep',
+    hl = 'UserGreenGray',
   },
   {
     condition = function()
       return not vim.bo.modifiable or vim.bo.readonly
     end,
     provider = '',
-    hl = 'UserRedSep',
+    hl = 'UserRedGray',
   },
 }
 
 local file_name_modifier = {
   hl = function()
     if vim.bo.modified then
-      return { fg = 'UserCyanSep', bold = true, force = true }
+      return { fg = 'UserCyanGray', bold = true, force = true }
     end
   end,
 }

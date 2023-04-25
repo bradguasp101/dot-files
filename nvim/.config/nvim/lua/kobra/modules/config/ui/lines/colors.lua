@@ -71,6 +71,7 @@ local function generate_pallet_from_colorscheme()
 
   pallet.sl = get_highlight('StatusLine')
   pallet.sel = get_highlight('TabLineSel')
+  pallet.dir = get_highlight('Directory')
 
   return pallet
 end
@@ -93,19 +94,20 @@ local create_highlights = function()
     Purple  = { fg = pal.purple,  bg = pal.sl.bg },
   }
 
+  local status = vim.o.background == 'dark' and { fg = pal.black, bg = pal.white } or { fg = pal.white, bg = pal.black }
+
   local res = {}
   for name, value in pairs(sl_colors) do
     res['User' .. name] = { fg = value.fg, bg = value.bg, bold = true }
     res['User' .. name .. 'N'] = { fg = value.fg, bg = value.bg }
     res['User' .. name .. 'Sep'] = { fg = value.fg, bg = pal.sel.fg, bold = true }
     res['UserRv' .. name] = { fg = value.bg, bg = value.fg, bold = true }
+    res['User' .. name .. 'Gray'] = { fg = value.fg, bg = pal.gray, bold = true }
   end
 
-  local status = vim.o.background == 'dark' and { fg = pal.black, bg = pal.white } or { fg = pal.white, bg = pal.black }
-  local dir = utils.get_highlight('Directory')
-
   local groups = {
-    UserDir = { fg = dir.fg, bg = pal.sel.fg, bold = true },
+    UserDir = { fg = pal.blue, bg = pal.gray, bold = true },
+    UserDirSep = { fg = pal.gray, bg = pal.sl.bg },
     UserSL = { fg = pal.sel.fg, bg = pal.sl.bg },
 
     UserLSPSep = { fg = sl_colors.White.fg, bg = pal.sl.bg },
