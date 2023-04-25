@@ -18,11 +18,6 @@ function config.heirline()
     statusline = require('kobra.modules.config.ui.lines.statusline').statusline(),
     winbar = require('kobra.modules.config.ui.lines.winbar').winbar(),
     -- tabline = require('kobra.modules.config.ui.lines.tabline').tabline(),
-    opts = {
-      disable_winbar_cb = function(args)
-        return require('nvim-navic').is_available(args.buf)
-      end,
-    },
   })
 end
 

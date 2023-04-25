@@ -48,7 +48,6 @@ return {
     local children = {}
 
     for i, d in ipairs(data) do
-      local pos = self.enc(d.scope.start.line, d.scope.start.character, self.winnr)
       local child = {
         { provider = d.icon, hl = self.type_hl[d.type] },
         { provider = d.name:gsub('%%', '%%%%'):gsub('%s*->%s*', '') },
@@ -56,7 +55,7 @@ return {
 
       if #data > 1 and i < #data then
         table.insert(child, {
-          provider = '>',
+          provider = ' > ',
           hl = { fg = 'bright_fg' },
         })
       end
@@ -68,6 +67,6 @@ return {
   provider = function(self)
     return self.child:eval()
   end,
-  hl = { fg = 'gray' },
+  hl = { fg = 'bright_fg' },
   update = 'CursorMoved',
 }
