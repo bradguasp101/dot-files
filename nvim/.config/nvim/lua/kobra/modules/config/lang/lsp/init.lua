@@ -2,6 +2,7 @@ local config = require('kobra.modules.config.lang.lsp.config')
 local handlers = require('kobra.modules.config.lang.lsp.handlers')
 local lspconfig = require('lspconfig')
 
+config.setup_navbuddy()
 config.setup_mason()
 config.setup_mason_lsp()
 config.setup_mason_null()

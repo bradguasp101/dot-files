@@ -14,6 +14,8 @@ lang[#lang+1] = {
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
     'jose-elias-alvarez/null-ls.nvim',
+    'SmiteshP/nvim-navic',
+    'SmiteshP/nvim-navbuddy',
   },
   config = conf.mason,
 }

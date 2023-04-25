@@ -33,6 +33,7 @@ local function load_options()
     scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
     sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
     autochdir = true,                        -- when on, vim will change the current working directory whenever you open a file, switch buffers, delete a buffer, or open/close a window.
+    laststatus = 3,                          -- when on, enables a global status line
   }
 
   vim.opt.shortmess:append "c"
