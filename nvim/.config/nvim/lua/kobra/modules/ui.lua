@@ -2,6 +2,12 @@ local ui = {}
 local conf = require('kobra.modules.config.ui.config')
 
 ui[#ui+1] = {
+  'stevearc/dressing.nvim',
+  event = 'VimEnter',
+  config = conf.dressing,
+}
+
+ui[#ui+1] = {
   'rcarriga/nvim-notify',
   event = 'VimEnter',
   config = conf.notify,

@@ -1,5 +1,9 @@
 local config = {}
 
+function config.dressing()
+  require('dressing').setup({})
+end
+
 function config.notify()
   require('notify').setup({
     stages = 'slide',

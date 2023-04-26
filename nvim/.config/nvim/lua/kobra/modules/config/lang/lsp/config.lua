@@ -18,7 +18,7 @@ M.servers = {
   'tsserver',
   'vimls',
   'yamlls',
-  'bufls',
+  -- 'bufls',
 }
 
 M.sources = {
