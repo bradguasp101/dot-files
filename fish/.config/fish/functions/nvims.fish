@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 function nvims
-  set items default LazyVim blank
+  set items default LazyVim blank volatile
   set config (printf "%s\n" $items | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if test -z $config
     echo "Nothing selected"
