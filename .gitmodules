@@ -1,0 +1,3 @@
+[submodule "nvim/.config/KobraVim"]
+	path = nvim/.config/KobraVim
+	url = git@github.com:KobraKommander9/KobraVim.git
