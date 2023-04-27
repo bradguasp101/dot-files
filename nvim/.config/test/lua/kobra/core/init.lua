@@ -71,7 +71,7 @@ function M.setup(opts)
   if not M.has() then
     require('lazy.core.util').error(
       '**KobraVim** needs **lazy.nvim** version '
-        .. M.lazy_versino
+        .. M.lazy_version
         .. ' to work properly.\n'
         .. 'Please upgrade **lazy.nvim**',
       { title = 'KobraVim' }
@@ -108,6 +108,12 @@ function M.setup(opts)
       vim.cmd.colorscheme('carbonfox')
     end,
   })
+
+  local ok, globals = pcall(require, 'kobra.globals')
+  if not ok then
+    globals = {}
+  end
+  require('kobra.core.globals').setup(globals)
 end
 
 function M.has(range)
@@ -148,6 +154,7 @@ function M.init()
     M.did_init = true
     require('kobra.core.util').lazy_notify()
 
+    require('kobra.core.commands').init()
     require('kobra.core').load('options')
     local Plugin = require('lazy.core.plugin')
     local add = Plugin.Spec.add

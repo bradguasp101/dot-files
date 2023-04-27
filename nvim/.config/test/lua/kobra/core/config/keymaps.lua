@@ -1,4 +1,4 @@
-local layout = require('kobra.globals').layout
+local layout = require('kobra.core.globals').layout
 
 local function map(mode, lhs, rhs, opts)
   local keys = require('lazy.core.handler').handers.keys
