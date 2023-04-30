@@ -1,0 +1,3 @@
+-- Autocmds are automatically loaded on the VeryLazy event
+-- Default autocmds that are always set: https://github.com/KobraKommander9/KobraVim/blob/main/lua/kobra/core/config/autocmds.lua
+-- Add any additional autocmds here
