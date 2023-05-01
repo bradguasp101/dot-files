@@ -22,13 +22,18 @@ end
 
 local workspaces = {
   {
+    'Matrix Sessions',
+    'ms',
+    '~/Matrix',
+  },
+  {
     'Project Sessions',
-    'p',
+    'ps',
     '~/Projects/',
   },
   {
     'Dotfile Sessions',
-    'd',
+    'ds',
     '~/dot-files/',
   },
 }
@@ -74,8 +79,8 @@ local function scandir(dir)
   return t
 end
 
-local get_projects = function()
-  local files = scandir('~/Projects/')
+local get_projects = function(prefix, dir)
+  local files = scandir(dir .. '/')
 
   local buttons = {}
   for i, fn in ipairs(files) do
@@ -99,7 +104,7 @@ local get_projects = function()
 
     local short_fn = vim.fn.fnamemodify(fn, ':~')
     local cd_cmd = ' | cd %:p:h'
-    local file_button_el = startify.button(tostring(i), ico_txt .. short_fn, '<cmd>e ' .. fn .. cd_cmd .. '<cr>')
+    local file_button_el = startify.button(prefix .. tostring(i), ico_txt .. short_fn, '<cmd>e ' .. fn .. cd_cmd .. '<cr>')
     local fn_start = short_fn:match('.*[/\\]')
     if fn_start ~= nil then
       table.insert(fb_hl, { 'Comment', #ico_txt, #fn_start + #ico_txt })
@@ -204,18 +209,33 @@ function screen.config()
     type = 'group',
     val = {
       { type = 'padding', val = 1 },
-      { type = 'text', val = 'Projects', opts = { hl = 'SpecialComment' } },
+      { type = 'text', val = 'Matrix', opts = { hl = 'SpecialComment' } },
       { type = 'padding', val = 1 },
       {
         type = 'group',
         val = function()
-          return { get_projects() }
+          return { get_projects('', '~/Matrix') }
         end,
       },
     },
   })
 
   table.insert(config.layout, 6, {
+    type = 'group',
+    val = {
+      { type = 'padding', val = 1 },
+      { type = 'text', val = 'Projects', opts = { hl = 'SpecialComment' } },
+      { type = 'padding', val = 1 },
+      {
+        type = 'group',
+        val = function()
+          return { get_projects('p', '~/Projects') }
+        end,
+      },
+    },
+  })
+
+  table.insert(config.layout, 7, {
     type = 'group',
     val = utils.throttle(get_sessions, 5000),
   })
