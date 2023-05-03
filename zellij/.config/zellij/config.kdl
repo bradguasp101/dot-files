@@ -6,9 +6,11 @@ keybinds clear-defaults=true {
     }
     locked {
         bind "©" { SwitchToMode "Normal"; } // Alt g
+        bind "Alt g" { SwitchToMode "Normal"; }
     }
     resize {
         bind "˜" { SwitchToMode "Normal"; } // Alt n
+        bind "Alt n" { SwitchToMode "Normal"; }
         bind "p" { SwitchToMode "Pane"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "n" "Down" { Resize "Increase Down"; } // j
@@ -23,6 +25,7 @@ keybinds clear-defaults=true {
     }
     pane {
         bind "π" { SwitchToMode "Normal"; } // Alt p
+        bind "Alt p" { SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "i" "Right" { MoveFocus "Right"; } // l
         bind "n" "Down" { MoveFocus "Down"; } // j
@@ -41,6 +44,7 @@ keybinds clear-defaults=true {
     }
     move {
         bind "˙" { SwitchToMode "Normal"; } // Alt h
+        bind "Alt h" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -50,6 +54,7 @@ keybinds clear-defaults=true {
     }
     tab {
         bind "†" { SwitchToMode "Normal"; } // Alt t
+        bind "Alt t" { SwitchToMode "Normal"; } // Alt t
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "i" "Right" "Down" "j" { GoToNextTab; } // l
@@ -69,13 +74,17 @@ keybinds clear-defaults=true {
     }
     scroll {
         bind "ß" { SwitchToMode "Normal"; } // Alt s
+        bind "Alt s" { SwitchToMode "Normal"; }
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
         bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
         bind "ç" { ScrollToBottom; SwitchToMode "Normal"; } // Alt c
+        bind "Alt c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
         bind "ƒ" "PageDown" "Right" "l" { PageScrollDown; } // Alt f
+        bind "Alt f" "PageDown" "Right" "l" { PageScrollDown; }
         bind "∫" "PageUp" "Left" "h" { PageScrollUp; } // Alt b
+        bind "Alt b" "PageUp" "Left" "h" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         // uncomment this and adjust key if using copy_on_select=false
@@ -83,11 +92,15 @@ keybinds clear-defaults=true {
     }
     search {
         bind "ß" { SwitchToMode "Normal"; } // Alt s
+        bind "Alt s" { SwitchToMode "Normal"; }
         bind "ç" { ScrollToBottom; SwitchToMode "Normal"; } // Alt c
+        bind "Alt c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
         bind "ƒ" "PageDown" "Right" "l" { PageScrollDown; } // Alt f
+        bind "Alt f" "PageDown" "Right" "l" { PageScrollDown; }
         bind "∫" "PageUp" "Left" "h" { PageScrollUp; } // Alt b
+        bind "Alt b" "PageUp" "Left" "h" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         bind "n" { Search "down"; }
@@ -98,10 +111,12 @@ keybinds clear-defaults=true {
     }
     entersearch {
         bind "ç" "Esc" { SwitchToMode "Scroll"; } // Alt c
+        bind "Alt c" "Esc" { SwitchToMode "Scroll"; }
         bind "Enter" { SwitchToMode "Search"; }
     }
     renametab {
         bind "ç" { SwitchToMode "Normal"; } // Alt c
+        bind "Alt c" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
     }
     renamepane {
@@ -110,12 +125,15 @@ keybinds clear-defaults=true {
     }
     session {
         bind "ø" { SwitchToMode "Normal"; } // Alt o
+        bind "Alt o" { SwitchToMode "Normal"; }
         bind "ß" { SwitchToMode "Scroll"; } // Alt s
+        bind "Alt s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
         bind "∫" { Write 2; SwitchToMode "Normal"; } // Alt b
+        bind "Alt b" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
@@ -138,40 +156,58 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" {
         bind "©" { SwitchToMode "Locked"; } // Alt g
+        bind "Alt g" { SwitchToMode "Locked"; }
         bind "œ" { Quit; } // Alt q
+        bind "Alt q" { Quit; }
         bind "˜" { NewPane; } // Alt n
+        bind "Alt n" { NewPane; }
         bind "˙" { MoveFocusOrTab "Left"; } // Alt h, Alt Left
+        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "¬" { MoveFocusOrTab "Right"; } // Alt l, Alt Right
+        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
         bind "∆" { MoveFocus "Down"; } // Alt j, Alt Down
+        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
         bind "˚" { MoveFocus "Up"; } // Alt k, Alt Up
+        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
         bind "≠" "±" { Resize "Increase"; } // Alt =, Alt +
+        bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "–" { Resize "Decrease"; } // Alt -
+        bind "Alt -" { Resize "Decrease"; }
         bind "“" { PreviousSwapLayout; } // Alt [
+        bind "Alt [" { PreviousSwapLayout; }
         bind "‘" { NextSwapLayout; } // Alt ]
+        bind "Alt ]" { NextSwapLayout; }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
         bind "π" { SwitchToMode "Pane"; } // Alt p
+        bind "Alt p" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
         bind "˜" { SwitchToMode "Resize"; } // Alt n
+        bind "Alt n" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "ß" { SwitchToMode "Scroll"; } // Alt s
+        bind "Alt s" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
         bind "ø" { SwitchToMode "Session"; } // Alt o
+        bind "Alt o" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "†" { SwitchToMode "Tab"; } // Alt t
+        bind "Alt t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
         bind "˙" { SwitchToMode "Move"; } // Alt h
+        bind "Alt h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "∫" { SwitchToMode "Tmux"; } // Alt b
+        bind "Alt b" { SwitchToMode "Tmux"; }
     }
 }
 

@@ -6,6 +6,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = 'AdventureTime'
+require('ui').apply(config)
+require('keys').apply(config)
 
 return config
