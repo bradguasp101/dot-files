@@ -1,24 +1,54 @@
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git', '--branch=stable', lazypath })
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-require('lazy').setup({
+require("lazy").setup({
   spec = {
     {
-      'KobraKommander9/KobraVim',
+      "KobraKommander9/KobraVim",
       opts = {
         layouts = {
           colemak = true,
         },
+        start_screen = {
+          folders = {
+            { "Matrix", "~/Matrix" },
+            { "Projects", "~/Projects" },
+          },
+          workspaces = {
+            {
+              "Matrix Sessions",
+              "ms",
+              "~/Matrix",
+            },
+            {
+              "Project Sessions",
+              "ps",
+              "~/Projects/",
+            },
+            {
+              "Dotfile Sessions",
+              "ds",
+              "~/dot-files/",
+            },
+          },
+        },
       },
-      import = 'kobra.plugins'
+      import = "kobra.plugins",
     },
     -- import any extras modules here
-    { import = 'kobra.plugins.presets.kobra' },
+    { import = "kobra.plugins.presets.kobra" },
     -- import/override with your plugins
-    { import = 'plugins' },
+    { import = "plugins" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -29,16 +59,16 @@ require('lazy').setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { 'carbonfox' } },
+  install = { colorscheme = { "carbonfox" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
       disabled_plugins = {
-        'gzip',
-        'tarPlugin',
-        'tohtml',
-        'tutor',
-        'zipPlugin',
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
       },
     },
   },

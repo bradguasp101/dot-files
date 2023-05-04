@@ -120,7 +120,8 @@ keybinds clear-defaults=true {
         bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
     }
     renamepane {
-        bind "ç" { SwitchToMode "Normal"; }
+        bind "ç" { SwitchToMode "Normal"; } // Alt c
+        bind "Alt c" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
     }
     session {
@@ -159,16 +160,16 @@ keybinds clear-defaults=true {
         bind "Alt g" { SwitchToMode "Locked"; }
         bind "œ" { Quit; } // Alt q
         bind "Alt q" { Quit; }
-        bind "˜" { NewPane; } // Alt n
-        bind "Alt n" { NewPane; }
+        // bind "˜" { NewPane; } // Alt n
+        // bind "Alt n" { NewPane; }
         bind "˙" { MoveFocusOrTab "Left"; } // Alt h, Alt Left
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "¬" { MoveFocusOrTab "Right"; } // Alt l, Alt Right
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "∆" { MoveFocus "Down"; } // Alt j, Alt Down
-        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
-        bind "˚" { MoveFocus "Up"; } // Alt k, Alt Up
-        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+        // bind "∆" { MoveFocus "Down"; } // Alt j, Alt Down
+        // bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        // bind "˚" { MoveFocus "Up"; } // Alt k, Alt Up
+        // bind "Alt k" "Alt Up" { MoveFocus "Up"; }
         bind "≠" "±" { Resize "Increase"; } // Alt =, Alt +
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "–" { Resize "Decrease"; } // Alt -
@@ -186,8 +187,9 @@ keybinds clear-defaults=true {
         bind "Alt p" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "˜" { SwitchToMode "Resize"; } // Alt n
-        bind "Alt n" { SwitchToMode "Resize"; }
+        // bind "˜" { SwitchToMode "Resize"; } // Alt n
+        // bind "Alt n" { SwitchToMode "Resize"; }
+        bind "Alt r" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "ß" { SwitchToMode "Scroll"; } // Alt s
@@ -202,8 +204,9 @@ keybinds clear-defaults=true {
         bind "Alt t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "˙" { SwitchToMode "Move"; } // Alt h
-        bind "Alt h" { SwitchToMode "Move"; }
+        // bind "˙" { SwitchToMode "Move"; } // Alt h
+        // bind "Alt h" { SwitchToMode "Move"; }
+        bind "Alt m" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "∫" { SwitchToMode "Tmux"; } // Alt b
