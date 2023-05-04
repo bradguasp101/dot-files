@@ -2,6 +2,16 @@ local ui = {}
 local conf = require('kobra.modules.config.ui.config')
 
 ui[#ui+1] = {
+  'xiyaowong/transparent.nvim',
+  lazy = false,
+  opts = {
+    exclude_groups = {
+      'NotifyBackground',
+    },
+  },
+}
+
+ui[#ui+1] = {
   'stevearc/dressing.nvim',
   event = 'VimEnter',
   config = conf.dressing,

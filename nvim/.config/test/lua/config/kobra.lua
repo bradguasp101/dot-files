@@ -16,12 +16,7 @@ require('lazy').setup({
       import = 'kobra.plugins'
     },
     -- import any extras modules here
-    { import = 'kobra.plugins.extras.coding.copilot' },
-    { import = 'kobra.plugins.extras.coding.navbuddy' },
-    { import = 'kobra.plugins.extras.formatting.prettier' },
-    { import = 'kobra.plugins.extras.lang.json' },
-    { import = 'kobra.plugins.extras.lang.go' },
-    { import = 'kobra.plugins.extras.lang.typescript' },
+    { import = 'kobra.plugins.presets.kobra' },
     -- import/override with your plugins
     { import = 'plugins' },
   },
