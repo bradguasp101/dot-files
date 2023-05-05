@@ -22,7 +22,7 @@ require("lazy").setup({
         start_screen = {
           folders = {
             { "Matrix", "~/Matrix" },
-            { "Projects", "~/Projects" },
+            { "Projects", "p", "~/Projects" },
           },
           workspaces = {
             {
