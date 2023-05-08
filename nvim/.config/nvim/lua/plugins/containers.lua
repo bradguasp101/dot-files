@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 local M = {}
 
 M[#M + 1] = {
@@ -102,6 +106,27 @@ M[#M + 1] = {
   cmd = "AsyncRun",
   config = function()
     vim.g.asyncrun_open = 8
+  end,
+}
+
+M[#M + 1] = {
+  "chipsenkbeil/distant.nvim",
+  branch = "v0.2",
+  cmd = {
+    "DistantInstall",
+    "DistantLaunch",
+    "DistantOpen",
+    "DistantConnect",
+    "DistantMetadata",
+    "DistantShell",
+    "DistantSessionInfo",
+    "DistantSystemInfo",
+    "DistantClientVersion",
+  },
+  config = function()
+    require("distant").setup({
+      ["*"] = require("distant.settings").chip_default(),
+    })
   end,
 }
 
