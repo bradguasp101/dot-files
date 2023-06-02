@@ -163,13 +163,13 @@ keybinds clear-defaults=true {
         // bind "˜" { NewPane; } // Alt n
         // bind "Alt n" { NewPane; }
         bind "˙" { MoveFocusOrTab "Left"; } // Alt h, Alt Left
-        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt h" { MoveFocusOrTab "Left"; } // Alt h, Alt Left
         bind "¬" { MoveFocusOrTab "Right"; } // Alt l, Alt Right
-        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt l" { MoveFocusOrTab "Right"; } // Alt l, Alt Right
         // bind "∆" { MoveFocus "Down"; } // Alt j, Alt Down
-        // bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        // bind "Alt j" { MoveFocus "Down"; } // Alt j, Alt Down
         // bind "˚" { MoveFocus "Up"; } // Alt k, Alt Up
-        // bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+        // bind "Alt k" { MoveFocus "Up"; } // Alt k, Alt up
         bind "≠" "±" { Resize "Increase"; } // Alt =, Alt +
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "–" { Resize "Decrease"; } // Alt -
