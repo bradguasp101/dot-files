@@ -1,0 +1,33 @@
+layout {
+  default_tab_template {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+
+  swap_tiled_layout name="multi_term" {
+    tab max_panes=1 {
+      pane
+    }
+    tab max_panes=2 split_direction="vertical" {
+      pane size="70%"
+      pane
+    }
+    tab split_direction="vertical" {
+      pane size="70%"
+      pane split_direction="horizontal" {
+        pane
+        pane
+      }
+    }
+  }
+
+  tab name="nvim" focus=true {
+    pane command="nvim"
+  }
+
+  tab name="term" {
+    pane
+  }
+}
